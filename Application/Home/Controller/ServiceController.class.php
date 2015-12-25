@@ -238,5 +238,8 @@ class ServiceController extends BaseController {
         $this->display();
     }
     
+    public function getGoodDatePrices(){
+        echo "";
+    }
 
 }
