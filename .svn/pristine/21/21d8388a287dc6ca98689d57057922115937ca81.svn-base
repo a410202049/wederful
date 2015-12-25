@@ -1,0 +1,321 @@
+/**
+ * Hf （head - footer）头部 - 页脚
+ * fj in 2015-11-27
+ */
+;
+!(function($) {
+    "use strict";
+    var Hf = (function() {
+        var $register,
+            $login,
+            $repass,
+            $htmlBody = $("html, body"),
+            _reg_log = true,
+            _reg_log_code = true,
+            _reg_data = {
+                username: '',
+                password: '',
+                code: ''
+            };
+        return {
+            ini: function() {
+                // 把所有的ts4 加上live
+                var $ts4 = $('.ts4'),
+                    _ts4_l = $ts4.length;
+                while (_ts4_l--) {
+                    $ts4.eq(_ts4_l).addClass('ts-live');
+                };
+                // 禁止鼠标选择
+                if (typeof document.onselectstart !== "undefined") {
+                    document.onselectstart = new Function("return false");
+                };
+                // 禁止右键
+                function nocontextmenu(e) {
+                    e = e || window.event || arguments.callee.caller.arguments[0];
+                    e.cancelBubble = true;
+                    e.returnValue = false;
+                    return false;
+                }
+
+                function norightclick(e) {
+                    e = e || window.event || arguments.callee.caller.arguments[0];
+                    if (window.event) {
+                        if (e.which === 2 || e.which === 3) return false;
+                    } else if (e.button === 2 || e.button === 3) {
+                        e.cancelBubble = true;
+                        e.returnValue = false;
+                        return false;
+                    };
+                }
+                document.oncontextmenu = nocontextmenu; // for IE5+
+                document.onmousedown = norightclick; // for all others
+                /******************************************************************************/
+
+                $register = $('#registerDom').html();
+                $login = $('#loginDom').html();
+                $repass = $('#findpassDom').html();
+                $('#regLogDom').remove();
+            },
+            regOut: function() {
+                $mask.hide().html($register).show(0, function() {
+                    $(this).children().removeClass('active');
+                });
+            },
+            logOut: function() {
+                $mask.hide().html($login).show(0, function() {
+                    $(this).children().removeClass('active');
+                });
+            },
+            findPassOut: function() {
+                $mask.hide().html($repass).show(0, function() {
+                    $(this).children().removeClass('active');
+                });
+            },
+            goTop: function() {
+                $htmlBody.animate({
+                    scrollTop: 0
+                }, 400);
+            },
+            register: function($this) {
+                if (_reg_log) {
+                    _reg_log = false;
+                    _reg_data.username = $.trim($mask.find('.register-ipt').val());
+                    if ($.cTel(_reg_data.username)) {
+                        $this.html("检测手机号...");
+                        $.ajax({
+                            type: "POST",
+                            url: globalBase.checkUserUrl,
+                            dataType: "json",
+                            data: {
+                                username: _reg_data.username
+                            },
+                            success: function(r) {
+                                if (r.status === 'success') {
+                                    _reg_data.code = $.trim($mask.find('.reg-code-ipt').val());
+                                    if (/^\d{6}$/.test(_reg_data.code)) {
+                                        _reg_data.password = $mask.find('.reg-pass-ipt').val();
+                                        if (_reg_data.password.length > 5 && _reg_data.password.length < 21) {
+                                            $this.html("注册中...");
+                                            $.ajax({
+                                                type: "POST",
+                                                url: globalBase.registerUrl,
+                                                dataType: "json",
+                                                data: _reg_data,
+                                                success: function(r) {
+                                                    if (r.status === 'success') {
+                                                        $this.html("注册成功");
+                                                        setTimeout(function() {
+                                                            location.reload();
+                                                        }, 1000);
+                                                    } else {
+                                                        Hf.regLogTip($mask.find('.reg-log-sub-err'), r.message);
+                                                        $this.html("注册");
+                                                        _reg_log = true;
+                                                    };
+                                                },
+                                                error: function() {
+                                                    Hf.regLogTip($mask.find('.reg-log-sub-err'), '网络错误');
+                                                    $this.html("注册");
+                                                    _reg_log = true;
+                                                }
+                                            });
+                                        } else {
+                                            Hf.regLogTip($mask.find('.reg-pass-err'), '密码格式错误');
+                                            $this.html("注册");
+                                            _reg_log = true;
+                                        };
+                                    } else {
+                                        Hf.regLogTip($mask.find('.reg-code-err'), '验证码错误');
+                                        $this.html("注册");
+                                        _reg_log = true;
+                                    };
+                                } else {
+                                    Hf.regLogTip($mask.find('.reg-tel-err'), r.message);
+                                    $this.html("注册");
+                                    _reg_log = true;
+                                };
+                            },
+                            error: function() {
+                                Hf.regLogTip($mask.find('.reg-tel-err'), '网络错误');
+                                $this.html("注册");
+                                _reg_log = true;
+                            }
+                        });
+                    } else {
+                        Hf.regLogTip($mask.find('.reg-tel-err'), '手机号错误');
+                        _reg_log = true;
+                    };
+                };
+            },
+            sendCode: function($this) {
+                var _t = 59,
+                    _t_id;
+                if (_reg_log_code) {
+                    _reg_log_code = false;
+                    _reg_data.username = $.trim($mask.find('.register-ipt').val());
+                    if (_reg_data.username) {
+                        $this.html("检测手机号...");
+                        $.ajax({
+                            type: "POST",
+                            url: globalBase.checkUserUrl,
+                            dataType: "json",
+                            data: {
+                                username: _reg_data.username
+                            },
+                            success: function(r) {
+                                if (r.status === 'success') {
+                                    $this.html("正在发送...");
+                                    $.ajax({
+                                        type: "POST",
+                                        url: globalBase.regSendCodeUrl,
+                                        dataType: "json",
+                                        data: {
+                                            username: _reg_data.username
+                                        },
+                                        success: function(r) {
+                                            if (r.status === 'success') {
+                                                _t_id = setInterval(function() {
+                                                    $this.html(_t-- + "秒后重试")
+                                                    if (_t < 1) {
+                                                        clearInterval(_t_id);
+                                                        $this.html("发送验证码");
+                                                        _reg_log_code = true;
+                                                    };
+                                                }, 1000);
+                                            } else {
+                                                Hf.regLogTip($mask.find('.reg-code-err'), r.message);
+                                                $this.html("发送验证码");
+                                                _reg_log_code = true;
+                                            };
+                                        },
+                                        error: function() {
+                                            Hf.regLogTip($mask.find('.reg-code-err'), '网络错误');
+                                            $this.html("发送验证码");
+                                            _reg_log_code = true;
+                                        }
+                                    });
+                                } else {
+                                    Hf.regLogTip($mask.find('.reg-tel-err'), r.message);
+                                    $this.html("发送验证码");
+                                    _reg_log_code = true;
+                                };
+                            },
+                            error: function() {
+                                Hf.regLogTip($mask.find('.reg-tel-err'), '网络错误');
+                                $this.html("发送验证码");
+                                _reg_log_code = true;
+                            }
+                        });
+                    } else {
+                        Hf.regLogTip($mask.find('.reg-tel-err'), '手机号错误');
+                        _reg_log_code = true;
+                    };
+                };
+            },
+            login: function($this) {
+                if (_reg_log) {
+                    _reg_log = false;
+                    _reg_data.username = $.trim($mask.find('.login-ipt').val());
+                    if ($.cTel(_reg_data.username)) {
+                        _reg_data.password = $mask.find('.log-pass-ipt').val();
+                        if (_reg_data.password.length > 5 && _reg_data.password.length < 21) {
+                            $this.html("登录中...");
+                            $.ajax({
+                                type: "POST",
+                                url: globalBase.loginUrl,
+                                dataType: "json",
+                                data: _reg_data,
+                                success: function(r) {
+                                    if (r.status === 'success') {
+                                        $this.html("登录成功");
+                                        setTimeout(function() {
+                                            location.reload();
+                                        }, 1000);
+                                    } else {
+                                        Hf.regLogTip($mask.find('.reg-log-sub-err'), r.message);
+                                        $this.html("登录");
+                                        _reg_log = true;
+                                    };
+                                },
+                                error: function() {
+                                    gVar.sign_tip("网络繁忙，请重试", $this, "登录", "f_sign")
+                                    $this.html("登录");
+                                    _reg_log = true;
+                                }
+                            });
+                        } else {
+                            Hf.regLogTip($mask.find('.log-pass-err'), '密码错误');
+                            _reg_log = true;
+                        };
+                    } else {
+                        Hf.regLogTip($mask.find('.log-tel-err'), '手机号错误');
+                        _reg_log = true;
+                    };
+                };
+            },
+            regLogTip: function($err, _t) {
+                $err.html(_t);
+            }
+        };
+    })();
+
+    Hf.ini();
+
+    /**
+     * *******************************************************************************
+     */
+
+    /**
+     * 注册
+     */
+    // 弹出注册框
+    $('#body').on('click', '.register-trigger', function() {
+        Hf.regOut();
+    });
+    // 点击注册按钮
+    $mask.on('click', '.reg-submit', function() {
+        Hf.register($(this));
+    });
+    // 发送验证码
+    $mask.on('click', '.send-code', function() {
+        Hf.sendCode($(this));
+    });
+
+    /**
+     * 登陆
+     */
+    // 弹出登陆框
+    $('#body').on('click', '.login-trigger', function() {
+        Hf.logOut();
+    });
+    // 点击登陆按钮
+    $mask.on('click', '.log-submit', function() {
+        Hf.login($(this));
+    });
+
+    /**
+     * 找回密码
+     */
+    // 弹出找回密码框
+    $('#body').on('click', '.findPass-trigger', function() {
+        Hf.findPassOut();
+    });
+
+    // all-public
+    $mask.on('focus', '.reg-log-ipt', function() {
+        $(this).next().html('&emsp;')
+        $mask.find('.reg-log-sub-err').html('&emsp;')
+    });
+
+    /**
+     * *******************************************************************************
+     */
+    // 联系客服
+    $('#asideFunc').on('click', '.func-contact', function() {
+        easemobIM();
+    });
+    // 回答顶部
+    $('#asideFunc').on('click', '.func-top', function() {
+        Hf.goTop();
+    });
+})(jQuery);

@@ -1,0 +1,327 @@
+<extend name="Index/base" />
+<block name="title">添加商品 - wederful后台管理系统</block>
+<block name="global">
+    <script>
+        var global = {
+        };
+    </script>
+</block>
+<block name="main-class">
+    <main class="main bb pr page_goods">
+</block>
+<block name="main">
+    <!-- 导航栏 -->
+    <div class="con-nav i-lh30 i-bcm h30 p10 mb20 c">
+        <nav class="fl">
+            <a href="index.php">后台</a>
+            <a href="#">商品管理</a>
+            <a href="#">商品信息</a>
+            <a href="#">套餐添加</a>
+            <a href="#">{$productName}</a>
+        </nav>
+    </div>
+    <!-- h4 二级标题 -->
+    <div class="mb20">
+        <h4 class="fs20 fc3 dlb">套餐添加</h4>
+    </div>
+    <!-- *************************** -->
+    <div class="package-tpl none">
+        <!-- 套餐模板 -->
+        <div class="packageDom package-each i-bcm p15 mb20 ofh">
+            <table class="con-show w1">
+                <tbody>
+                    <tr>
+                        <td colspan="3">
+                            <button type="button" class="package-toggle i-button mr10"></button>
+                            <button type="button" class="package-del i-button"></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>套餐编号</td>
+                        <td>
+                            <select class="i-select i-w-short" name="package_no[1]">
+                                <option value="1">套餐A</option>
+                                <option value="2">套餐B</option>
+                                <option value="3">套餐C</option>
+                                <option value="4">套餐D</option>
+                                <option value="5">套餐E</option>
+                                <option value="6">套餐F</option>
+                                <option value="7">套餐G</option>
+                                <option value="8">套餐H</option>
+                                <option value="9">套餐I</option>
+                                <option value="10">套餐J</option>
+                            </select>
+                        </td>
+                        <td>&ensp;</td>
+                    </tr>
+                    <tr>
+                        <td>套餐名称</td>
+                        <td><input class="i-input i-w-short" type="text" placeholder="中文名" name="name[1]"/></td>
+                        <td><input class="i-input i-w-short" type="text" placeholder="英文名" name="name_en[1]"/></td>
+                    </tr>
+                    <tr>
+                        <td>套餐价格</td>
+                        <td><input class="i-input i-w-short" type="text" placeholder="价格" name="price[1]"/></td>
+                        <td>
+                        <td>&ensp;</td>
+                    </tr>
+                    <tr>
+                        <td>人数范围</td>
+                        <td colspan="2">
+                            <input class="i-input i-max-width mr10" type="text" name="number_range_min[1]"/> - <input class="i-input i-max-width ml10 mr10" type="text" name="number_range_max[1]"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>超出费用</td>
+                        <td>
+                            <input class="i-input i-w-short mr10" type="text" placeholder="超出人数费用" name="out_charge[1]"/> / 人
+                        </td>
+                        <td>&ensp;</td>
+                    </tr>
+                    <tr>
+                        <td>不可提供日期</td>
+                        <td colspan="2">
+                            <section class="dlb">
+                                <div class="mb10">
+                                    <input name="no_provide_date_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="no_provide_date_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+                                    <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
+                                </div>
+                            </section>
+                            <button data-html="unDayDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>日期/价格</td>
+                        <td colspan="2">
+                            <section class="dlb">
+                                <div>
+                                    <input name="package_date_price_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="package_date_price_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+                                    <input name="package_date_price[1][]" class="i-input i-max-width mr10 mb10" type="text" placeholder="价格" />
+                                    <button type="button" class="del-temp-dom i-button i-b-w mr10 mb5">删除</button>
+                                </div>
+                            </section>
+                            <button data-html="dayPriceDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>商品促销</td>
+                        <td colspan="2">
+                            <section class="dlb">
+                                <div>
+                                    <input name="package_promotion_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="package_promotion_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+                                    <select class="i-select mr10 mb10" name="promotion[1][]">
+                                        <volist name="promotionData" id="promotion">
+                                            <option value="{$promotion.id}">{$promotion.value}</option>
+                                        </volist>
+                                    </select>
+                                    <button type="button" class="del-temp-dom i-button i-b-w mr10 mb5">删除</button>
+                                </div>
+                            </section>
+                            <button data-html="goodsPromotDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>套餐内容</td>
+                        <td>
+                            <textarea name="content[1]" class="edit-dom i-textarea i-w-long" placeholder="套餐内容中文描述"></textarea>
+                        </td>
+                        <td>
+                            <textarea name="content_en[1]" class="edit-dom i-textarea i-w-long" placeholder="套餐内容英文描述"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>赠送服务</td>
+                        <td>
+                            <textarea name="gift_service[1]" class="edit-dom i-textarea i-w-long" placeholder="赠送服务中文描述"></textarea>
+                        </td>
+                        <td>
+                            <textarea name="gift_service_en[1]" class="edit-dom i-textarea i-w-long" placeholder="赠送服务英文描述"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>增值服务/价格</td>
+                        <td colspan="2">
+                            <section class="dlb">
+                                <div class="mb10">
+                                    <input name="add_value_name[1][]" class="i-input mr10 mb5" type="text" placeholder="增值服务中文" />
+                                    <input name="add_value_name_en[1][]" class="i-input mr10" type="text" placeholder="增值服务英文" />
+                                    <input name="add_value_price[1][]" class="i-input mr10 i-max-width" type="text" placeholder="价格" />
+                                    <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
+                                </div>
+                            </section>
+                            <button data-html="exPriceDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- 不可提供日期 -->
+        <div class="unDayDom mb10">
+            <input name="no_provide_date_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="no_provide_date_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+            <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
+        </div>
+        <!-- 日期/价格 -->
+        <div class="dayPriceDom">
+            <input name="package_date_price_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="package_date_price_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+            <input name="package_date_price[1][]" class="i-input i-max-width mr10 mb10" type="text" placeholder="价格" />
+            <button type="button" class="del-temp-dom i-button i-b-w mr10 mb5">删除</button>
+        </div>
+        <!-- 商品促销 -->
+        <div class="goodsPromotDom">
+            <input name="package_promotion_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="package_promotion_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+            <select class="i-select mr10 mb10" name="promotion[1][]">
+                <volist name="promotionData" id="promotion">
+                    <option value="{$promotion.id}">{$promotion.value}</option>
+                </volist>
+            </select>
+            <button type="button" class="del-temp-dom i-button i-b-w mr10 mb5">删除</button>
+        </div>
+        <!-- 增值服务/价格 -->
+        <div class="exPriceDom mb10">
+            <input name="add_value_name[1][]" class="i-input mr10 mb5" type="text" placeholder="增值服务中文" />
+            <input name="add_value_name_en[1][]" class="i-input mr10" type="text" placeholder="增值服务英文" />
+            <input name="add_value_price[1][]" class="i-input mr10 i-max-width" type="text" placeholder="价格" />
+            <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
+        </div>
+    </div>
+    <!-- *************************** -->
+    <form class="package-form" action="{:U('addproduct/step4')}" method="POST" autocomplete="off">
+        <input type="hidden" name="productId" value="{$pid}">
+        <input type="hidden" name="hash" value="{$hash}">
+        <section>
+            <div class="package-each i-bcm p15 mb20 ofh">
+                <table class="con-show w1">
+                    <tbody>
+                        <tr>
+                            <td colspan="3">
+                                <button type="button" class="package-toggle i-button mr10"></button>
+                                <button type="button" class="package-del i-button"></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>套餐编号</td>
+                            <td>
+                                <select class="i-select i-w-short" name="package_no[1]">
+                                    <option value="1">套餐A</option>
+                                    <option value="2">套餐B</option>
+                                    <option value="3">套餐C</option>
+                                    <option value="4">套餐D</option>
+                                    <option value="5">套餐E</option>
+                                    <option value="6">套餐F</option>
+                                    <option value="7">套餐G</option>
+                                    <option value="8">套餐H</option>
+                                    <option value="9">套餐I</option>
+                                    <option value="10">套餐J</option>
+                                </select>
+                            </td>
+                            <td>&ensp;</td>
+                        </tr>
+                        <tr>
+                            <td>套餐名称</td>
+                            <td><input class="i-input i-w-short" type="text" placeholder="中文名" name="name[1]"/></td>
+                            <td><input class="i-input i-w-short" type="text" placeholder="英文名" name="name_en[1]"/></td>
+                        </tr>
+                        <tr>
+                            <td>套餐价格</td>
+                            <td><input class="i-input i-w-short" type="text" placeholder="价格" name="price[1]"/></td>
+                            <td>
+                            <td>&ensp;</td>
+                        </tr>
+                        <tr>
+                            <td>人数范围</td>
+                            <td colspan="2">
+                                <input class="i-input i-max-width mr10" type="text" name="number_range_min[1]"/> - <input class="i-input i-max-width ml10 mr10" type="text" name="number_range_max[1]"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>超出费用</td>
+                            <td>
+                                <input class="i-input i-w-short mr10" type="text" placeholder="超出人数费用" name="out_charge[1]"/> / 人
+                            </td>
+                            <td>&ensp;</td>
+                        </tr>
+                        <tr>
+                            <td>不可提供日期</td>
+                            <td colspan="2">
+                                <section class="dlb">
+                                    <div class="mb10">
+                                        <input name="no_provide_date_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="no_provide_date_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+                                        <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
+                                    </div>
+                                </section>
+                                <button data-html="unDayDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>日期/价格</td>
+                            <td colspan="2">
+                                <section class="dlb">
+                                    <div>
+                                        <input name="package_date_price_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="package_date_price_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+                                        <input name="package_date_price[1][]" class="i-input i-max-width mr10 mb10" type="text" placeholder="价格" />
+                                        <button type="button" class="del-temp-dom i-button i-b-w mr10 mb5">删除</button>
+                                    </div>
+                                </section>
+                                <button data-html="dayPriceDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>商品促销</td>
+                            <td colspan="2">
+                                <section class="dlb">
+                                    <div>
+                                        <input name="package_promotion_startdate[1][]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="package_promotion_enddate[1][]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+                                        <select class="i-select mr10 mb10" name="promotion[1][]">
+                                            <volist name="promotionData" id="promotion">
+                                                <option value="{$promotion.id}">{$promotion.value}</option>
+                                            </volist>
+                                        </select>
+                                        <button type="button" class="del-temp-dom i-button i-b-w mr10 mb5">删除</button>
+                                    </div>
+                                </section>
+                                <button data-html="goodsPromotDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>套餐内容</td>
+                            <td>
+                                <textarea name="content[1]" class="edit-dom i-textarea i-w-long" placeholder="套餐内容中文描述"></textarea>
+                            </td>
+                            <td>
+                                <textarea name="content_en[1]" class="edit-dom i-textarea i-w-long" placeholder="套餐内容英文描述"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>赠送服务</td>
+                            <td>
+                                <textarea name="gift_service[1]" class="edit-dom i-textarea i-w-long" placeholder="赠送服务中文描述"></textarea>
+                            </td>
+                            <td>
+                                <textarea name="gift_service_en[1]" class="edit-dom i-textarea i-w-long" placeholder="赠送服务英文描述"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>增值服务/价格</td>
+                            <td colspan="2">
+                                <section class="dlb">
+                                    <div class="mb10">
+                                        <input name="add_value_name[1][]" class="i-input mr10 mb5" type="text" placeholder="增值服务中文" />
+                                        <input name="add_value_name_en[1][]" class="i-input mr10" type="text" placeholder="增值服务英文" />
+                                        <input name="add_value_price[1][]" class="i-input mr10 i-max-width" type="text" placeholder="价格" />
+                                        <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
+                                    </div>
+                                </section>
+                                <button data-html="exPriceDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- 产品操作 -->
+        <div class="con-operation tac pt20 mb30">
+            <button data-html="packageDom" type="button" class="add-dom i-button i-b-mw">增加套餐</button>
+            <button class="i-button i-b-mw">保存 / 下一步</button>
+        </div>
+    </form>
+</block>

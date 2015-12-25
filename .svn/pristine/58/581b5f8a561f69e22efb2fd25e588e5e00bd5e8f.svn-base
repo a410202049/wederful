@@ -1,0 +1,77 @@
+/**
+ * Pj 头部 - 页脚
+ * fj in 2015-11-27
+ */
+;
+!(function($) {
+    "use strict";
+    var Pj = (function() {
+        var $mask = $('#mask'),
+            $register,
+            $login,
+            $repass;
+        return {
+            ini: function() {
+                // 禁止鼠标选择
+                if (typeof document.onselectstart !== "undefined") {
+                    document.onselectstart = new Function("return false");
+                };
+                // 禁止右键
+                function nocontextmenu(e) {
+                    e = e || window.event;
+                    e.cancelBubble = true
+                    e.returnValue = false;
+                    return false;
+                }
+
+                function norightclick(e) {
+                    e = e || window.event;
+                    if (window.event) {
+                        if (e.which === 2 || e.which === 3) return false;
+                    } else if (e.button === 2 || e.button === 3) {
+                        e.cancelBubble = true
+                        e.returnValue = false;
+                        return false;
+                    };
+                }
+                document.oncontextmenu = nocontextmenu; // for IE5+
+                document.onmousedown = norightclick; // for all others
+                /******************************************************************************/
+
+                var $registerLogin = $('#registerLogin');
+                $register = $('<div>').append($registerLogin.find('.register-wrap').clone()).html();
+                $login = $('<div>').append($registerLogin.find('.login-wrap').clone()).html();
+                $repass = $('<div>').append($registerLogin.find('.find-pass-wrap').clone()).html();
+                $registerLogin.remove();
+            },
+            register: function() {
+                $('#mask').hide().html($register).show(0, function() {
+                    $(this).children().removeClass('active');
+                });
+            },
+            login: function() {
+                $('#mask').hide().html($login).show(0, function() {
+                    $(this).children().removeClass('active');
+                });
+            },
+            findPass: function() {
+                $('#mask').hide().html($repass).show(0, function() {
+                    $(this).children().removeClass('active');
+                });
+            }
+        };
+    })();
+    Pj.ini();
+    // 注册
+    $('#body').on('click', '.register-trigger', function() {
+        Pj.register();
+    });
+    // 登陆
+    $('#body').on('click', '.login-trigger', function() {
+        Pj.login();
+    });
+    // 找回密码
+    $('#body').on('click', '.findPass-trigger', function() {
+        Pj.findPass();
+    });
+})(jQuery);

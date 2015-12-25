@@ -1,0 +1,237 @@
+/**
+ * [首页控制器]
+ * @return {[User - project object]}    [Feng Jie production]
+ */
+;
+! function($) {
+    "use strict";
+    var $country = $('#country'),
+        $province = $('#province'),
+        $city = $('#city'),
+        $year = $('#year'),
+        $mouth = $('#mouth'),
+        $day = $('#day'),
+        _day_obj = {
+            '01': 31,
+            '03': 31,
+            '04': 30,
+            '05': 31,
+            '06': 30,
+            '07': 31,
+            '08': 31,
+            '09': 30,
+            '10': 31,
+            '11': 30,
+            '12': 31
+        },
+        _city;
+    var User = (function() {
+        var $tab = $('#tab'),
+            $tel = $('#tel');
+        return {
+            ini: function() {
+                // 电话中间4位加密
+                var _v = $tel.val().split('');
+                _v == false && $tel.val(_v.join(''));
+                // 年月日初始化
+                User.loopYear($year.val());
+                // 循环国家
+                var _time;
+                $.getJSON(global.jsonUrl + 'country.json', function(_r) {
+                    var _h = ['<option value="null">国家</option>'],
+                        _now = $country.val() === 'null' ? '001' : 'null',
+                        _i;
+                    for (_i in _r) {
+                        _h.push('<option ' + ((_now === _i) ? 'selected ' : '') + 'value="' + _i + '">' + _r[_i] + '</option>');
+                    };
+                    $country.html(_h.join(''));
+                    if (_now === '001') {
+                        _time = setTimeout(function() {
+                            if (_city) {
+                                clearTimeout(_time);
+                                User.loopProvince();
+                            };
+                        }, 200);
+                    };
+                });
+                // 初始化城市
+                $.getJSON(global.jsonUrl + 'city.json', function(_r) {
+                    _city = _r;
+                    if ($province.val() !== 'null') {
+                        User.loopProvince($province.val(), $city.val());
+                    };
+                });
+            },
+            toggleShow: function($this) {
+                $tab.find('.' + $this.data('to')).siblings().css('display', 'none').end().css('display', 'block');
+                $this.addClass('active').siblings().removeClass('active');
+            },
+            loopYear: function(_n) {
+                var _y = new Date().getFullYear(),
+                    _i = 10,
+                    _h = ['<option value="null">年</option>'];
+                while (_i--) {
+                    _h.push('<option ' + ((_n == _y) ? 'selected ' : '') + 'value="' + _y + '">' + _y++ + '</option>');
+                };
+                $year.html(_h.join(''));
+                _n !== 'null' && User.loopMouth();
+            },
+            loopMouth: function() {
+                var _n = $mouth.val(),
+                    _m = 1,
+                    _i = $year.val() !== 'null' ? 12 : 0,
+                    _h = ['<option value="null">月</option>'];
+                while (_i--) {
+                    _m = _m < 10 ? ('0' + _m) : _m;
+                    _h.push('<option ' + ((_n == _m) ? 'selected ' : '') + 'value="' + _m + '">' + _m + '</option>');
+                    _m++;
+                };
+                $mouth.html(_h.join(''));
+                _n !== 'null' && User.loopDay($day.val());
+            },
+            loopDay: function(_n) {
+                var _d = 1,
+                    _i = User.getDayNum($year.val(), $mouth.val()),
+                    _h = ['<option value="null">日</option>'];
+                while (_i--) {
+                    _d = _d < 10 ? ('0' + _d) : _d;
+                    _h.push('<option ' + ((_n == _d) ? 'selected ' : '') + 'value="' + _d + '">' + _d + '</option>');
+                    _d++;
+                };
+                $day.html(_h.join(''));
+            },
+            getDayNum: function(_y, _m) {
+                _day_obj['02'] = (_y % 4 === 0) && (_y % 100 !== 0 || _y % 400 === 0) ? 29 : 28;
+                return _day_obj[_m];
+            },
+            loopProvince: function(_n, _c) {
+                if ($country.val() === '001') {
+                    var _h = ['<option value="null">省份</option>'],
+                        _i = _city.length;
+                    while (_i--) {
+                        _h.push('<option ' + ((_n === _city[_i].province.num) ? 'selected ' : '') + ' value="' + _city[_i].province.num + '">' + _city[_i].province.name + '</option>');
+                    };
+                    $province.html(_h.join(''));
+                    $province.removeClass('none');
+                    if (_c) {
+                        User.loopCity();
+                    } else {
+                        $city.html('<option value="null">城市</option>').removeClass('none');
+                    };
+                } else {
+                    $province.html('<option value="null">省份</option>').addClass('none');
+                    $city.html('<option value="null">城市</option>').addClass('none');
+                };
+            },
+            loopCity: function() {
+                var _h = ['<option value="null">城市</option>'],
+                    _i = _city.length,
+                    _now = $province.val(),
+                    _n = $city.val(),
+                    _city_num;
+                if (_now !== 'null') {
+                    while (_i--) {
+                        if (_city[_i].province.num === _now) {
+                            // 循环城市
+                            for (_city_num in _city[_i].city) {
+                                _h.push('<option ' + ((_n === _city_num) ? 'selected ' : '') + ' value="' + _city_num + '">' + _city[_i].city[_city_num] + '</option>');
+                            };
+                            break;
+                        };
+                    };
+                };
+                $city.html(_h.join(''));
+            },
+            submitForm: function($this) {
+                if ($this.data('role') === 'info') {
+                    var _e = $('#userInfo').find('.ipt-email').val();
+                    if (_e !== '' && !$.cEmail(_e)) {
+                        $this.next().html('邮箱格式不正确');
+                    } else {
+                        $this.removeAttr('type');
+                    };
+                } else {
+                    var _old_pass = $tab.find('.old-pass').val(),
+                        _new_pass = $tab.find('.new-pass').val(),
+                        _re_pass = $tab.find('.re-pass').val();
+                    if (_old_pass.length > 5 && _old_pass.length < 21) {
+                        if (_new_pass.length > 5 && _new_pass.length < 21) {
+                            if (_new_pass === _re_pass) {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '###',
+                                    data: {
+                                        password: _old_pass,
+                                        newpassword: _new_pass
+                                    },
+                                    dataType: 'json',
+                                    success: function(r) {
+                                        if (r.status === 'success') {
+                                            $this.html('修改成功');
+                                            setTimeout(function() {
+                                                location.reload();
+                                            }, 400);
+                                        } else {
+                                            $this.next().html(r.message);
+                                        };
+                                    }
+                                });
+                            } else {
+                                $this.next().html('两次密码不相同');
+                            };
+                        } else {
+                            $this.next().html('新密码格式错误');
+                        };
+                    } else {
+                        $this.next().html('密码错误');
+                    };
+                };
+            },
+            clearErr: function($this) {
+                $this.closest('.sub-wrap').find('.submit-err').html('&emsp;');
+            },
+            iptKeyup: function($this, e) {
+                if ($.getKey(e) === 13) {
+                    $this.closest('.sub-wrap').find('.submit-btn').trigger('click')
+                } else {
+                    User.clearErr($this);
+                };
+            }
+        };
+    })();
+
+    User.ini();
+
+    // 面板切换
+    $('#tabIndex').on('click', 'li', function() {
+        User.toggleShow($(this));
+    });
+    //年份选择
+    $('#year').on('change', function() {
+        User.loopMouth();
+    });
+    //月份选择
+    $('#mouth').on('change', function() {
+        User.loopDay($day.val());
+    });
+    // 国家选择
+    $('#country').on('change', function() {
+        User.loopProvince();
+    });
+    // 省份选择
+    $('#province').on('change', function() {
+        User.loopCity();
+    });
+    // 提交form（数据）
+    $('#tab').on('click', '.submit-btn', function() {
+        User.submitForm($(this));
+    });
+    // keyup
+    $('#tab').on('keyup', '.ipt-trigger', function(e) {
+        User.iptKeyup($(this), e);
+    });
+    // focus
+    $('#tab').on('focus', '.ipt-trigger', function(e) {
+        User.clearErr($(this));
+    });
+}(jQuery);

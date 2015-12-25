@@ -1,0 +1,1193 @@
+[ 2015-12-23T15:17:50+08:00 ] ::1 /dev_wederful/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000169s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004727s ]
+
+[ 2015-12-23T15:17:50+08:00 ] ::1 /dev_wederful/Admin/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000141s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001023s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004254s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000302s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000849s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013965s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001242s ]
+
+[ 2015-12-23T15:17:55+08:00 ] ::1 /dev_wederful/Admin/Login/doLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000115s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001009s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000617s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003604s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\LoginController.class.php on line 25 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined index: validate D:\www\dev_wederful\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\dev_wederful\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: lock D:\www\dev_wederful\Application\Admin\Controller\LoginController.class.php 第 44 行.
+
+[ 2015-12-23T15:17:56+08:00 ] ::1 /dev_wederful/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000160s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003886s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0030s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000264s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000821s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001231s ]
+
+[ 2015-12-23T15:17:59+08:00 ] ::1 /dev_wederful/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000121s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000960s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003669s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0036s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 19 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0033s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 23 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 26 行.
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `is_del` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `article` WHERE `is_del` = 0 ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 40 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 45 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000888s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.133769s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.134309s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001239s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000805s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001549s ]
+
+[ 2015-12-23T15:18:07+08:00 ] ::1 /dev_wederful/Admin/Article/editArticle/id/56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000172s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004009s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0028s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 67 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `article_tags_relational` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_tags_relational` WHERE `article_id` = 56  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article` WHERE `id` = 56 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `article_tags` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `article_tags`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000283s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000827s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059130s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001207s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001323s ]
+
+[ 2015-12-23T15:18:08+08:00 ] ::1 /dev_wederful/Admin/Product/qiniuUploadToken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000161s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001115s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001248s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004859s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0093s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+
+[ 2015-12-23T15:22:10+08:00 ] ::1 /dev_wederful/Admin/Index/uploadImg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000158s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001106s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003647s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0090s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0024s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\www\dev_wederful\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+
+[ 2015-12-23T15:22:25+08:00 ] ::1 /dev_wederful/Admin/Article/editArticleMethod
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002057s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003730s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0034s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 104 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0035s ]
+SQL: UPDATE `article` SET `category_id`='2',`keywords`='',`description`='',`title`='跟着大大逛英国之——英国结婚的5种姿势',`subtitle`='习大大和彭麻麻最近到英国了',`source`='0',`author`='Wederful',`bigpic`='http://7xo7hn.com1.z0.glb.clouddn.com/1449228677637',`content`='<p>天朝第一虐狗情侣习大大和彭麻麻最近到英国了，在跟英国皇室会面的报道里，最抢眼的莫过于那辆华丽丽的皇家马车。</p><p><img alt=\"1.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_56617823e94ec.jpg\" height=\"276\" width=\"386\"><br></p><p>而作为老牌资本主义帝国，英国拿得出手的并不只有皇室专属的物件，艺术、建筑、文学都有值得称道的地方。同时，10月22号首相卡梅伦宣布自2016年1月起，中国游客可以申请有效期为两年的英国访客签证。签证都放宽了，你不去看看？？不过呢，为了紧跟习大大和彭妈妈的虐狗步伐，今天只介绍5个比较有英国特色婚礼场地类型。<br>1教堂婚礼 英国教堂非常的多，几百年的教堂一抓一大把，但是并不是所有的教堂都愿意为非教徒的外国人提供婚礼服务。所以，如果有去英国教堂结婚的打算，最好提前打探清楚。除了杰伦小贡菊结婚的塞尔比教堂，圣吉尔斯大教堂（St. Giles\' Cathedral）其实也可以纳入考虑的范围。教堂距今已经有900年历史，位于苏格兰爱丁堡老城，有着极其高的宗教地位，被誉为“爱丁堡的宗教枢纽”。除了为当地人举办婚礼，教堂也可以给一些歪果仁提供婚礼服务。</p><p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\"><br></span></p><p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">圣吉尔斯大教堂</span><br></p><p><img src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-23_567a4ba177382.jpg\" alt=\"6173212819_e4b5896ae6_b.jpg\" height=\"789\" width=\"1024\"><br></p><p><br></p><p>圣吉尔斯大教堂的窗户</p><p><img alt=\"3.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_5661784da8c0c.jpg\" height=\"426\" width=\"640\"><br></p><p><br></p><p>圣吉尔斯大教堂内部</p><p><img alt=\"4.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_566178627a4f2.jpg\" height=\"480\" width=\"640\"><br></p><p><br>2古堡婚礼 喜欢看英剧和英国电影的人对英国各式各样的古堡一定不陌生。恢弘、大气，可以满足所有的公主梦。</p><p><img alt=\"5.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_5661787bd5589.jpg\" height=\"297\" width=\"480\"><br></p><p><br></p><p>PeckfortonCastlePeckforton Castle是英国唯一保存完好的中世纪风格的城堡，位于柴郡（Cheshire）连绵的平原的一个山坡上。Peckforton Castle的历史可以追溯到19世纪，并曾在电影《罗宾汉》和电视剧《异世奇人》中做过拍摄场地。</p><p><br>3庄园婚礼 说起英国的庄园就不得不提一下大火的英剧唐家屯，虽然现实里并没有Downton Abbey可供大家实现“乡村爱情梦”，不过，在剧中唐顿庄园的所在地约克郡，有一座看得见摸得着的庄园——霍林斯庄园。</p><p><img alt=\"6.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_56617891e636a.jpg\" height=\"361\" width=\"480\"><br></p><p>霍林斯庄园霍林斯庄园坐拥 200 英亩（81 公顷）的地域，有丰富的现代设施设备，不管是婚礼还是拍拍婚纱照都是绝对的大英style…</p><p><br></p><p>4画廊婚礼 在画廊里结婚、拍婚纱照这种事，相信隔壁老王都不知道，而在英国有不少画廊会承接婚礼，其中比较知名的画廊是Watts Gallery。</p><p><img alt=\"7.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_566178a8b2fd3.jpg\" height=\"311\" width=\"480\"><br></p><p><br></p><p>Watts Gallery<br>5博物馆婚礼 博物馆婚礼简直就是画廊婚礼的升级版，如果说在画廊结婚你周围可能是未来大师的作品，那么，一场博物馆婚礼就妥妥的是被大师作品环绕了。<br></p><p><img alt=\"8.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_566178ba4d1c1.jpg\" height=\"320\" width=\"480\"><br></p><p>威尔士国家博物馆能够提供婚礼服务的博物馆其实并不是很多，所以像威尔士国家博物馆（NATIONAL MUSEUM CARDIFF）这样，被评为“欧洲最美建筑之一”的博物馆提供的婚礼，一定是值得期待的。<br><br></p><p>5个没看够？那来看看硬广吧<br>英国是Wederful海外婚礼下一批主推的婚礼目的地之一，我们精选英国当地的特色婚礼服务，你可以自由选择、组合所有的婚礼元素。更多详细信息调戏客服即可了解。</p><p><br></p><p>微信公众号：Wederful海外婚礼</p><p>微信客服：Wederful_kf</p><p>微博：weibo.com/wederful<br></p>' WHERE `id` = 56 [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `article_tags_relational` [ RunTime:0.0028s ]
+SQL: DELETE FROM `article_tags_relational` WHERE `article_id` = 56 [ RunTime:0.0004s ]
+SQL: INSERT INTO `article_tags_relational` (`article_id`,`tags_id`) VALUES ('56','8') [ RunTime:0.0007s ]
+SQL: INSERT INTO `article_tags_relational` (`article_id`,`tags_id`) VALUES ('56','30') [ RunTime:0.0004s ]
+SQL: INSERT INTO `article_tags_relational` (`article_id`,`tags_id`) VALUES ('56','41') [ RunTime:0.0003s ]
+
+[ 2015-12-23T15:22:27+08:00 ] ::1 /dev_wederful/Admin/Article/editArticle/id/56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000119s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000966s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000903s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002144s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004199s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0032s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 67 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `article_tags_relational` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_tags_relational` WHERE `article_id` = 56  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article` WHERE `id` = 56 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `article_tags` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `article_tags`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000744s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002271s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001212s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000753s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001307s ]
+
+[ 2015-12-23T15:22:28+08:00 ] ::1 /dev_wederful/Admin/Product/qiniuUploadToken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000990s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004536s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0031s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+
+[ 2015-12-23T15:22:40+08:00 ] ::1 /dev_wederful/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000954s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004091s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006240s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0031s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 19 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0023s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 23 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 26 行.
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `is_del` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article` WHERE `is_del` = 0 ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 40 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 45 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000807s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.130935s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.131478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000753s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001294s ]
+
+[ 2015-12-23T15:23:53+08:00 ] ::1 /dev_wederful/Admin/Article/editArticle/id/56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000144s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002132s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003689s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0028s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 67 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `article_tags_relational` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_tags_relational` WHERE `article_id` = 56  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article` WHERE `id` = 56 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article_tags` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `article_tags`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000285s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000834s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058431s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058989s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000608s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000846s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001442s ]
+
+[ 2015-12-23T15:23:54+08:00 ] ::1 /dev_wederful/Admin/Product/qiniuUploadToken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003653s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0029s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+
+[ 2015-12-23T15:28:04+08:00 ] ::1 /dev_wederful/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002191s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003822s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0029s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000273s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000821s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027522s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000742s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001320s ]
+
+[ 2015-12-23T15:31:02+08:00 ] ::1 /dev_wederful/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000464s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003939s ]
+
+[ 2015-12-23T15:31:02+08:00 ] ::1 /dev_wederful/Admin/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000122s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004700s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000260s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000803s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013198s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013773s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001372s ]
+
+[ 2015-12-23T15:31:08+08:00 ] ::1 /dev_wederful/Admin/Login/doLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002160s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003667s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\LoginController.class.php on line 25 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: validate D:\www\dev_wederful\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\dev_wederful\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: lock D:\www\dev_wederful\Application\Admin\Controller\LoginController.class.php 第 44 行.
+
+[ 2015-12-23T15:31:09+08:00 ] ::1 /dev_wederful/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003565s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0027s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000267s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000829s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026649s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001093s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000980s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001682s ]
+
+[ 2015-12-23T15:31:12+08:00 ] ::1 /dev_wederful/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000139s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004364s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0030s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 19 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 23 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 26 行.
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `is_del` = 0 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `article` WHERE `is_del` = 0 ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 40 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 45 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000304s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000866s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.130119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.130664s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000732s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001287s ]
+
+[ 2015-12-23T15:31:21+08:00 ] ::1 /dev_wederful/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000184s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003986s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0029s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 19 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 23 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 26 行.
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `is_del` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article` WHERE `is_del` = 0 ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 40 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 45 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000303s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000884s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.129720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.130336s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001082s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001724s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000723s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001265s ]
+
+[ 2015-12-23T15:32:42+08:00 ] ::1 /dev_wederful/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000124s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003714s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0030s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 19 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0024s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 23 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 26 行.
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `is_del` = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `article` WHERE `is_del` = 0 ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 40 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 45 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000286s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000871s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.129256s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.129951s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001242s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001331s ]
+
+[ 2015-12-23T15:32:46+08:00 ] ::1 /dev_wederful/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000137s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004283s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0029s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 19 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0024s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 23 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 26 行.
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `is_del` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article` WHERE `is_del` = 0 ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 40 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 45 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000389s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001212s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.128881s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.129411s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001597s ]
+
+[ 2015-12-23T15:33:34+08:00 ] ::1 /dev_wederful/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000139s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000988s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004940s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0030s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 19 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0024s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 23 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 26 行.
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `is_del` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article` WHERE `is_del` = 0 ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 40 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 45 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000315s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000854s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.128472s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.129066s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001395s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001302s ]
+
+[ 2015-12-23T15:33:42+08:00 ] ::1 /dev_wederful/Admin/Article/editArticle/id/56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001128s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004253s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0034s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 67 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `article_tags_relational` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_tags_relational` WHERE `article_id` = 56  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article` WHERE `id` = 56 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article_tags` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `article_tags`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000285s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000946s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055791s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056334s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001183s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000734s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001262s ]
+
+[ 2015-12-23T15:33:43+08:00 ] ::1 /dev_wederful/Admin/Product/qiniuUploadToken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000131s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005616s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0069s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+
+[ 2015-12-23T15:34:12+08:00 ] ::1 /dev_wederful/Admin/Index/uploadImg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000124s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000970s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001051s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003993s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0032s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\www\dev_wederful\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+
+[ 2015-12-23T15:34:31+08:00 ] ::1 /dev_wederful/Admin/Index/uploadImg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000129s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001051s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003934s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0029s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\www\dev_wederful\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+
+[ 2015-12-23T15:35:02+08:00 ] ::1 /dev_wederful/Admin/Index/uploadImg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000137s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003491s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0028s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0011s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\www\dev_wederful\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+
+[ 2015-12-23T15:35:12+08:00 ] ::1 /dev_wederful/Admin/Index/uploadImg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000299s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001063s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004092s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0027s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\www\dev_wederful\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+NOTIC: [8] Undefined index: saveName D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 80 行.
+NOTIC: [8] Undefined index: custom_fields D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 83 行.
+
+[ 2015-12-23T15:35:21+08:00 ] ::1 /dev_wederful/Admin/Article/editArticleMethod
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000114s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003601s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0035s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 104 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0030s ]
+SQL: UPDATE `article` SET `category_id`='2',`keywords`='',`description`='',`title`='跟着大大逛英国之——英国结婚的5种姿势',`subtitle`='习大大和彭麻麻最近到英国了',`source`='0',`author`='Wederful',`bigpic`='http://7xo7hn.com1.z0.glb.clouddn.com/1449228677637',`content`='<p>天朝第一虐狗情侣习大大和彭麻麻最近到英国了，在跟英国皇室会面的报道里，最抢眼的莫过于那辆华丽丽的皇家马车。</p><p><img alt=\"1.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_56617823e94ec.jpg\" height=\"276\" width=\"386\"><br></p><p>而作为老牌资本主义帝国，英国拿得出手的并不只有皇室专属的物件，艺术、建筑、文学都有值得称道的地方。同时，10月22号首相卡梅伦宣布自2016年1月起，中国游客可以申请有效期为两年的英国访客签证。签证都放宽了，你不去看看？？不过呢，为了紧跟习大大和彭妈妈的虐狗步伐，今天只介绍5个比较有英国特色婚礼场地类型。<br>1教堂婚礼 英国教堂非常的多，几百年的教堂一抓一大把，但是并不是所有的教堂都愿意为非教徒的外国人提供婚礼服务。所以，如果有去英国教堂结婚的打算，最好提前打探清楚。除了杰伦小贡菊结婚的塞尔比教堂，圣吉尔斯大教堂（St. Giles\' Cathedral）其实也可以纳入考虑的范围。教堂距今已经有900年历史，位于苏格兰爱丁堡老城，有着极其高的宗教地位，被誉为“爱丁堡的宗教枢纽”。除了为当地人举办婚礼，教堂也可以给一些歪果仁提供婚礼服务。</p><p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\"><br></span></p><p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">圣吉尔斯大教堂</span><br></p><p><img src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-23_567a4eb00263f.jpg\" alt=\"6173212819_e4b5896ae6_b.jpg\" height=\"789\" width=\"1024\"><br></p><p><br></p><p>圣吉尔斯大教堂的窗户</p><p><img alt=\"3.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_5661784da8c0c.jpg\" height=\"426\" width=\"640\"><br></p><p><br></p><p>圣吉尔斯大教堂内部</p><p><img alt=\"4.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_566178627a4f2.jpg\" height=\"480\" width=\"640\"><br></p><p><br>2古堡婚礼 喜欢看英剧和英国电影的人对英国各式各样的古堡一定不陌生。恢弘、大气，可以满足所有的公主梦。</p><p><img alt=\"5.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_5661787bd5589.jpg\" height=\"297\" width=\"480\"><br></p><p><br></p><p>PeckfortonCastlePeckforton Castle是英国唯一保存完好的中世纪风格的城堡，位于柴郡（Cheshire）连绵的平原的一个山坡上。Peckforton Castle的历史可以追溯到19世纪，并曾在电影《罗宾汉》和电视剧《异世奇人》中做过拍摄场地。</p><p><br>3庄园婚礼 说起英国的庄园就不得不提一下大火的英剧唐家屯，虽然现实里并没有Downton Abbey可供大家实现“乡村爱情梦”，不过，在剧中唐顿庄园的所在地约克郡，有一座看得见摸得着的庄园——霍林斯庄园。</p><p><img alt=\"6.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_56617891e636a.jpg\" height=\"361\" width=\"480\"><br></p><p>霍林斯庄园霍林斯庄园坐拥 200 英亩（81 公顷）的地域，有丰富的现代设施设备，不管是婚礼还是拍拍婚纱照都是绝对的大英style…</p><p><br></p><p>4画廊婚礼 在画廊里结婚、拍婚纱照这种事，相信隔壁老王都不知道，而在英国有不少画廊会承接婚礼，其中比较知名的画廊是Watts Gallery。</p><p><img alt=\"7.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_566178a8b2fd3.jpg\" height=\"311\" width=\"480\"><br></p><p><br></p><p>Watts Gallery<br>5博物馆婚礼 博物馆婚礼简直就是画廊婚礼的升级版，如果说在画廊结婚你周围可能是未来大师的作品，那么，一场博物馆婚礼就妥妥的是被大师作品环绕了。<br></p><p><img alt=\"8.jpg\" src=\"http://7xo7hn.com1.z0.glb.clouddn.com/2015-12-04_566178ba4d1c1.jpg\" height=\"320\" width=\"480\"><br></p><p>威尔士国家博物馆能够提供婚礼服务的博物馆其实并不是很多，所以像威尔士国家博物馆（NATIONAL MUSEUM CARDIFF）这样，被评为“欧洲最美建筑之一”的博物馆提供的婚礼，一定是值得期待的。<br><br></p><p>5个没看够？那来看看硬广吧<br>英国是Wederful海外婚礼下一批主推的婚礼目的地之一，我们精选英国当地的特色婚礼服务，你可以自由选择、组合所有的婚礼元素。更多详细信息调戏客服即可了解。</p><p><br></p><p>微信公众号：Wederful海外婚礼</p><p>微信客服：Wederful_kf</p><p>微博：weibo.com/wederful<br></p>' WHERE `id` = 56 [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `article_tags_relational` [ RunTime:0.0027s ]
+SQL: DELETE FROM `article_tags_relational` WHERE `article_id` = 56 [ RunTime:0.0005s ]
+SQL: INSERT INTO `article_tags_relational` (`article_id`,`tags_id`) VALUES ('56','8') [ RunTime:0.0003s ]
+SQL: INSERT INTO `article_tags_relational` (`article_id`,`tags_id`) VALUES ('56','30') [ RunTime:0.0004s ]
+SQL: INSERT INTO `article_tags_relational` (`article_id`,`tags_id`) VALUES ('56','41') [ RunTime:0.0003s ]
+
+[ 2015-12-23T15:35:22+08:00 ] ::1 /dev_wederful/Admin/Article/editArticle/id/56
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003415s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0034s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 67 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `article_tags_relational` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_tags_relational` WHERE `article_id` = 56  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `article` WHERE `id` = 56 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article_tags` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `article_tags`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000294s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000833s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062291s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062844s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000954s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001548s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000807s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001392s ]
+
+[ 2015-12-23T15:35:23+08:00 ] ::1 /dev_wederful/Admin/Product/qiniuUploadToken
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000117s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003990s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0030s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: Expires D:\www\dev_wederful\ThinkPHP\Library\Think\Upload\Driver\Qiniu\QiniuStorage.class.php 第 45 行.
+
+[ 2015-12-23T15:35:25+08:00 ] ::1 /dev_wederful/Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001010s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003552s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0035s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php on line 19 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `article_category` [ RunTime:0.0033s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 23 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 26 行.
+SQL: SELECT * FROM `article_category`  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `is_del` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `article` WHERE `is_del` = 0 ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `article_category` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 40 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 45 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\ArticleController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000283s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001105s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.124155s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.124857s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001247s ]
+
+[ 2015-12-23T15:37:32+08:00 ] ::1 /dev_wederful/Admin/Login/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000286s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001815s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002182s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004106s ]
+
+[ 2015-12-23T15:37:32+08:00 ] ::1 /dev_wederful/Admin/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000977s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001983s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003545s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000250s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000837s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013721s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014270s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001119s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001239s ]
+

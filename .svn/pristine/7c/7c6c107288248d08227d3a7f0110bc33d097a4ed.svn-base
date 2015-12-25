@@ -1,0 +1,13 @@
+/**
+ * 2015-12-08 by hangyangws
+ * [Area 内容管理]
+ */
+
+! function($) {
+    "use strict";
+    var Area = (function() {
+        return {
+            
+        };
+    })();
+}(jQuery);

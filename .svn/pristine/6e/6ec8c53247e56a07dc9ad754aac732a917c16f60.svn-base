@@ -1,0 +1,658 @@
+<extend name="Index/base" />
+
+<block name="meta">
+    <title>详情页 - wederful</title>
+    <meta name="author" content="wederfull" />
+    <meta name="keywords" content="Wederful,海外婚礼,海外婚礼场地,海外婚礼旅拍" />
+    <meta name="Copyright" content="wederful.com &copy;" />
+    <meta name="description" content="国内首家海外婚礼垂直电商,提供海外婚礼场地、全球知名婚礼及旅拍摄影师、海外婚礼团队住宿、交通服务、当地游活动及婚礼装扮等服务预定。DIY 海外婚礼,从此变得很简单。" />
+</block>
+
+<block name="css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/detail.css" />
+</block>
+
+<block name="body">
+    <body id="body" class="body">
+</block>
+
+<block name="main">
+    <main class="i-mw pr">
+        <!-- 封面 -->
+        <section id="detailCover" class="cover-nav pr fs0 click-m">
+            <img class="detail-cover w1 fs14" src="{$productData.large_img}" alt="封面图" />
+            <nav id="navNative" class="nav w1 tac fs16 i-mw ts4">
+                <a data-role="intro" class="active ts4">介绍</a>
+                <a data-role="package" class="ts4">套餐</a>
+                <a data-role="notice" class="ts4">须知</a>
+                <a data-role="prompt" class="ts4">提示</a>
+                <!-- <a data-role="map" class="ts4">地图</a> -->
+                <a data-role="recom" class="ts4">推荐</a>
+            </nav>
+            <nav id="nav" class="nav nav-fixed w1 tac fs16 i-mw ts4">
+                <a data-role="intro" class="active ts4">介绍</a>
+                <a data-role="package" class="ts4">套餐</a>
+                <a data-role="notice" class="ts4">须知</a>
+                <a data-role="prompt" class="ts4">提示</a>
+                <!-- <a data-role="map" class="ts4">地图</a> -->
+                <a data-role="recom" class="ts4">推荐</a>
+            </nav>
+        </section>
+        <!-- 介绍 -->
+        <section id="intro" class="i-p80 i-bcm">
+            <div class="base-intro i-shadow bc bcf r4">
+                <section class="pr">
+                    <figure id="siteLogo" class="dlb vam pr">
+                        <img src="{$productData.vendorLogo}" class="middle" />
+                    </figure>
+                    <div class="dlb vam">
+                        <h1 class="fc3 mb10">{$productData.name}</h1>
+                        <h2 class="fc9">{$productData.vendorName}</h2>
+                        <h3 class="pa fs16 fc9 r0 mr30 pr15">{$productData.name_en}</h3>
+                    </div>
+                </section>
+                <ul class="site-kind tac fs16 mt20 c">
+                    <volist name="productData.iconAttrData" id="attIcon">
+                        <li>
+                            <img draggable="false" src="__PUBLIC__/Admin/images/icon/{$attIcon.icon.icon_url}">
+                            <if condition="$attIcon.name eq '包含住宿'">
+                                    <span>{$attIcon.icon.option}</span>
+                                <elseif condition="$attIcon.name eq '最大人数'"/>
+                                    <span>最大人数:{$attIcon.value}人</span>
+                                <elseif condition="$attIcon.name eq '场地类型'"/>
+                                    <span>{$attIcon.icon.option}</span>
+                                <elseif condition="$attIcon.name eq '所在地区'"/>
+                                    <span>{$attIcon.value}</span>
+                                <else />
+                                    <span>{$attIcon.name}</span>
+                            </if>
+                        </li>
+                    </volist>
+                </ul>
+            </div>
+        </section>
+        <section class="i-p80">
+            <article class="bc i-wm">
+                <h2 class="section-label">场地介绍</h2>
+                <section class="site-intro c">
+                    <div id="siteIntro" class="intro-text dlb i-w5 bb fl">
+                        <div class="ofh">
+                            <p>{$productData.description}</p>
+                        </div>
+                        <span class="site-intro-btn db cp fcm mt15" data-i="open">显示全部</span>
+                    </div>
+                    <div class="intro-ext dlb i-w5 bb fr">
+                        <volist name="productData.textAttrData" id="textIcon">
+                            <dl class="mb5">
+                                <dt>{$textIcon.name}:</dt>
+                                <dd>{$textIcon.value}</dd>
+                            </dl>
+                        </volist>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="i-bcm i-p80">
+            <div class="bc i-wm">
+                <h2 class="section-label">场地图片</h2>
+                <section id="rollImg" class="roll-img w1000 bc ofh pr">
+                    <!-- 以下的 r-i 表示 roll-img  -->
+                    <div class="r-i-wrap w1 h1 pr fs0">
+                        <figure class="h1 pr">
+                            <!-- <div class="h1 dlb pr" data-video="http://static.youku.com/v1.0.0574/v/swf/loader.swf">
+                                <img src="__PUBLIC__/Home/images/6.jpg" class="h1">
+                            </div>
+                            <div class="h1 dlb pr"><img src="__PUBLIC__/Home/images/4.jpg" class="h1"></div> -->
+                            <volist name="productData.ImagesData" id="img">
+                                <div class="h1 dlb pr"><img src="{$img.img}" class="h1"></div>
+                            </volist>
+                        </figure>
+                        <span class="r-i-prev pa cp l0 t0 dlb"><i></i></span>
+                        <span class="r-i-next pa cp r0 t0 dlb"><i></i></span>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <!-- 套餐 -->
+        <section id="package" class="i-p80">
+            <div class="bc i-wm">
+                <h2 class="section-label">套餐信息</h2>
+                <section class="package r4 ofh">
+                    <!-- 套餐A 给package-item 加上active 表示展开-->
+                    <volist name="productData.packageData" id="package">
+                        <div class="package-item ofh i-bc">
+                            <div class="p-i-head">
+                                <div class="p-i-h-tit open-pack fs18 h1 bb fl cp lh150 c">
+                                    <div class="dlb i-w5 fl">
+                                        <span>
+                                            <if condition="$package.package_no eq 1">
+                                                套餐A
+                                            <elseif condition="$package.package_no eq 2"/>
+                                                套餐B
+                                            <elseif condition="$package.package_no eq 3"/>
+                                                套餐C
+                                            <elseif condition="$package.package_no eq 4"/>
+                                                套餐D
+                                            <elseif condition="$package.package_no eq 5"/>
+                                                套餐E
+                                            <elseif condition="$package.package_no eq 6"/>
+                                                套餐F
+                                            <elseif condition="$package.package_no eq 7"/>
+                                                套餐G
+                                            <elseif condition="$package.package_no eq 8"/>
+                                                套餐H
+                                            <elseif condition="$package.package_no eq 9"/>
+                                                套餐I
+                                            <elseif condition="$package.package_no eq 10"/>
+                                                套餐J
+                                            </if>
+                                        </span>
+                                        <h3>{$package.name}</h3>
+                                    </div>
+                                    <ul class="dlb i-w5 fl">
+                                        <li>标准人数：{$package.number_range_min}</li>
+                                        <li>RMB {$package.price}</li>
+                                    </ul>
+                                </div>
+                                <ul class="fr h1">
+                                    <!-- 如果用户已经收藏过此套餐 下面的title 就变成 取消收藏 data-t 变成delFav -->
+                                    <li class="like-pack w80 h1 fl pr cp" data-t="fav" title="收藏此套餐">
+                                        <!-- 有active类表示套餐已经收藏 -->
+                                        <span class="css-hart middle ts4 "></span>
+                                    </li>
+                                    <li class="open-pack w80 h1 fl pr cp">
+                                        <span class="css-arrow middle ts4"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-i-con c">
+                                <div class="pr20 i-w5 bb fl">
+                                    <div class="calendar r4 bcf mb20 i-bc"></div>
+                                    <!-- 加上 active 表示 打开选择人数 -->
+                                    <!--<div class="p-i-num i-bc mb20 r4 cp ofh">
+                                        <h4 class="fc3 fs16 p-h4">选择人数</h4>
+                                        <div class="bcf tac pt10 pb10 pr" title="点击选择人数">
+                                            <span>最大容量20人，套餐标准人数12人</span>
+                                            <i class="pa r0 i-arrow i-arrow-b dlb mr20 ts4"></i>
+                                            <ul class="pa w1 bcf i-bc mt10 none lh200 pb5">
+                                                <li class="ts4">2</li>
+                                                <li class="ts4">3</li>
+                                                <li class="ts4">4</li>
+                                                <li class="ts4">5</li>
+                                                <li class="ts4">6</li>
+                                                <li class="ts4">7</li>
+                                                <li class="ts4">8</li>
+                                                <li class="ts4">9</li>
+                                                <li class="ts4">10</li>
+                                                <li class="ts4">11</li>
+                                                <li class="ts4">12</li>
+                                                <li class="ts4">13</li>
+                                                <li class="ts4">14</li>
+                                                <li class="ts4">15</li>
+                                                <li class="ts4">16</li>
+                                                <li class="ts4">17</li>
+                                                <li class="ts4">17</li>
+                                                <li class="ts4">17</li>
+                                                <li class="ts4">20</li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                                    <div class="i-bc r4 bcf ofh">
+                                        <h4 class="fc3 fs16 p-h4">增值服务</h4>
+                                        <ul class="p-i-ext lh150 p15 cp">
+                                            <volist name="package.addValue" id="add">
+                                                <li class="c">
+                                                    <i class="fl dlb h10 w10 mr10"></i>
+                                                    <span class="fl p-ext-con">{$add.name}</span>
+                                                    <span class="fr p-ext-money">￥{$add.price}</span>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pl20 i-w5 bb fr">
+                                    <section class="i-bc bcf lh200 r4">
+                                        <h4 class="fc3 fs16 p-h4">套餐项目</h4>
+                                        <div class="p-i-proj">
+                                            <ul class="p15">
+                                                {$package.content}
+                                            </ul>
+                                            <h5 class="tac fs16 fc3">赠送服务</h5>
+                                            <ul class="p15">
+                                                {$package.gift_service}
+                                            </ul>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="p-i-foot p15 fs16 tar c">
+                                <dl class="dlb vam mr15">
+                                    <dt class="dlb">总计:</dt>
+                                    <dd class="package-money dlb">RMB {$package.price}</dd>
+                                </dl>
+                                <span class="ml15 dlb vam r4 bcm fcf pl15 pr15 pt10 pb10 cp mr5">申请预定</span>
+                            </div>
+                        </div>
+                    </volist>
+                </section>
+            </div>
+        </section>
+        <!-- 须知 -->
+        <section id="notice" class="i-p80 i-bcm">
+            <div class="bc i-wm">
+                <h2 class="section-label">预定流程</h2>
+                <section class="pt30 pb30 bcf i-shadow r4">
+                    <article class="click-m">
+                        <h4 class="ml20 fc3 fs16 mb20"><i class="i-tit-icon i-process"></i>流程图</h4>
+                        <img src="__PUBLIC__/Home/images/process.png" alt="预定流程图" />
+                    </article>
+                    <article class="n-order">
+                        <h4 class="mb20 fc3 fs16"><i class="i-tit-icon i-notice"></i>预定须知</h4>
+                        <ul class="lh200">
+                            {$productData.noticeData.booking_notice}
+                            <!--<li></li>-->
+                        </ul>
+                    </article>
+                </section>
+            </div>
+        </section>
+        <section class="i-p80 i-pt0 i-bcm">
+            <div class="bc i-wm">
+                <h2 class="section-label">费用说明</h2>
+                <section class="pl20 pr20 pt30 pb30 bcf i-shadow r4 c">
+                    <div class="i-w5 fl bb pr30">
+                        <article>
+                            <h4 class="fc3 fs16 mb10"><i class="i-tit-icon i-contain"></i>包含内容</h4>
+                            <ul class="lh200">
+                                {$productData.noticeData.cost_include}
+                            </ul>
+                        </article>
+                        <article>
+                            <h4 class="fc3 fs16 mt30 mb10"><i class="i-tit-icon i-no-contain"></i>不包含内容</h4>
+                            <ul class="lh200">
+                                {$productData.noticeData.cost_not_include}
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="i-w5 fr bb pl30">
+                        <article>
+                            <h4 class="fc3 fs16 mb10"><i class="i-tit-icon i-instruct"></i>其他说明</h4>
+                            <ul class="lh200">
+                                {$productData.noticeData.other_cost}
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class="i-p80 i-pt0 i-bcm">
+            <div class="bc i-wm">
+                <h2 class="section-label">变更政策</h2>
+                <section class="pl20 pr20 pt30 pb30 bcf i-shadow r4 c">
+                    <article class="i-w5 fl bb pr30">
+                        <h4 class="fc3 fs16 mb10"><i class="i-tit-icon i-cancel"></i>取消政策</h4>
+                        <ul class="lh200">
+                            {$productData.noticeData.cancel_policy}
+                        </ul>
+                    </article>
+                    <article class="i-w5 fr bb pl30">
+                        <h4 class="fc3 fs16 mb10"><i class="i-tit-icon i-modify"></i>修改政策</h4>
+                        <ul class="lh200">
+                            {$productData.noticeData.change_policy}
+                        </ul>
+                    </article>
+                </section>
+            </div>
+        </section>
+        <!-- 提示 -->
+        <section id="prompt" class="i-p80">
+            <div class="bc i-wm">
+                <h2 class="section-label">出行提示</h2>
+                <section class="travel-tips c">
+                    <nav id="travelTipsNav" class="h1 bcf i-shadow bcm fl tac fcf fs16 ofh">
+                        <a data-i="0" class="ts4 active">签证</a>
+                        <a data-i="1" class="ts4">交通</a>
+                        <a data-i="2" class="ts4">住宿</a>
+                        <a data-i="3" class="ts4">消费</a>
+                        <a data-i="4" class="ts4">气候</a>
+                        <a data-i="5" class="ts4">其他</a>
+                    </nav>
+                    <div class="h1 i-bcm i-shadow ofh fr">
+                        <ul id="travelTipsCon" class="travel-tips-con">
+                            <!-- 签证 -->
+                            <li class="tips-item c">
+                                <figure class="i-w5 h1 ofh pr15 bb fl tac">
+                                    <h5 class="fc3 mb20">落地签（免签证费）</h5>
+                                    <img draggable="false" src="__PUBLIC__/Home/images/visa.jpg" alt="免签证" />
+                                </figure>
+                                <article class="tips-con bb i-w5 fr">
+                                    <section class="mb20 c">
+                                        <i class="i-travel-icon i-passport mt5"></i>
+                                        <p class="dlb">护照是出国旅游的基本证件，有护照才能办理签证，护照有效期为10年，办理签证前检查下护照有效期是否在6个月以上，是否还有至少2页正反面都是空白页，如没有请换新本再签，以免耽误行程。</p>
+                                    </section>
+                                    <section class="mb20 c">
+                                        <i class="i-travel-icon i-policy mt5"></i>
+                                        <p>自2015年6月10日起，印度尼西亚对中国公民实施面前政策。只要是以旅游为目的，从雅加达、巴厘岛、棉兰、泗水、巴淡岛等机场进入印尼境内的游客，都可以享受停留期30天（图标）的面签待遇，但不得延长或变更为其他签证。</p>
+                                    </section>
+                                    <section class="c">
+                                        <i class="i-travel-icon i-visa mt5"></i>
+                                        <p>"由于巴厘岛是免签地区，因此旅客可以选择去程或回程在香港停留，无须港澳通行证，即使是白本护照也可以免费停留7天。 把香港作为去程或返程的购物停留之地，给旅程增加另一番独特体验。"
+                                        </p>
+                                    </section>
+                                </article>
+                            </li>
+                            <!-- 交通 -->
+                            <li class="tips-item">
+                                <figure class="i-w5 h1 ofh pr15 bb fl tac">
+                                    <img draggable="false" src="__PUBLIC__/Home/images/traffic.jpg" alt="交通" />
+                                </figure>
+                                <article class="tips-con bb i-w5 fr">
+                                    <section class="mb20 c">
+                                        <i class="i-travel-icon i-plane mt5"></i>
+                                        <p>1."中国定期直航巴厘岛的城市有：深圳、广州和上海。
+                                            <br />2.其他城市可以选择在香港、新加坡、马来西亚吉隆坡等地转机，转机航班非常丰富，时间选择较为自由。 中国到巴厘岛的飞行时间约为5个小时（直航），如加上转机时间，则约为7-10个小时。"
+                                        </p>
+                                    </section>
+                                    <section class="mb20 c">
+                                        <i class="i-travel-icon i-car mt5"></i>
+                                        <p>1."巴厘岛出租车很多，比较推荐的是Blue Bird公司，全部都是淡蓝色的车身，这家公司服务比较正规，5000印尼盾起步价。
+                                            <br />2.在巴厘岛如需全天出行，建议选择正规的包车公司或旅行社提供的车辆。巴厘岛包车通常分为4小时和10小时的时长，市场价格约60美元/天，包含司机费用、油费，但不含过路费和停车费。（预订链接）"
+                                        </p>
+                                    </section>
+                                    <section class="c">
+                                        <i class="i-travel-icon i-vehicle mt5"></i>
+                                        <p>"巴厘岛随处可见踏板摩托车Scooter，这种小型摩托车可承载2人，游客可在路边的摩托车行凭有效证件租赁，费用也比较低廉。 但须注意的是，巴厘岛街道狭窄，人车混行，如没有熟练的驾驶经验，最好不要贸然尝试，而在巴厘岛骑摩托车，则需全程佩戴安全帽。"</p>
+                                    </section>
+                                </article>
+                            </li>
+                            <!-- 住宿 -->
+                            <li class="accommodation tips-item i-lh180">
+                                <ul class="i-w5 pr15 bb fl">
+                                    <li>"Kuta库塔，21%的客人住在这里，位于南部海滩区，以冲浪和夜生活闻名。
+                                        <br />推荐品牌：<a>Double-Six Luxury Hotel</a>，巴厘岛库塔喜来登度假村，发现卡地亚酒店
+                                    </li>
+                                    <li>Ubud乌布，19%的客人住在这里，这里是巴厘岛的心脏地区，是岛上景点和住宿最集中的两个区域之一。
+                                        <br />推荐品牌：<a>曼达帕丽思卡尔顿</a>，<a>玛雅乌布酒店</a>，<a>巴厘岛乌布切蒂度假村</a>
+                                    </li>
+                                    <li>Seminyak水明漾，17%的客人住在这里，这里拥有巴厘岛首屈一指的海滩。
+                                        <br />推荐品牌：<a>水明漾W度假酒店</a>，<a>安纳塔拉水明漾度假村</a>，<a>水明漾L酒店</a>
+                                    </li>
+                                    <li>Bukit Peninsula布科半岛，12%的客人住在这里，拥有全球十大最美日落之一的海滩。
+                                        <br />推荐品牌：<a>巴厘岛艾美金芭兰酒店</a>，<a>努沙杜瓦穆里亚度假村</a>，<a>巴厘岛日航酒店</a>
+                                    </li>
+                                </ul>
+                                <ul class="pl15 bb i-w5 fr">
+                                    <li>Sanur沙努尔，7%的客人住在这里，这里是巴厘岛最早开发的沙滩，以欣赏日出而闻名。
+                                        <br />推荐品牌：A <a>巴厘岛费尔蒙酒店</a>，<a>Villa Bianti</a>
+                                    </li>
+                                    <li>Tanah Lot海神庙，5%的客人住在这里，巴厘岛著名的海神庙位于此，比较安静。
+                                        <br />推荐品牌：<a>阿里拉苏里别墅</a>
+                                    </li>
+                                    <li>Nusa Penida &amp;Lembongan努沙佩妮达岛&amp;蓝梦岛，3%的客人住在这里，这两个小道幽静而又不会过度商业化，很适合喜欢原始风味的游客入住。
+                                        <br />推荐品牌：<a>Villa Voyage</a>
+                                    </li>
+                                    <li>Lovina罗威那，2%的客人住在这里，这里以观赏海豚出名，沙滩质量一般，但比较安静。
+                                        <br />推荐品牌：<a>Villa Patria Lovina</a></li>
+                                </ul>
+                            </li>
+                            <!-- 消费 -->
+                            <li class="tips-item">
+                                <figure class="i-w5 h1 ofh pr15 bb fl tac">
+                                    <h5 class="fc3 mb20">100人民币：214000印尼盾</h5>
+                                    <img draggable="false" src="__PUBLIC__/Home/images/consumption.jpg" alt="消费" />
+                                </figure>
+                                <article class="tips-con bb i-w5 fr">
+                                    <section class="mb20 c">
+                                        <i class="i-travel-icon i-tip mt5"></i>
+                                        <p>1.在当地用餐和床铺整理一般需要支付小费，一般为1万或5000卢比（7-3.5元人民币）</p>
+                                    </section>
+                                    <section class="mb20 c">
+                                        <i class="i-travel-icon i-waiter mt5"></i>
+                                        <p>2.在巴厘岛吃饭是强迫付税的，五星级酒店、饭店都是21%的税，普通饭店是15%的税。</p>
+                                    </section>
+                                    <section class="c">
+                                        <i class="i-travel-icon i-information mt5"></i>
+                                        <p>3.除服务费或税费可能包含在账单中外，小费均为客人自愿支付，任何服务人员无权强制收费。给小费是当地约定俗成的习惯，如因小费问题造成不快，我们不接受这方面的投诉和差评。</p>
+                                    </section>
+                                </article>
+                            </li>
+                            <!-- 气候 -->
+                            <li class="tips-item">
+                                <figure class="i-w5 h1 ofh pr15 bb fl tac">
+                                    <h5 class="fc3 mb20">年平均气温</h5>
+                                    <img draggable="false" src="__PUBLIC__/Home/images/weather.jpg" alt="气候" />
+                                </figure>
+                                <article class="tips-con bb i-w5 fr">
+                                    <section class="mb20 c">
+                                        <i class="i-travel-icon i-sunny mt5"></i>
+                                        <p>巴厘岛地处赤道，气候炎热而超市，是典型的热带雨林气候。在低处，平均温度在21°C-33°C之间，但山区温度可以低至5°C。 一般而言，巴厘岛分为两个季节，干季和雨季，雨季从11月持续到3月，1-2月是雨季的最高峰，因此在此时间段去巴厘岛举办婚礼的新人，最好选择室内场地进行婚礼仪式
+                                        </p>
+                                    </section>
+                                    <section class="c">
+                                        <i class="i-travel-icon i-calendar mt5"></i>
+                                        <p>1.旺季游客较多，机票及酒店住宿费用有小幅增长，如需在旺季期间举办婚礼或旅行，请提前预定机票、酒店及所需服务。
+                                            <br />2.淡季为雨季，相对旺季费用优惠20%以上，在这段时间结婚的新人尽量预定室内场地举行婚礼仪式。
+                                        </p>
+                                    </section>
+                                </article>
+                            </li>
+                            <!-- 其他 -->
+                            <li class="tips-item">
+                                <figure class="i-w5 h1 ofh pr15 bb fl tac">
+                                    <h5 class="fc3 mb20">插座示意图</h5>
+                                    <img draggable="false" src="__PUBLIC__/Home/images/other.jpg" alt="其他" />
+                                </figure>
+                                <article class="tips-con bb i-w5 fr">
+                                    <section class="mb20 c">
+                                        <i class="i-travel-icon i-safety mt5"></i>
+                                        <p>强烈建议在出发前购买旅行项目保险，如果在游玩中出现意外事故，请在当地及时联系该保险公司紧急联系电话 ，并根据国外保险条例处理相关事故，请您积极配合，因买的当地保险回国后再处理属于无效，如您强行回国处理，后果需自己承担。</p>
+                                    </section>
+                                    <section class="c">
+                                        <i class="i-travel-icon i-forbid mt5"></i>
+                                        <p>1.出入寺庙不得着短裤或短裙，需在寺外免费租件沙龙及腰带。
+                                            <br />2.在祭祀庆典中拍照，不得站在跪拜祈祷的人群前，也不得以闪光灯拍摄祭司。
+                                            <br />3.印度教阶级制度在巴厘岛虽然并不严格划分，但为避免因阶级不明而触犯祭司阶级，请勿任意触摸孩童头部。
+                                            <br />4.拍摄当地人最好先得到许可，一方面表示尊重，再则也避免事后索取费用的争议。
+                                            <br />5.左手被视为不洁，因此与人接触时尽可能使用右手。
+                                            <br />6.进入寺庙需脱鞋，不可露出手臂及腿，生理期的女生，莫进入寺庙。 若有人坐在地上时，千万不可站在他的右手边。</p>
+                                    </section>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <!-- 地图 -->
+        <!-- temp change -->
+        <section id="map" class="map i-bcm pr none">
+            <!-- 这是地图 -->
+            <div id="mapBox" class="w1 h1"></div>
+            <div class="map-box i-shadow tac i-bcm">
+                <figure class="w1">
+                    <img class="w1" src="__PUBLIC__/Home/images/bg/1.png" />
+                    <a class="center-lg map-lg db lh200 cp" data-lg="-8.80441, 115.2311">巴厘岛</a>
+                </figure>
+                <section class="bcf lh200 cp">
+                    <div id="mapExPrev">
+                        <i class="i-arrow i-arrow-t dlb pr"></i>
+                    </div>
+                    <div id="mapExCon" class="map-ex-wrap ofh">
+                        <section class="ts4">
+                            <a class="ex-lg map-lg" data-lg="-8.74608, 115.1672">推荐 - 巴厘岛机场</a>
+                        </section>
+                    </div>
+                    <div id="mapExNext">
+                        <i class="i-arrow i-arrow-b dlb pr"></i>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <!-- 推荐 -->
+        <section id="recom" class="i-p80 i-bcm">
+            <div class="bc i-wm">
+                <h2 class="section-label">其他推荐</h2>
+                <nav id="recomNav" class="recom-nav pb20 tar">
+                    <!-- 初始化的时候给第一个a加上active -->
+                    <for start="0" end="$randLength">
+                        <a class="ts4 dlb cp ml15 r50 <if condition='$i eq 0'>active</if>" data-i="{$i}"></a>
+                    </for>
+                </nav>
+                <section class="ofh">
+                    <ul id="recomCon" class="recom-con tac lh150 c">
+                        <volist name="rand" id="r">
+                            <li class="h1 bcf fl">
+                                <a class="db fs0 pr" href="{:U('Index/productDetail')}/pid/{$r.id}">
+                                    <img class="w1 h1" src="{$r.thumbnail}" />
+                                    <aside class="c bb">
+                                        <h3 class="fl">{$r.name}</h3>
+                                        <span class="fr">￥12,123</span>
+                                    </aside>
+                                </a>
+                                <p>一级分类 / 一起地区，二级地区</p>
+                            </li>
+                        </volist>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+</block>
+
+<block name="footer-js">
+	<script>
+        "use strict";
+        var gVar = (function() {
+            var geojson = [{
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-8.80441, 115.2311]
+                    },
+                    "properties": {
+                        "title": "\u5df4\u5398\u5c9b\u541b",
+                        "description": "\u5df4\u5398\u5c9b\u541b\u60a6\u5ea6\u5047\u9152\u5e97\u4f4d\u4e8e\u52aa\u6c99\u675c\u5df4\u5398\u5c9b",
+                        "icon": {
+                            "iconUrl": "__PUBLIC__\/Home\/images\/info\/resort.png",
+                            "iconSize": [30, 70],
+                            "iconAnchor": [15, 45],
+                            "popupAnchor": [0, -25],
+                            "className": "wdfMapIcon"
+                        }
+                    },
+                    "wdfTime": 0,
+                    "wdfType": "center"
+                }, {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-8.74608, 115.1672]
+                    },
+                    "properties": {
+                        "title": "\u5df4\u5398",
+                        "description": "\u670914\u4e2a\u767b\u673a\u95e8\uff0c\u5176\u4e2d\u516b\u5ea7\u8bbe\u6709\u7a7a\u6865\u3002",
+                        "icon": {
+                            "iconUrl": "__PUBLIC__\/Home\/images\/info\/airport.png",
+                            "iconSize": [30, 70],
+                            "iconAnchor": [15, 45],
+                            "popupAnchor": [0, -25],
+                            "className": "wdfMapIcon"
+                        }
+                    },
+                    "wdfTime": 0,
+                    "wdfType": "recommend"
+                }],
+                // 套餐和日历相关
+                pack = [{ // 可能不止一个goods （现在模拟数据是一个）
+                    'goods': {
+                        'id': 'taocan1', //套餐的id 也是html dom 节点的id
+                        'name': '套餐A',
+                        'title': '艾美简约时髦婚礼',
+                        'date': '', //用户选择的日期
+                        'curPrice': '111.11', //当前套餐总价（当前币种）价格不要千分位逗号
+                        'wdfCurPrice': '11', //当前套餐总价（美元）价格不要千分位逗号
+                        'price': '111.11', // 价格不要千分位逗号 (套餐基本价格)（当前币种）
+                        'wdfPrice': '11', // 价格不要千分位逗号 (套餐基本价格)（美元）
+                        'currency': 'CNY',
+                        'perNum': '20', //用户选择的人数 （当baseNum != 0 的时候 和baseNum相等 否则 等于2）
+                        'baseNum': '3',
+                        'maxNum': '30',
+                        'extDay': '0', //该日期前后三天均可申请
+                        'extPrice': '22.41', // 超出人数每人价格（当前币种） 价格不要千分位逗号
+                        'wdfExtPrice': '2', // 超出人数每人价格（美元）价格不要千分位逗号
+                        'project': {
+                            'id': '74',
+                            'type': '拍摄类型',
+                            'name': '场地名字',
+                            'price': '888.41', // 价格不要千分位逗号 (场地基本价格)（当前币种）
+                            'wdfPrice': '88' // 价格不要千分位逗号 (场地基本价格)（美元）
+                        },
+                        'other': [{
+                            'title': '黑人乐队伴唱',
+                            'id': '1',
+                            'price': '111.11',
+                            'wdfPrice': '11', // 价格不要千分位逗号
+                            'selected': '0', //是否选择此增值服务 价格不要千分位逗号
+                            'currency': 'CNY'
+                        }]
+                    }
+                }, { // 可能不止一个goods （现在模拟数据是一个）
+                    'goods': {
+                        'id': 'taocan2', //套餐的id 也是html dom 节点的id
+                        'name': '套餐B',
+                        'title': '安纳达啦极致动人落日套餐',
+                        'date': '', //用户选择的日期
+                        'curPrice': '111.11', //当前套餐总价（当前币种）价格不要千分位逗号
+                        'wdfCurPrice': '11', //当前套餐总价（美元）价格不要千分位逗号
+                        'price': '111.11', // 价格不要千分位逗号 (套餐基本价格)（当前币种）
+                        'wdfPrice': '11', // 价格不要千分位逗号 (套餐基本价格)（美元）
+                        'currency': 'CNY',
+                        'perNum': '20', //用户选择的人数 （当baseNum != 0 的时候 和baseNum相等 否则 等于2）
+                        'baseNum': '20',
+                        'maxNum': '30',
+                        'extDay': '0', //该日期前后三天均可申请
+                        'extPrice': '22.41', // 超出人数每人价格（当前币种） 价格不要千分位逗号
+                        'wdfExtPrice': '2', // 超出人数每人价格（美元）价格不要千分位逗号
+                        'project': {
+                            'id': '74',
+                            'type': '拍摄类型',
+                            'name': '场地名字',
+                            'price': '888.41', // 价格不要千分位逗号 (场地基本价格)（当前币种）
+                            'wdfPrice': '88' // 价格不要千分位逗号 (场地基本价格)（美元）
+                        },
+                        'other': [{
+                            'title': '黑人乐队伴唱',
+                            'id': '2',
+                            'price': '111.11',
+                            'wdfPrice': '11', // 价格不要千分位逗号
+                            'selected': '0', //是否选择此增值服务 价格不要千分位逗号
+                            'currency': 'CNY'
+                        }]
+                    }
+                }];
+
+            return {
+                token: 'cf73c2ed085e2703a46d30f5f3fc065e',
+
+                // 获取地图数据
+                getgeojson: function() {
+                    return geojson;
+                },
+
+                // 获取套餐
+                getPack: function() {
+                    return pack;
+                }
+            };
+        })();
+    </script>
+    <!-- 日历 -->
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/calendar.css" />
+    <script src="__PUBLIC__/Home/js/calendar.js"></script>
+    <!-- this -->
+    <script src="__PUBLIC__/Home/js/detail-controler.js"></script>
+    <!-- 地图 -->
+    <!-- <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css" /> -->
+    <!--// <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js"></script>
+    // <script src="__PUBLIC__/Home/js/detail-map.js"></script> -->
+</block>

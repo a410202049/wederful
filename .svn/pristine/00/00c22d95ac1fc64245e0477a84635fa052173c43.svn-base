@@ -1,0 +1,10 @@
+/**
+ * 2015-12-08 by hangyangws
+ * [Service 后台公共js]
+ */
+
+"use strict";
+var Pj = (function() {
+    var a;
+    return {};
+})();

@@ -1,0 +1,100 @@
+<extend name="Public/base" />
+<block name="title">服务商管理 - wederful后台管理系统</block>
+<block name="global">
+    <script>
+        var global = {
+            copyAreaUrl:'{:U("Provider/copyArea")}'
+        };
+    </script>
+</block>
+
+<block name="main-class">
+    <main class="main bb pr page_provider">
+</block>
+<block name="main">
+    <!-- 导航栏 -->
+    <div class="con-nav i-lh30 i-bcm h30 p10 mb20 c">
+        <nav class="fl">
+            <a href="{:U('Provider/index/')}">服务商管理</a>
+        </nav>
+        <div class="fr c">
+            <!-- 第一个不需要 class ml20 -->
+            <label class="nav-search fl">
+                <input class="search-list i-input i-b1m fl" type="text" />
+                <button class="service-search-btn i-button fl" type="botton">搜索</button>
+            </label>
+            <a href="{:U('Provider/addProvider/')}" class="i-button i-b-mw fl ml20">新增服务商</a>
+        </div>
+    </div>
+    <!-- 搜索区域 select 集 -->
+    <div class="mb20 c">
+        <select class="category-type i-select fl mr10" name="categoryid">
+            <option value="null">选择商品大类</option>
+            <volist name="categorys" id="category">
+                <option value="{$category.id}">{$category.name}</option>
+            </volist>
+        </select>
+        <!--<select class="i-select fl mr10">
+            <option value="null">选择服务地区</option>
+            <option value="1">巴厘岛</option>
+        </select> -->
+    </div>
+    <!-- 结果展示区域 table -->
+    <table class="i-table mb20 w1">
+        <thead>
+            <tr>
+                <th>服务类型</th>
+                <th>服务商</th>
+                <th>合约到期日</th>
+                <th>上传者</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="result" id="re">
+                <tr>
+                    <td>{$re.category}</td>
+                    <td>{$re.name}</td>
+                    <td>{$re.contract_expires}</td>
+                    <td class="upname"><ExtendsTags:getusername uid="re.uid"/></td>
+                    <td>
+                       <a class="dlb mr30 cp">复制</a><a class="dlb cp" href="{:U('Provider/editProvider/')}/id/{$re.id}">编辑</a>
+                    </td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    <!-- 分页 paging -->
+    <div class="con-paging mb20 c h30 i-lh30">
+        <dl class="fl mr20">
+            <dt class="dlb">商品数：</dt>
+            <dd class="dlb">{$totalSize}</dd>
+        </dl>
+        <div class="fl mr20">
+            <span>当前页：</span>
+            <div class="dlb">
+                <i data-role="p-dir" data-p="{$nowPage-1}" class="paging-dir provider-paging-dir {$nowPage==1?'disable':''}">&lt;</i>
+                <span class="paging-now">{$nowPage}</span>
+                <i data-role="p-dir" data-p="{$nowPage+1}" class="paging-dir provider-paging-dir {$nowPage==$totalPage?'disable':''}">&gt;</i>
+            </div>
+        </div>
+        <div class="fl">
+            转到
+            <select data-role="p-go" class="provider-paging-sel i-select">
+                <for start="1" end="$totalPage+1">
+                    <if condition="$nowPage eq $i ">
+                        <option value="{$i}" selected="selected">{$i}</option>
+                    <else />
+                         <option value="{$i}">{$i}</option>
+                    </if>
+                </for>
+            </select>
+            页
+        </div>
+    </div>
+</block>
+
+<block name="script">
+    <!-- this -->
+    <script src="__PUBLIC__/Admin/js/provider.js"></script>
+</block>

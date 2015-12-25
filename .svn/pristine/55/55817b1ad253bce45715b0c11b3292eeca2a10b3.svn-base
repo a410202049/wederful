@@ -1,0 +1,76 @@
+<?php
+// +----------------------------------------------------------------------
+// | Copyright (c) 2013 http://www.onethink.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: kerry.gao <1509699669@vip.qq.com> <http://weibo.com/coderzero>
+// +----------------------------------------------------------------------
+namespace Admin\Controller;
+use Think\Controller;
+use Think\Upload\Driver\Qiniu\QiniuStorage;
+
+class ServiceController extends BaseController {
+
+  /**
+   * [serviceManage 服务项管理]
+   * @return [type] [description]
+   */
+  public function index(){
+      $table = M('product');
+      $vendors = M('vendors');
+      $where = array();
+      $pagesize = C('BACKEND_PAGESIZE');
+      $count = $table->where($where)->count();
+      $page = getpage($count,$pagesize);
+      $result = $table->where($where)->limit($page->firstRow.','.$page->listRows)->select();
+      $category = D('ProductCategory');
+      $categorys = $category->where(array('parent_id'=>0))->select();
+      $totalPage = ceil($count/$pagesize);
+      $totalSize = $count;
+      $nowPage = $arr['p'] && $arr['p'] > 1 ? $arr['p'] : 1;
+      foreach ($result as $key => $value) {
+          $cid = $value['category_id'];
+          $vid = $value['vendors_id'];
+          $cate = $category->where(array('id'=>$cid))->find();
+          $vendor =$vendors->where(array('id'=>$vid))->find();
+          $result[$key]['categoryName'] = $cate['name'];
+          $result[$key]['vendorName'] = $vendor['name'];
+      }
+      $this->assign('result', $result); // 赋值数据集
+      $this->assign('nowPage',$nowPage);
+      $this->assign('categorys',$categorys);
+      $this->assign('totalSize',$totalSize);
+      $this->assign('totalPage',$totalPage);
+      $this->display();
+  }
+
+  
+    // public function index(){
+    // 	$table = M('ProductCategory');
+    //     $condition = array(
+    //         'parent_id' => 0
+    //     );
+    //     $categorys = $table->where($condition)->select();
+    //     $this->assign('categorys', $categorys);
+    //     $this->display();
+    // }
+
+    public function getVendors(){
+    	$arr = I();
+        $dao = M();
+        $data = array();
+        if($arr['categoryid']){
+            $data = $dao->query("SELECT id,name from vendors where id in (SELECT vendors_id from vendors_category_relation where category_id = '%s')",$arr['id']);
+        }
+        $this->resultMsg('success', '获取成功',$data);
+
+    }
+
+    public function addServiceOne(){
+        $arr = I();
+        $category = D('ProductCategory');
+        $categorys = $category->where(array('parent_id'=>0))->select();
+        $this->assign('categorys',$categorys);
+        $this->display();
+    }
+
+}

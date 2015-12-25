@@ -1,0 +1,148 @@
+<extend name="Index/base" />
+
+<block name="meta">
+	<title>个人中心 - wederful</title>
+	<meta name="author" content="wederfull" />
+    <meta name="keywords" content="Wederful,海外婚礼,海外婚礼场地,海外婚礼旅拍" />
+    <meta name="Copyright" content="wederful.com &copy;" />
+    <meta name="description" content="国内首家海外婚礼垂直电商,提供海外婚礼场地、全球知名婚礼及旅拍摄影师、海外婚礼团队住宿、交通服务、当地游活动及婚礼装扮等服务预定。DIY 海外婚礼,从此变得很简单。" />
+</block>
+
+<block name="css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/user.css" />
+</block>
+
+<block name="body">
+    <body id="body" class="body">
+</block>
+
+<block name="main">
+    <main id="main" class="main">
+        <section>
+            <img draggable="false" src="###" alt="个人中心" />
+            <div>
+                <h2>WEDERFUL</h2>
+                <h2>个人中心</h2>
+            </div>
+        </section>
+        <section>
+            <aside>
+                <figure>
+                    <img draggable="false" src="###" alt="用户名" />
+                    <button type="button" title="删除头像">x</button>
+                </figure>
+                <button type="button">上传头像</button>
+                <nav>
+                    <a href="">
+                        <i></i>
+                        个人资料
+                    </a>
+                    <a href="">
+                        <i></i>
+                        收藏夹
+                    </a>
+                    <a href="">
+                        <i></i>
+                        订单信息
+                    </a>
+                </nav>
+            </aside>
+            <div>
+                <ul>
+                    <li>基本信息</li>
+                    <li>修改密码</li>
+                </ul>
+                <div>
+                    <section>
+                        <label>
+                            <span>昵称</span>
+                            <input type="text" />
+                        </label>
+                        <label>
+                            <span>邮箱</span>
+                            <input type="email" />
+                        </label>
+                        <section>
+                            <label>
+                                <span>手机</span>
+                                <div>
+                                    <span>+86</span>
+                                    <input type="tel" />
+                                </div>
+                            </label>
+                            <div>
+                                <span>已验证</span>
+                                <span>错误信息</span>
+                                <button type="button">修改</button>
+                            </div>
+                        </section>
+                        <label>
+                            <span>性别</span>
+                            <select>
+                                <option value="###">保密</option>
+                                <option value="###">男</option>
+                                <option value="###">女</option>
+                                <option value="###">其他</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>期望的目的地</span>
+                            <input type="text" />
+                        </label>
+                        <section>
+                            <label>所在地</label>
+                            <select>
+                                <option value="###">国家</option>
+                            </select>
+                            <select>
+                                <option value="###">省份</option>
+                            </select>
+                            <select>
+                                <option value="###">城市</option>
+                            </select>
+                        </section>
+                        <section>
+                            <label>婚期</label>
+                            <select>
+                                <option value="###">年</option>
+                            </select>
+                            <select>
+                                <option value="###">月</option>
+                            </select>
+                            <select>
+                                <option value="###">日</option>
+                            </select>
+                        </section>
+                        <section>
+                            <button type="button">保存</button>
+                            <span>错误提示</span>
+                        </section>
+                    </section>
+                    <section>
+                        <label>
+                            <span>旧密码</span>
+                            <input type="text" />
+                        </label>
+                        <label>
+                            <span>新密码</span>
+                            <input type="text" />
+                        </label>
+                        <label>
+                            <span>确认新密码</span>
+                            <input type="text" />
+                        </label>
+                        <section>
+                            <button type="button">保存</button>
+                            <span>错误提示</span>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+</block>
+
+<block name="footer-js">
+    <script src="__PUBLIC__/Home/js/user-controler.js"></script>
+</block>
+</div>

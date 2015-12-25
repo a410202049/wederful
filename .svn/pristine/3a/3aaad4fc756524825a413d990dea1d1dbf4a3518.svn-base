@@ -1,0 +1,31 @@
+/**
+ * [首页控制器]
+ * @return {[User - project object]}    [Feng Jie production]
+ */
+
+;
+! function($) {
+    "use strict";
+    var User = (function() {
+        var $tab = $('#tab');
+        return {
+            tab: function($this) {
+                $this.siblings().removeClass('active').end().addClass('active');
+                $tab.find('.' + $this.data('to')).siblings().addClass('none').end().removeClass('none');
+            },
+            pagingIndex: function($this, e) {
+                if ($.getKey(e) === 13) {
+                    location.href = global.baseUrl + '/p/' + $this.val();
+                };
+            }
+        };
+    })();
+    // 标签切换
+    $('#tabIndex').on('click', 'li', function() {
+        User.tab($(this));
+    });
+    // 翻页
+    $('#paging').on('keyup', '.paging-go', function(e) {
+        User.pagingIndex($(this), e);
+    });
+}(jQuery);

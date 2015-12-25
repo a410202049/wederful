@@ -1,0 +1,14 @@
+<extend name="Index/base" />
+<block name="title">用户管理 - wederful后台管理系统</block>
+<block name="global">
+    <script>
+        var global = {};
+    </script>
+</block>
+
+<block name="main-class">
+    <main class="main bb pr page_user">
+</block>
+<block name="main">
+    用户管理
+</block>

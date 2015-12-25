@@ -1,0 +1,126 @@
+/**
+ * 2015-12-08 by hangyangws
+ * [Article 内容管理]
+ */
+
+! function($) {
+    "use strict";
+    var Article = (function() {
+        return {
+        	/**
+        	 * 文章管理
+        	 */
+        	// 文章删除
+        	artDel: function($this) {
+        	    var $tr = $this.closest('tr');
+        	    if (_art_operation && confirm('确认删除文章？\n' + $tr.data('name'))) {
+        	        _art_operation = false;
+        	        $.ajax({
+        	            url: global.delArticleUrl,
+        	            dataType: 'json',
+        	            data: {
+        	                aid: $tr.data('id')
+        	            },
+        	            success: function(r) {
+        	                if (r.status === 'success') {
+        	                    $tr.remove();
+        	                } else {
+        	                    $.remaind(r.message, true);
+        	                };
+        	                _art_operation = true;
+        	            },
+        	            error: function() {
+        	                $.remaind('网络堵塞', true);
+        	                _art_operation = true;
+        	            }
+        	        });
+        	    };
+        	},
+        	// 文章操作（发布和置顶）
+        	artOperation: function($this, _type) {
+        	    var $tr = $this.closest('tr'),
+        	        _t;
+        	    if (_art_operation) {
+        	        _art_operation = false;
+        	        $.remaind('操作中，请稍后...', false);
+        	        $.ajax({
+        	            url: _type === 'show' ? global.articleIsShowUrl : global.articleIsTopUrl,
+        	            dataType: 'json',
+        	            data: {
+        	                aid: $tr.data('id')
+        	            },
+        	            success: function(r) {
+        	                if (r.status === 'success') {
+        	                    $.showMask(false);
+        	                    _t = _type === 'show' ? '发布' : '置顶';
+        	                    $this.html(r.data === '1' ? '取消' + _t : _t);
+        	                } else {
+        	                    $.remaind(r.message, true);
+        	                };
+        	                _art_operation = true;
+        	            },
+        	            error: function() {
+        	                $.remaind('网络堵塞', true);
+        	                _art_operation = true;
+        	            }
+        	        });
+        	    };
+        	},
+        	// 文章分页
+        	artPagingJudge: function($this) {
+        	    Pj.artPagingGo(
+        	        $this.data('role') === 'p-dir' ? $this.data('p') : $this.val(),
+        	        _article_type,
+        	        _search
+        	    );
+        	},
+        	artPagingGo: function(page, type, search) {
+        	    var _u = '';
+        	    _u += (page ? '/p/' + page : '') +
+        	        (type ? '/categoryid/' + type : '') +
+        	        (search ? '/search/' + search : '');
+        	    // 设置新的搜索数据
+        	    // search/global.keywords
+        	    // categoryid/global.categoryid
+        	    _page = page;
+        	    _article_type = type;
+        	    location.href = global.localUrl + _u;
+        	},
+        	artSearch: function(_s) {
+        	    _search = _s;
+        	    Pj.artPagingGo('1', _article_type, _search);
+        	},
+        };
+    })();
+    /**
+     * 文章管理
+     */
+    // 文章删除
+    $('#allWrap').on('click', '.art-del', function() {
+        Pj.artDel($(this));
+    });
+    // 文章发布
+    $('#allWrap').on('click', '.art-publish', function() {
+        Pj.artOperation($(this), 'show');
+    });
+    // 文章顶置
+    $('#allWrap').on('click', '.art-top', function() {
+        Pj.artOperation($(this), 'top');
+    });
+    // 翻页
+    $('#allWrap').on('click', '.con-paging .art-paging-dir', function() {
+        $(this).is('.disable') || Pj.artPagingJudge($(this));
+    });
+    // 到第几页
+    $('#allWrap').on('change', '.con-paging .art-paging-sel', function() {
+        Pj.artPagingJudge($(this));
+    });
+    // 关键字搜索
+    $('#allWrap').on('click', '.art-search-btn', function() {
+        Pj.artSearch($.trim($(this).prev().val()));
+    });
+    // 关键字搜索
+    $('#allWrap').on('change', '.art-type', function() {
+        Pj.artPagingGo('1', $(this).val(), '');
+    });
+}(jQuery);

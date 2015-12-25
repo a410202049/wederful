@@ -1,0 +1,13 @@
+/**
+ * [首页控制器]
+ * @return {[Pj - project object]}    [Feng Jie production]
+ */
+
+;
+! function($) {
+    "use strict";
+    var Pj = (function() {
+        var a;
+        return {};
+    })();
+}(jQuery);

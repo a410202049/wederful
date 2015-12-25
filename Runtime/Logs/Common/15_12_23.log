@@ -1,0 +1,21 @@
+[ 2015-12-23T14:25:53+08:00 ] ::1 /dev_wederful/lovelyplane
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000163s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001522s ]
+
+[ 2015-12-23T14:29:30+08:00 ] ::1 /dev_wederful/lovelyplanet
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000156s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001153s ]
+
+[ 2015-12-23T14:30:08+08:00 ] ::1 /dev_wederful/lovelyplanet
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000128s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001126s ]
+
+[ 2015-12-23T14:39:07+08:00 ] ::1 /dev_wederful/lovelyplanet/inspired
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000121s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001052s ]
+ERR: 无法加载模块:Index
+

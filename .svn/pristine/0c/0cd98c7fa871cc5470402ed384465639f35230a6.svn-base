@@ -1,0 +1,13 @@
+/**
+ * 2015-12-08 by hangyangws
+ * [Goods 商品管理]
+ */
+
+! function($) {
+    "use strict";
+    var Goods = (function() {
+        return {
+            
+        };
+    })();
+}(jQuery);

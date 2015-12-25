@@ -1,0 +1,289 @@
+@charset 'utf-8';
+
+/*con*/
+
+.sect-con {
+    position: relative;
+    width: 1000px;
+    height: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sect-con .animate {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+}
+
+
+/*direction*/
+
+.direction {
+    bottom: 40px;
+}
+
+.direction span {
+    width: 30px;
+    height: 15px;
+}
+
+.direction span::before {
+    position: absolute;
+    top: -11px;
+    left: 4px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    content: '';
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 2px solid #fff;
+}
+
+.direction.up span {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+
+/*footer*/
+
+.footer {
+    min-width: 920px;
+    min-height: 820px;
+    background-color: #bdb099;
+}
+
+
+/*footer-up*/
+
+.footer-up h1 {
+    font-size: 24px;
+    padding-top: 100px;
+    color: #333;
+}
+
+.footer section {
+    width: 270px;
+    vertical-align: top;
+}
+
+
+/*footer-down*/
+
+.footer-down {
+    padding-top: 50px;
+}
+
+
+/*关注我们*/
+
+.footer-con {
+    padding-top: 40px;
+    border-top: 1px solid #a79d8a;
+}
+
+
+/*联系我们图标*/
+
+.i-contact {
+    width: 30px;
+    height: 30px;
+    background: url(../images/info/i-contact.png) no-repeat;
+}
+
+.i-facebook {
+    background-position: 0 0;
+}
+
+.i-twitter {
+    background-position: 0 -30px;
+}
+
+.i-service {
+    background-position: 0 -60px;
+}
+
+.i-weibo {
+    background-position: 0 -90px;
+}
+
+.i-weixin {
+    background-position: 0 -120px;
+}
+
+.i-email {
+    background-position: 0 -150px;
+}
+
+.wdf-wx {
+    z-index: -1;
+    top: -280px;
+}
+
+.wdf-wx.active {
+    z-index: 1;
+    top: -320px;
+}
+
+.footer-tip {
+    line-height: 20px;
+    z-index: -1;
+    top: -40px;
+    left: -36px;
+    min-width: 100px;
+    height: 20px;
+    color: #fff;
+    background-color: #555;
+}
+
+.footer-tip span,
+.wdf-wx span {
+    position: absolute;
+    bottom: -12px;
+    left: 45px;
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top: 6px solid #555;
+}
+
+.wdf-wx span {
+    left: 8px;
+    border-top: 6px solid #fff;
+}
+
+.footer-con li:hover .footer-tip {
+    z-index: 2;
+    top: -32px;
+}
+
+
+/*public*/
+
+.mr50 {
+    margin-right: 50px;
+}
+
+.mr40 {
+    margin-right: 40px;
+}
+
+.lh30 {
+    line-height: 30px;
+}
+
+.t2 {
+    top: 2px;
+}
+
+.t3 {
+    top: 3px;
+}
+
+.lh1 {
+    line-height: 100%;
+}
+
+.bt {
+    border-top: 1px solid #ccc;
+}
+
+.h50 {
+    height: 50%;
+}
+
+.f24 {
+    font-size: 24px;
+}
+
+.sect {
+    background-position: center center;
+}
+
+.sect_1 {
+    background: url('../images/bg/product/pic/pic1.jpg') no-repeat;
+    background-size: cover;
+}
+
+.sect_2 {
+    background: url('../images/bg/product/pic/pic2.jpg') no-repeat;
+    background-size: cover;
+}
+
+.sect_3 {
+    background: url('../images/bg/product/pic/pic3.jpg') no-repeat;
+    background-size: cover;
+}
+
+.sect_4 {
+    background: url('../images/bg/product/pic/pic4.jpg') no-repeat;
+    background-size: cover;
+}
+
+.i-main {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('../images/info/mainIcons.png');
+}
+
+.i-photo {
+    background-position: 0 0;
+}
+
+.i-price {
+    background-position: -30px 0;
+}
+
+.i-ser {
+    background-position: -60px 0;
+}
+
+.fadeIn {
+    opacity: 1 !important;
+}
+
+@media screen and (max-width: 1100px) {
+    .sect-con {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .sect-con {
+        width: 400px;
+    }
+}
+
+@media screen and (max-height: 850px) {
+    .direction {
+        bottom: 20px;
+    }
+    .footer-up {
+        padding-bottom: 0;
+    }
+    .footer-up h1 {
+        padding-top: 72px;
+    }
+    .footer-down {
+        padding-top: 20px;
+    }
+    .footer-con {
+        padding: 20px 0 30px 0;
+    }
+}
+
+@media screen and (max-height: 820px) {
+    .footer-con ul {
+        margin: 10px;
+    }
+ }

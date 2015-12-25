@@ -1,0 +1,44 @@
+/**
+ * 2015-12-08 by hangyangws
+ * [Goods 商品管理]
+ */
+
+! function($) {
+    "use strict";
+    var Goods = (function() {
+        var $dateWrap = $allWrap.find('.package-form'),
+            addDom = {
+                unDayDom: $('#unDayDom').html(),
+                dayPriceDom: $('#dayPriceDom').html(),
+                goodsPromotDom: $('#goodsPromotDom').html(),
+                exPriceDom: $('#exPriceDom').html()
+            };
+        return {
+            ini: function() {
+                Pj.inputText();
+                Pj.inputDate($dateWrap);
+            },
+            addDom: function($this) {
+                $this.prev().append(addDom[$this.data('html')]);
+                // 初始化日期
+                Pj.inputDate($dateWrap, 'restart');
+            },
+            removeGldp: function($this) {
+                var $input = $this.parent().find('input'),
+                    _l = $input.length;
+                while(_l--) {
+                    $input.eq(_l).attr('gldp-id');
+                    $('div[gldp-el="' + $input.eq(_l).attr('gldp-id') + '"]').remove();
+                };
+            }
+        };
+    })();
+    Goods.ini();
+    $allWrap.on('click', '.add-dom', function() {
+        Goods.addDom($(this));
+    });
+    // 删除临时节点
+    $allWrap.on('click', '.del-temp-dom', function() {
+        Goods.removeGldp($(this));
+    });
+}(jQuery);

@@ -1,0 +1,90 @@
+/**
+ * 2015-12-08 by hangyangws
+ * [Service 服务项管理]
+ */
+
+! function($) {
+    "use strict";
+    var Service = (function() {
+        var _service = true,
+            _category = true;
+        return {
+            ini: function() {
+                Pj.qiNiu();
+                Pj.inputText();
+                Pj.inputDate($allWrap.find('.package-form'));
+            },
+            choiceType: function() {
+                if (_service && _category) {
+                    _service = false;
+                    _category = false;
+                    Service.service();
+                    Service.category();
+                };
+            },
+            service: function() {
+                $.ajax({
+                    url: global.getVendorsUrl,
+                    dataType: 'json',
+                    data: {
+                        id: $this.data('id')
+                    },
+                    success: function(r) {
+                        if (r.status === 'success') {
+                            $.showMask(false);
+
+                            _type === 'release' && (
+                                $this.html(r.data === '1' ? '取消发布' : '发布')
+                            ) || (
+                                $this.closest('tr').slideUp(400, function() {
+                                    $(this).remove();
+                                })
+                            );
+                        } else {
+                            $.remaind(r.message, true);
+                        };
+                        _good_release_f = true;
+                    },
+                    error: function() {
+                        $.remaind('网络堵塞', true);
+                        _good_release_f = true;
+                    }
+                });
+            },
+            category: function() {
+                $.ajax({
+                    url: _type === 'release' ? global.isShowUrl : global.delProductUrl,
+                    dataType: 'json',
+                    data: {
+                        pid: $this.data('id')
+                    },
+                    success: function(r) {
+                        if (r.status === 'success') {
+                            $.showMask(false);
+
+                            _type === 'release' && (
+                                $this.html(r.data === '1' ? '取消发布' : '发布')
+                            ) || (
+                                $this.closest('tr').slideUp(400, function() {
+                                    $(this).remove();
+                                })
+                            );
+                        } else {
+                            $.remaind(r.message, true);
+                        };
+                        _good_release_f = true;
+                    },
+                    error: function() {
+                        $.remaind('网络堵塞', true);
+                        _good_release_f = true;
+                    }
+                });
+            }
+        };
+    })();
+    Service.ini();
+    // 选择类型
+    $allWrap.on('change', '.category-type', function() {
+        Service.choiceType();
+    });
+}(jQuery);

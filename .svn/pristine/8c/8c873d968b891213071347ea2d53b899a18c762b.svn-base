@@ -1,0 +1,168 @@
+<extend name="Index/base" />
+<block name="title">添加商品 -wederful后台管理系统</block>
+<block name="global">
+    <script>
+        var global = {
+            cityListUrl:'{:U("Product/getCityList")}/countryid',
+            addVendorsUrl:'{:U("Product/addVendors")}',
+            getVendorDetailUrl:'{:U("Product/getVendorDetail")}',
+            getCategoryAttrUrl:'{:U("Product/getCategoryAttr")}',
+            getChildrenCategoryUrl:'{:U("Product/getChildrenCategory")}',
+            qiniuUploadTokenUrl:'{:U("Product/qiniuUploadToken")}'
+        };
+    </script>
+</block>
+<block name="main-class">
+    <main class="main bb pr page_goods">
+</block>
+<block name="main">
+    <!-- 导航栏 -->
+    <div class="con-nav i-lh30 i-bcm p10 mb20 c">
+        <nav class="fl">
+            <a href="{:U('Index/index/')}">后台</a>
+            <a href="{:U('Index/goodsManage/')}">商品管理</a>
+            <a href="">商品信息</a>
+            <a href="">添加商品</a>
+        </nav>
+    </div>
+    <!-- *************************** -->
+    <!-- 查看/添加 商家 template -->
+    <div class="add-merchant-tpl none">
+        <div class="m-add-merchant m-add-box dlb r4 bcf">
+            <label class="db mb10">
+                <span>商家中文名</span>
+                <input name="name" class="save-item i-input" type="text" />
+            </label>
+            <label class="db mb20">
+                <span>商家英文名</span>
+                <input name="name_en" class="save-item i-input" type="text" />
+            </label>
+            <div class="db">
+                <span class="left-label">商家Logo</span>
+                <div class="dlb c">
+                    <figure class="load-img-wrap none">
+                        <img class="merchant-logo" src="" />
+                        <input class="save-item" name="icon" type="hidden" />
+                        <span class="goods-img-del">x</span>
+                    </figure>
+                    <span class="add-img" data-num="1" data-rule="random" data-name="icon"></span>
+                </div>
+            </div>
+            <label class="db mb10">
+                <span>商家地址</span>
+                <input name="address" class="save-item i-input" type="text" />
+            </label>
+            <label class="db mb10">
+                <span>联系人</span>
+                <input name="contacts" class="save-item i-input" type="text" />
+            </label>
+            <label class="db mb10">
+                <span>联系电话</span>
+                <input name="mobile" class="save-item i-input" type="text" />
+            </label>
+            <label class="db mb10">
+                <span>联系邮箱</span>
+                <input name="email" class="save-item i-input" type="text" />
+            </label>
+            <label class="db mb5">
+                <span>其他</span>
+                <textarea name="other" class="save-item i-textarea bb"></textarea>
+            </label>
+            <label class="db mb10">
+                <span>&emsp;</span>
+                <span class="i-error">&emsp;</span>
+            </label>
+            <div class="db mb10">
+                <span>&emsp;</span>
+                <div class="dlb">
+                    <button class="save-merchant i-button i-b-mw mr20" type="bubtton">保存</button>
+                    <button class="close-mask i-button i-b-mw" type="bubtton">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- *************************** -->
+    <form action="{:U('Product/addProductStepOneSave')}" method="POST" autocomplete="off">
+        <!-- 内容展示 -->
+        <table class="con-show w1">
+            <tbody>
+                <!-- 基本信息 -->
+                <tr>
+                    <td colspan="3" class="mb10 fs20 fc3 mr30">基本信息</td>
+                </tr>
+                <tr>
+                    <td>商品名称</td>
+                    <td><input class="i-input i-w-short" data-need="true" data-name="商品中文名" type="text" placeholder="中文名" name="name" /></td>
+                    <td><input class="i-input i-w-short" data-need="true" data-name="商品英文名" type="text" placeholder="英文名" name="name_en" /></td>
+                </tr>
+                <tr>
+                    <td>商品所在地区</td>
+                    <td>
+                        <select class="select-area-a i-select i-w-short i-mr10" data-need="true" data-name="商品所在地区" name="regional_id">
+                            <option value="null">选择地区</option>
+                            <volist name="destinationData" id="data">
+                                <option value="{$data.id}">{$data.name}</option>
+                            </volist>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="select-area-b i-select i-w-short none" name="destination_id">
+                            <option value="null">选择地区</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>商家名称</td>
+                    <td class="c">
+                        <select class="select-merchant i-select i-w-short vat i-mr10 fl" data-need="true" data-name="商家名称" name="vendors_id">
+                            <option value="null">选择商家</option>
+                            <volist name="vendors" id="vendor">
+                                <option value="{$vendor.id}">{$vendor.name}</option>
+                            </volist>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="check-merchant i-button i-b-mw mr20" type="button">查看</button>
+                        <button class="add-merchant i-button i-b-mw" type="button">添加</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>商品分类</td>
+                    <td>
+                        <select class="choice-category-a i-select i-w-short" data-need="true" data-name="商品分类" name="category_id">
+                            <option value="null">选择分类</option>
+                            <volist name="categorys" id="data">
+                                <option value="{$data.id}">{$data.name}</option>
+                            </volist>
+                        </select>
+                    </td>
+                    <td>&emsp;
+                        <!-- <select class="choice-category-b i-select i-w-short none" name="category_id"></select> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>商品属性</td>
+                    <td colspan="2" class="goods-attr fs0">
+                        <section class="category-wrap fs14">
+                            请选择商品分类
+                        </section>
+                    </td>
+                    <!-- <td>&ensp;</td> -->
+                </tr>
+                <tr>
+                    <td>商品描述</td>
+                    <td>
+                        <textarea class="edit-dom i-textarea i-w-long" placeholder="商品中文描述" name="description"></textarea>
+                    </td>
+                    <td>
+                        <textarea class="edit-dom i-textarea i-w-long" placeholder="商品英文描述" name="description_en"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- 产品操作 -->
+        <div class="con-operation tac pt20 mb30">
+            <button type="button" class="goods-add-sub i-button i-b-mw">保存 / 下一步</button>
+        </div>
+    </form>
+</block>

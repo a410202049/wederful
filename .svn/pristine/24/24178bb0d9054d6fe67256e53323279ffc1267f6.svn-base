@@ -1,0 +1,32 @@
+/**
+ * [首页控制器]
+ * @return {[User - project object]}    [Feng Jie production]
+ */
+
+;
+! function($) {
+    "use strict";
+    var User = (function() {
+        var $tab = $('#tab'),
+            $tel = $('#tel');
+        return {
+            ini: function() {
+                // 电话中间4位加密
+                var _v = $tel.val().split('');
+                if (_v == false) {
+                    $tel.val(_v.join(''));
+                };
+            },
+            toggleShow: function($this) {
+                $tab.find('.' + $this.data('to')).siblings().css('display', 'none').end().css('display', 'block');
+                $this.addClass('active').siblings().removeClass('active');
+            }
+        };
+    })();
+
+    User.ini();
+
+    $('#tabIndex').on('click', 'li', function() {
+        User.toggleShow($(this));
+    });
+}(jQuery);
