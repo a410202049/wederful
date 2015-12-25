@@ -219,8 +219,11 @@
                                         <dt class="dlb fc3 fs16 mr15 fl">选择人数</dt>
                                         <dd class="dlb fl">
                                             <span class="num-up dlb i-bc cp bcf fl mr5" title="增加人数">-</span>
-                                            <input class="num-ipt only-num tac i-bc fl" type="text" placeholder="最大容纳30人" />
+                                            <input class="num-ipt only-num tac i-bc fl" type="text" placeholder="最大容纳{$package.number_range_max}人" value="{$package.number_range_min}"/>
                                             <span class="num-down dlb i-bc cp bcf fl ml5" title="减少人数">+</span>
+                                            <input type="hidden" class="min_num" value="{$package.number_range_min}">
+                                            <input type="hidden" class="max_num" value="{$package.number_range_max}">
+                                            <input type="hidden" class="out_charge" value="{$package.out_charge}">
                                             <span class="fl ml10">&emsp;</span>
                                         </dd>
                                     </dl>
@@ -255,7 +258,7 @@
                                                             <span class="dlb w20 i-bc cp fl ml5">+</span>
                                                         </section>
                                                     </if>
-                                                    <span class="fr p-ext-money">￥{$add.price}</span>
+                                                    <span class="fr p-ext-money" data-price="{$add.price}">￥{$add.price}</span>
                                                 </li>
                                             </volist>
                                         </ul>
@@ -281,7 +284,7 @@
                 <section class="pt30 pb30 bcf i-shadow r4">
                     <article>
                         <h4 class="ml20 fc3 fs16 mb20"><i class="i-tit-icon i-process"></i>流程图</h4>
-                        <img src="__PUBLIC__/Home/images/process.png" alt="预定流程图" />
+                        <img draggable="false" src="__PUBLIC__/Home/images/process.png" alt="预定流程图" />
                     </article>
                     <article class="n-order">
                         <h4 class="mb20 fc3 fs16"><i class="i-tit-icon i-notice"></i>预定须知</h4>
@@ -494,7 +497,7 @@
             <div id="mapBox" class="w1 h1"></div>
             <div class="map-box i-shadow tac i-bcm">
                 <figure class="w1">
-                    <img class="w1" src="http://7xo7hn.com1.z0.glb.clouddn.com/1450075236180" />
+                    <img draggable="false" class="w1" src="http://7xo7hn.com1.z0.glb.clouddn.com/1450075236180" />
                     <a class="center-lg map-lg db lh200 cp" data-lg="-8.80441, 115.2311">巴厘岛</a>
                 </figure>
                 <section class="bcf lh200 cp">

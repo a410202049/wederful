@@ -369,7 +369,6 @@
                                         <li class="like-pack w80 h1 fl pr cp" data-t="fav" title="收藏">
                                             <span class="css-hart middle"></span>
                                         </li><?php endif; ?>
-
                                     <li class="open-pack w80 h1 fl pr cp">
                                         <span class="css-arrow middle ts4"></span>
                                     </li>
@@ -390,8 +389,11 @@
                                         <dt class="dlb fc3 fs16 mr15 fl">选择人数</dt>
                                         <dd class="dlb fl">
                                             <span class="num-up dlb i-bc cp bcf fl mr5" title="增加人数">-</span>
-                                            <input class="num-ipt only-num tac i-bc fl" type="text" placeholder="最大容纳30人" />
+                                            <input class="num-ipt only-num tac i-bc fl" type="text" placeholder="最大容纳<?php echo ($package["number_range_max"]); ?>人" value="<?php echo ($package["number_range_min"]); ?>"/>
                                             <span class="num-down dlb i-bc cp bcf fl ml5" title="减少人数">+</span>
+                                            <input type="hidden" class="min_num" value="<?php echo ($package["number_range_min"]); ?>">
+                                            <input type="hidden" class="max_num" value="<?php echo ($package["number_range_max"]); ?>">
+                                            <input type="hidden" class="out_charge" value="<?php echo ($package["out_charge"]); ?>">
                                             <span class="fl ml10">&emsp;</span>
                                         </dd>
                                     </dl>
@@ -422,12 +424,10 @@
                                                             <input class="only-num i-bc fl" type="text" placeholder="<?php echo ($add["min_num"]); ?>个到<?php echo ($add["max_num"]); ?>个" />
                                                             <span class="dlb w20 i-bc cp fl ml5">+</span>
                                                         </section><?php endif; ?>
-                                                    <span class="fr p-ext-money">￥<?php echo ($add["price"]); ?></span>
+                                                    <span class="fr p-ext-money" data-price="<?php echo ($add["price"]); ?>">￥<?php echo ($add["price"]); ?></span>
                                                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
                                         </ul>
                                     </div><?php endif; ?>
-
-
                             </div>
                             <div class="p-i-foot p15 fs16 tar c">
                                 <dl class="dlb vam mr15">
@@ -636,7 +636,7 @@
                 <h2 class="section-label">其他推荐</h2>
                 <nav id="recomNav" class="recom-nav pb20 tar">
                     <!-- 初始化的时候给第一个a加上active -->
-                    <?php $__FOR_START_26560__=0;$__FOR_END_26560__=$randLength;for($i=$__FOR_START_26560__;$i < $__FOR_END_26560__;$i+=1){ ?><a class="ts4 dlb cp ml15 r50 <?php if($i == 0): ?>active<?php endif; ?>" data-i="<?php echo ($i); ?>"></a><?php } ?>
+                    <?php $__FOR_START_21574__=0;$__FOR_END_21574__=$randLength;for($i=$__FOR_START_21574__;$i < $__FOR_END_21574__;$i+=1){ ?><a class="ts4 dlb cp ml15 r50 <?php if($i == 0): ?>active<?php endif; ?>" data-i="<?php echo ($i); ?>"></a><?php } ?>
                 </nav>
                 <section class="ofh">
                     <ul id="recomCon" class="recom-con tac lh150 c">

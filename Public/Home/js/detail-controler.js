@@ -128,9 +128,7 @@
                 $body.animate({
                     scrollTop: $('#' + _w).position().top + 20
                 }, 400, function() {
-                    setTimeout(10, function() {
-                        f_user_scroll = true;
-                    });
+                    f_user_scroll = true;
                 });
             },
             scrollCheck: function(n) {
@@ -141,7 +139,7 @@
                         break;
                     };
                 };
-                i > -1 && $scrollNav[i].siblings().removeClass('active').end().addClass('active');
+                $scrollNav[i].siblings().removeClass('active').end().addClass('active');
             },
             setScrollTop: function() {
                 scroll_top = [
@@ -150,7 +148,7 @@
                     $notice.position().top,
                     $prompt.position().top,
                     // $map.position().top,
-                    $recom.position().top
+                    $recom.position().top - 170
                 ];
             },
 

@@ -5172,3 +5172,1780 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000896s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001516s ]
 
+[ 2015-12-25T14:11:05+08:00 ] ::1 /dev_wederful/Admin/Goods/index/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000154s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004117s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0033s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 22 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 39 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  [ RunTime:0.0013s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  limit 20,20 [ RunTime:0.0009s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 60 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 66 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000315s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.254086s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.254791s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000767s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001315s ]
+
+[ 2015-12-25T14:11:09+08:00 ] ::1 /dev_wederful/Admin/Goods/index/p/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000120s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001265s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004758s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0028s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0026s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 22 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 39 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  [ RunTime:0.0006s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  limit 20,20 [ RunTime:0.0008s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 60 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 66 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000326s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.240678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.241201s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001128s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001870s ]
+
+[ 2015-12-25T14:11:13+08:00 ] ::1 /dev_wederful/Admin/Goods/index/p/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001143s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001929s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003397s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0032s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0033s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 22 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 39 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  [ RunTime:0.0007s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  limit 40,20 [ RunTime:0.0008s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 60 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 66 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000278s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000851s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.243400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.243920s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001183s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000759s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001336s ]
+
+[ 2015-12-25T14:11:19+08:00 ] ::1 /dev_wederful/Admin/Goods/index/order/desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000141s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001024s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001260s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004304s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0037s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0025s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 22 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  order by p.price desc [ RunTime:0.0009s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  order by p.price desc limit 0,20 [ RunTime:0.0009s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 53 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 66 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000290s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000829s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.239245s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.239809s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000885s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001731s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001222s ]
+
+[ 2015-12-25T14:11:21+08:00 ] ::1 /dev_wederful/Admin/Goods/index/order/asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000981s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003904s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0042s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0027s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 22 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  order by p.price asc [ RunTime:0.0010s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  order by p.price asc limit 0,20 [ RunTime:0.0009s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 53 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 66 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000974s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.240073s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.240649s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000748s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001293s ]
+
+[ 2015-12-25T14:11:24+08:00 ] ::1 /dev_wederful/Admin/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000114s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000806s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003741s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0032s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 22 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 39 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  [ RunTime:0.0007s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  limit 0,20 [ RunTime:0.0006s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 53 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 60 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 66 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000325s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001140s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.241913s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.242509s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001250s ]
+
+[ 2015-12-25T14:23:51+08:00 ] ::1 /dev_wederful/Admin/Goods/addGoods
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000119s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000968s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001446s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004552s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0027s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `destination`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `promotion` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `promotion`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000588s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001536s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052247s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052786s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001171s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000781s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001522s ]
+
+[ 2015-12-25T14:24:28+08:00 ] ::1 /dev_wederful/Admin/Goods/addGoods
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000119s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003871s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0028s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `destination`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `promotion` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `promotion`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000320s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000882s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051456s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051997s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001365s ]
+
+[ 2015-12-25T16:12:10+08:00 ] ::1 /dev_wederful/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000441s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001837s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005571s ]
+
+[ 2015-12-25T16:12:10+08:00 ] ::1 /dev_wederful/Admin/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000124s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003861s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000382s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018561s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001213s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001114s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001734s ]
+
+[ 2015-12-25T16:12:15+08:00 ] ::1 /dev_wederful/Admin/Login/doLogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000987s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003807s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\LoginController.class.php on line 25 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0884s ]
+NOTIC: [8] Undefined index: validate D:\www\dev_wederful\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\www\dev_wederful\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0026s ]
+NOTIC: [8] Undefined index: lock D:\www\dev_wederful\Application\Admin\Controller\LoginController.class.php 第 44 行.
+
+[ 2015-12-25T16:12:16+08:00 ] ::1 /dev_wederful/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000117s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000985s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004079s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0299s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000265s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000841s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027122s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027656s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001143s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001198s ]
+
+[ 2015-12-25T16:12:36+08:00 ] ::1 /dev_wederful/Admin/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003538s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0032s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0027s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 22 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 39 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  [ RunTime:0.0008s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  limit 0,20 [ RunTime:0.0006s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 53 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 60 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 66 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000291s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000947s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.240621s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.241175s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000696s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001329s ]
+
+[ 2015-12-25T16:12:39+08:00 ] ::1 /dev_wederful/Admin/Goods/editGoods/id/239
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000123s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003740s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0029s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 179 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `destination`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `promotion` [ RunTime:0.0185s ]
+SQL: SELECT * FROM `promotion`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `package` WHERE `id` = 239 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `product` WHERE `id` = 196 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name` FROM `product` WHERE `vendors_id` = 65  [ RunTime:0.0004s ]
+SQL: SELECT id,name from vendors where id in (SELECT vendors_id from vendors_category_relation where category_id = '56') [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `package_no_provide_date` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `package_date_price` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `package_promotion_date` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `package_add_value_service` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `package_no_provide_date` WHERE `package_id` = 239  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `package_date_price` WHERE `package_id` = 239  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `package_promotion_date` WHERE `package_id` = 239  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `package_add_value_service` WHERE `package_id` = 239  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000365s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.117432s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.117973s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001274s ]
+
+[ 2015-12-25T16:14:02+08:00 ] ::1 /dev_wederful/Admin/Goods/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000186s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002135s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003842s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0029s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0028s ]
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 22 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 39 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  [ RunTime:0.0007s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0  limit 0,20 [ RunTime:0.0005s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 53 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 60 行.
+NOTIC: [8] Undefined index: search D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 66 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000409s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001039s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.236527s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.237085s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001155s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001265s ]
+
+[ 2015-12-25T16:14:06+08:00 ] ::1 /dev_wederful/Admin/Goods/index/search/%E5%B7%B4%E5%8E%98%E5%B2%9B%E6%97%A5%E8%88%AA%E9%85%92%E5%BA%97%E5%AE%81%E9%9D%99%E6%B2%99%E6%BB%A9%E5%AE%A4%E5%A4%96%E5%A9%9A%E7%A4%BC%E5%A5%97%E9%A4%90
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000117s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004107s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0035s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 13 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `vendors` [ RunTime:0.0027s ]
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 26 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 35 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 39 行.
+SQL: SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0 and p.name like '%巴厘岛日航酒店宁静沙滩室外婚礼套餐%'  [ RunTime:0.0004s ]
+SQL: SELECT cate.name as categoryname,p.*,pro.category_id as categoryid ,pro.id as proid,pro.name as proname,v.name as vendorname from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id where p.is_del=0 and p.name like '%巴厘岛日航酒店宁静沙滩室外婚礼套餐%'  limit 0,20 [ RunTime:0.0006s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 53 行.
+NOTIC: [8] Undefined index: order D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 60 行.
+NOTIC: [8] Undefined index: categoryid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 67 行.
+NOTIC: [8] Undefined variable: vendorsArr D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 69 行.
+NOTIC: [8] Undefined index: vendorid D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 70 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000297s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+SQL: SELECT * FROM `destination` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `destination` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: visit_num D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 156 行.
+NOTIC: [8] Undefined index: createtime D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 159 行.
+SQL: SELECT `username` FROM `user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: product_no D:\www\dev_wederful\Runtime\Cache\Admin\ba16d0e360669664ee35f264e9f96c87.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.083625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001381s ]
+
+[ 2015-12-25T16:14:19+08:00 ] ::1 /dev_wederful/Admin/Goods/editGoods/id/212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000120s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000979s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004011s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0028s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 179 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `destination`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `promotion` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `promotion`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `package` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `product` WHERE `id` = 129 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name` FROM `product` WHERE `vendors_id` = 3  [ RunTime:0.0003s ]
+SQL: SELECT id,name from vendors where id in (SELECT vendors_id from vendors_category_relation where category_id = '55') [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `package_no_provide_date` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `package_date_price` [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `package_promotion_date` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `package_add_value_service` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `package_no_provide_date` WHERE `package_id` = 212  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `package_date_price` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `package_promotion_date` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `package_add_value_service` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000389s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000969s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.116957s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.117494s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001113s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001346s ]
+
+[ 2015-12-25T16:19:22+08:00 ] ::1 /dev_wederful/Admin/Goods/editGoods/id/212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000168s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001903s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000838s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003757s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0028s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 179 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `destination`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `promotion` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `promotion`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `package` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `product` WHERE `id` = 129 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name` FROM `product` WHERE `vendors_id` = 3  [ RunTime:0.0004s ]
+SQL: SELECT id,name from vendors where id in (SELECT vendors_id from vendors_category_relation where category_id = '55') [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `package_no_provide_date` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `package_date_price` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `package_promotion_date` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `package_add_value_service` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `package_no_provide_date` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `package_date_price` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `package_promotion_date` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `package_add_value_service` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000357s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000896s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.117431s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.118012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000895s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001781s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000831s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001396s ]
+
+[ 2015-12-25T16:32:51+08:00 ] ::1 /dev_wederful/Admin/Goods/editGoods/id/212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000121s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003723s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0034s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 179 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `destination`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `promotion` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `promotion`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `package` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `product` WHERE `id` = 129 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name` FROM `product` WHERE `vendors_id` = 3  [ RunTime:0.0003s ]
+SQL: SELECT id,name from vendors where id in (SELECT vendors_id from vendors_category_relation where category_id = '55') [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `package_no_provide_date` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `package_date_price` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `package_promotion_date` [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `package_add_value_service` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `package_no_provide_date` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `package_date_price` WHERE `package_id` = 212  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `package_promotion_date` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `package_add_value_service` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000482s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001528s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.117785s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.118348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001418s ]
+
+[ 2015-12-25T16:33:19+08:00 ] ::1 /dev_wederful/Admin/Goods/editGoodsMethod
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000118s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001023s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004050s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0028s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 222 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `package_no_provide_date` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `package_date_price` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `package_promotion_date` [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `package_add_value_service` [ RunTime:0.0025s ]
+SQL: UPDATE `package` SET `product_id`='129',`package_no`='1',`name`='巴厘岛日航酒店宁静沙滩室外婚礼套餐',`name_en`='',`price`='2250',`number_range_min`='40',`number_range_max`='200',`out_charge`='111',`content`='<p>室外婚礼宾客人数最多200人</p><p>套餐中包含的宾客座椅数为40个</p><p>1小时宁静海滩或Taman Sari悬崖花园的私人使用时间</p><p>美丽的新娘捧花和新郎别襟花束</p><p>说英语的牧师或婚礼主持人</p><p>婚礼纪念证书</p><p>花瓣雨</p><p>西式鲜花插花装饰</p><p>婚礼仪式中的CD音乐伴奏</p>',`content_en`='',`gift_service`='<p>为新人敬酒准备的香槟酒</p><p>为40位来宾准备的香水冷毛巾</p><p>新人两晚海景房入住服务</p>',`gift_service_en`='',`area_id`='1',`uid`='1' WHERE `id` = 212 [ RunTime:0.0111s ]
+SQL: DELETE FROM `package_no_provide_date` WHERE `package_id` = 212 [ RunTime:0.0003s ]
+SQL: DELETE FROM `package_date_price` WHERE `package_id` = 212 [ RunTime:0.0002s ]
+SQL: DELETE FROM `package_promotion_date` WHERE `package_id` = 212 [ RunTime:0.0003s ]
+SQL: DELETE FROM `package_add_value_service` WHERE `package_id` = 212 [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: package_promotion_startdate D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 281 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php 第 281 行.
+
+[ 2015-12-25T16:33:21+08:00 ] ::1 /dev_wederful/Admin/Goods/editGoods/id/212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000119s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003667s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0031s ]
+SQL: SELECT user.id AS id,user.username AS username,user.roles AS roles,user.is_lock AS is_lock,user_info.id AS id,user_info.uid AS uid,user_info.mobile AS mobile,user_info.nickname AS nickname,user_info.email AS email,user_info.sex AS sex,user_info.mobile_zone AS mobile_zone,user_info.real_name AS real_name,user_info.face_img AS face_img,user_info.age AS age,user_info.verify AS verify,user_info.address AS address,user_info.country_id AS country_id,user_info.province_id AS province_id,user_info.city_id AS city_id,user_info.area_id AS area_id,user_info.wechat AS wechat,user_info.email_valid AS email_valid,user_info.mobile_valid AS mobile_valid,user_info.birthday AS birthday,user_info.wedding_num_range AS wedding_num_range,user_info.wedding_fee_range AS wedding_fee_range,user_info.wedding_location AS wedding_location,user_info.wedding_date AS wedding_date FROM user user LEFT JOIN user_info user_info ON user.id = user_info.uid WHERE user.id = '1' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\www\dev_wederful\Application\Admin\Controller\GoodsController.class.php on line 179 and defined D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\www\dev_wederful\ThinkPHP\Common\functions.php 第 339 行.
+SQL: SHOW COLUMNS FROM `product_category` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `destination` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `destination`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `product_category` WHERE `parent_id` = 0  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `promotion` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `promotion`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `package` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `package` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `product` WHERE `id` = 129 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name` FROM `product` WHERE `vendors_id` = 3  [ RunTime:0.0003s ]
+SQL: SELECT id,name from vendors where id in (SELECT vendors_id from vendors_category_relation where category_id = '55') [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `package_no_provide_date` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `package_date_price` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `package_promotion_date` [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `package_add_value_service` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `package_no_provide_date` WHERE `package_id` = 212  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `package_date_price` WHERE `package_id` = 212  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `package_promotion_date` WHERE `package_id` = 212  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `package_add_value_service` WHERE `package_id` = 212  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000371s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000928s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.118542s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.119105s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001378s ]
+
