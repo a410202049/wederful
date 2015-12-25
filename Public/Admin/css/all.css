@@ -247,11 +247,12 @@
     top: 1.5px;
 }
 
-.simditor {
-    overflow: hidden;
+.simditor-body {
+    overflow-y: auto;
+    max-height: 600px;
 }
 
-.simditor img {
+.simditor-body img {
     display: block !important;
     max-width: 700px !important;
     height: auto !important;
@@ -261,27 +262,22 @@
     margin-left: auto !important;
 }
 
-.simditor-body {
-    overflow-y: auto;
-    max-height: 600px;
-}
-
-.simditor p,
-.simditor span,
-.simditor em {
+.simditor-body p,
+.simditor-body span,
+.simditor-body em {
     font: 14px/1.5 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'STHeiti Light [STXihei]', 'Microsoft Yahei', sans-serif !important;
     line-height: 1.5em !important;
     letter-spacing: .5px !important;
     color: #666 !important;
 }
 
-.simditor b {
+.simditor-body b {
     font: 14px/1.5 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'STHeiti Light [STXihei]', 'Microsoft Yahei', sans-serif !important;
     letter-spacing: .5px !important;
     color: #333 !important;
 }
 
-.area-add-table .simditor {
+.area-add-table .simditor-body {
     display: inline-block;
     width: 64%;
     vertical-align: top;

@@ -10,7 +10,7 @@
     <meta name="author" content="wederfull" />
     <meta name="Copyright" content="wederful.com &copy;" />
 
-    <link rel="shortcut icon" href="/dev_wederful/Public/Home/images/shutIco.ico" type="image/x-icon" sizes="16x16 32x32" />
+    <link rel="shortcut icon" href="/dev_wederful/Public/Home/images/shutPng.png" type="image/png" sizes="16x16 32x32" />
 
     <!-- basic -->
     <link rel="stylesheet" href="/dev_wederful/Public/Home/css/base.css" />
@@ -167,7 +167,7 @@
     <script src="/dev_wederful/Public/Home/js/jq.js"></script>
     <script src="/dev_wederful/Public/Home/js/public.js"></script>
     <!-- this -->
-    <script src="/dev_wederful/Public/Admin/js/all-new.js"></script>
+    <script src="/dev_wederful/Public/Admin/js/all.js"></script>
     
     <script src="/dev_wederful/Public/Admin/js/article.js"></script>
 

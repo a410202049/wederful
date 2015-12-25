@@ -13,7 +13,7 @@
 
 
     <!-- icon -->
-    <link rel="shortcut icon" href="/dev_wederful/Public/Home/images/shutIco.ico" type="image/x-icon" sizes="16x16 32x32" />
+    <link rel="shortcut icon" href="/dev_wederful/Public/Home/images/shutPng.png" type="image/png" sizes="16x16 32x32" />
 
     <!-- basic -->
     <link rel="stylesheet" href="/dev_wederful/Public/Home/css/base.css" />
@@ -171,7 +171,7 @@
                     <div class="login-con">
                         <label class="reg-log-tel reg-log-border db fc3 c r4 bcf">
                             <span class="tel-area dlb fl">+86</span>
-                            <input class="login-ipt reg-log-ipt fl pl20" type="tel" placeholder="请输入手机号" autofocus="autofocus" />
+                            <input class="login-ipt reg-log-ipt fl pl20" type="tel" placeholder="请输入手机号" />
                             <span class="log-tel-err tel-err reg-log-err pr20 dlb fr">&emsp;</span>
                         </label>
                         <label class="reg-log-pass reg-log-border db r4 bcf mb20 c">
@@ -223,9 +223,9 @@
     
     <main class="i-mw pr">
         <!-- 封面 -->
-        <section id="detailCover" class="cover-nav pr fs0 click-m">
+        <section id="detailCover" class="cover-nav pr fs0">
             <img class="detail-cover w1 fs14" src="<?php echo ($productData["large_img"]); ?>" alt="封面图" />
-            <nav id="navNative" class="nav w1 tac fs16 i-mw ts4">
+            <nav id="navNative" class="nav w1 tac fs16 i-mw">
                 <a data-role="intro" class="active ts4">介绍</a>
                 <a data-role="package" class="ts4">套餐</a>
                 <a data-role="notice" class="ts4">须知</a>
@@ -249,10 +249,10 @@
                     <figure id="siteLogo" class="dlb vam pr mr20">
                         <img draggable="false" src="<?php echo ($productData["vendorLogo"]); ?>" class="middle" />
                     </figure>
-                    <div class="dlb vam">
+                    <div class="dlb vam fs16">
                         <h1 class="fc3 mb10"><?php echo ($productData["name"]); ?></h1>
                         <h2 class="fc9"><?php echo ($productData["vendorName"]); ?></h2>
-                        <h3 class="pa fs16 fc9 r0 mr20"><?php echo ($productData["name_en"]); ?></h3>
+                        <h3 class="pa fc9 r0 mr20"><?php echo ($productData["name_en"]); ?></h3>
                     </div>
                 </section>
                 <ul class="site-kind tac fs16 mt20 c">
@@ -362,14 +362,11 @@
                                     </ul>
                                 </div>
                                 <ul class="fr h1">
-                                    <!-- 如果用户已经收藏过此套餐 下面的title 就变成 取消收藏 data-t 变成delFav -->
                                     <?php if($package["is_collection"] == '1'): ?><li class="like-pack w80 h1 fl pr cp" data-t="fav" title="取消收藏">
-                                            <!-- 有active类表示套餐已经收藏 -->
                                             <span class="css-hart middle active"></span>
                                         </li>
                                     <?php else: ?>
                                         <li class="like-pack w80 h1 fl pr cp" data-t="fav" title="收藏">
-                                            <!-- 有active类表示套餐已经收藏 -->
                                             <span class="css-hart middle"></span>
                                         </li><?php endif; ?>
 
@@ -448,7 +445,7 @@
             <div class="bc i-wm">
                 <h2 class="section-label">预定流程</h2>
                 <section class="pt30 pb30 bcf i-shadow r4">
-                    <article class="click-m">
+                    <article>
                         <h4 class="ml20 fc3 fs16 mb20"><i class="i-tit-icon i-process"></i>流程图</h4>
                         <img src="/dev_wederful/Public/Home/images/process.png" alt="预定流程图" />
                     </article>
@@ -639,7 +636,7 @@
                 <h2 class="section-label">其他推荐</h2>
                 <nav id="recomNav" class="recom-nav pb20 tar">
                     <!-- 初始化的时候给第一个a加上active -->
-                    <?php $__FOR_START_24089__=0;$__FOR_END_24089__=$randLength;for($i=$__FOR_START_24089__;$i < $__FOR_END_24089__;$i+=1){ ?><a class="ts4 dlb cp ml15 r50 <?php if($i == 0): ?>active<?php endif; ?>" data-i="<?php echo ($i); ?>"></a><?php } ?>
+                    <?php $__FOR_START_26560__=0;$__FOR_END_26560__=$randLength;for($i=$__FOR_START_26560__;$i < $__FOR_END_26560__;$i+=1){ ?><a class="ts4 dlb cp ml15 r50 <?php if($i == 0): ?>active<?php endif; ?>" data-i="<?php echo ($i); ?>"></a><?php } ?>
                 </nav>
                 <section class="ofh">
                     <ul id="recomCon" class="recom-con tac lh150 c">
@@ -651,12 +648,10 @@
                                         <span class="fr">￥<?php echo ($r["startPrice"]); ?></span>
                                     </aside>
                                 </a>
-                                <p>
-                                    <div class="img-tip c">
-                                        <span class="fl ml20 fc3"><?php echo ($r["option"]); ?></span>
-                                        <span class="fr mr20 fcg"><?php echo ($r["vendor"]["name"]); ?></span>
-                                    </div>
-                                </p>
+                                <div class="img-tip c">
+                                    <span class="w90 to fl"><?php echo ($r["option"]); ?></span>
+                                    <span class="w200 tar to fr"><?php echo ($r["vendor"]["name"]); ?></span>
+                                </div>
                             </li><?php endforeach; endif; else: echo "" ;endif; ?>
                     </ul>
                 </section>
@@ -706,7 +701,7 @@
                 <dd><a>Android客户端（即将上线）</a></dd>
             </dl>
             <dl class="footer-tel">
-                <dt>7×24小时&ensp;客服电话</dt>
+                <dt>客服电话&ensp;09:00-20:00</dt>
                 <dd>400-070-2080</dd>
             </dl>
         </section>

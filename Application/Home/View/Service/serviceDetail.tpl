@@ -199,7 +199,6 @@
                                             <span class="css-hart middle"></span>
                                         </li>
                                     </if>
-
                                     <li class="open-pack w80 h1 fl pr cp">
                                         <span class="css-arrow middle ts4"></span>
                                     </li>
@@ -262,8 +261,6 @@
                                         </ul>
                                     </div>
                                 </notempty>
-
-
                             </div>
                             <div class="p-i-foot p15 fs16 tar c">
                                 <dl class="dlb vam mr15">

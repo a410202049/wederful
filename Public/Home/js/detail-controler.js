@@ -83,7 +83,25 @@
 
                 // 日历实例化对象
                 $('#package').find('.calendar-con').each(function() {
-                    $(this).fullCalendar({});
+                    $(this).fullCalendar({
+                        dayClick: function(_d) {
+                            var _cur_d = $.fullCalendar.formatDate(_d, "yyyy-MM-dd");
+                            $.ajax({
+                                type: 'POST',
+                                // url: global.###,
+                                dataType: 'json',
+                                data: {
+                                    date: _cur_d
+                                },
+                                success: function(r) {
+                                    if (r.status === 'success') {
+                                    } else {
+                                        $.remaind("当前日期不可选", true);
+                                    };
+                                }
+                            });
+                        }
+                    });
                 });
 
                 // 图片描述 roll img 事件

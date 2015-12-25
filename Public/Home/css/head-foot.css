@@ -456,18 +456,16 @@ body {
 .register-wrap,
 .login-wrap,
 .find-pass-wrap {
-    top: 0;
-    -webkit-transition: top .6s, opacity .6s;
-    -moz-transition: top .6s, opacity .6s;
-    -o-transition: top .6s, opacity .6s;
-    transition: top .6s, opacity .6s;
+    -webkit-transition: opacity .6s;
+    -moz-transition: opacity .6s;
+    -o-transition: opacity .6s;
+    transition: opacity .6s;
     opacity: 1;
 }
 
 .register-wrap.active,
 .login-wrap.active,
 .find-pass-wrap.active {
-    top: -40px;
     opacity: .2;
 }
 
