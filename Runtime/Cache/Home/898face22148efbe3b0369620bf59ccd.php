@@ -228,13 +228,13 @@
         <section class="article-all-wrap bc">
             <h1 class="lovey-planet text-hide">爱星人的故事都在这儿</h1>
             <nav class="type-nav i-b-t tac">
-                <?php if(is_array($categorys)): $i = 0; $__LIST__ = $categorys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i; if($category["id"] == '4'): ?><a href="/dev_wederful/lovelyplanet/lgbt" class="lgbt text-hide"><?php echo ($category["name"]); ?></a>
+                <?php if(is_array($categorys)): $i = 0; $__LIST__ = $categorys;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i; if($category["id"] == '4'): ?><a href="/dev_wederful/lovelyplanet/lgbt" class="header-top-line lgbt text-hide <?php if($currenCategory == lgbt): ?>active<?php endif; ?>"><?php echo ($category["name"]); ?></a>
                     <?php elseif($category["id"] == '3'): ?>
-                        <a href="/dev_wederful/lovelyplanet/guru" ><?php echo ($category["name"]); ?></a>
+                        <a href="/dev_wederful/lovelyplanet/guru" class="header-top-line <?php if($currenCategory == guru): ?>active<?php endif; ?>"><?php echo ($category["name"]); ?></a>
                     <?php elseif($category["id"] == '2'): ?>
-                        <a href="/dev_wederful/lovelyplanet/story" ><?php echo ($category["name"]); ?></a>
+                        <a href="/dev_wederful/lovelyplanet/story" class="header-top-line <?php if($currenCategory == story): ?>active<?php endif; ?>"><?php echo ($category["name"]); ?></a>
                     <?php elseif($category["id"] == '1'): ?>
-                        <a href="/dev_wederful/lovelyplanet/inspired" ><?php echo ($category["name"]); ?></a><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                        <a href="/dev_wederful/lovelyplanet/inspired" class="header-top-line <?php if($currenCategory == inspired): ?>active<?php endif; ?>"><?php echo ($category["name"]); ?></a><?php endif; endforeach; endif; else: echo "" ;endif; ?>
             </nav>
             <section class="mt30 c">
                 <div class="article-wrap fl">
@@ -362,8 +362,8 @@
     </footer>
 
     <!-- 功能 侧边栏 -->
-    <section id="asideFunc" class="aside-func pf">
-        <span class="func-contact i-aside i-s-contact cp db" tenantId="9597" title="联系客服"></span>
+    <section id="asideFunc" class="aside-func pf z2">
+        <!-- <span class="func-contact i-aside i-s-contact cp db" tenantId="9597" title="联系客服"></span> -->
         <span class="func-top i-aside i-s-top cp db" title="回到顶部"></span>
     </section>
 
@@ -374,13 +374,12 @@
     <script src="/dev_wederful/Public/Home/js/jq.js"></script>
     <!-- public -->
     <script src="/dev_wederful/Public/Home/js/public.js"></script>
-    <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script>
+    <!-- // <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script> -->
     <!-- header-footer -->
     <script src="/dev_wederful/Public/Home/js/head-foot.js"></script>
     <!-- this -->
     
     <script src="/dev_wederful/Public/Home/js/article.js"></script>
-
 
 </body>
 

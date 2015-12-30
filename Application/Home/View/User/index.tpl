@@ -9,7 +9,7 @@
 </block>
 
 <block name="css">
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/user.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/user.css?20151230" />
 </block>
 
 <block name="global">
@@ -184,6 +184,6 @@
 </block>
 
 <block name="footer-js">
-    <script src="__PUBLIC__/Home/js/user.js"></script>
+    <script src="__PUBLIC__/Home/js/user.js?20151230"></script>
 </block>
 </div>

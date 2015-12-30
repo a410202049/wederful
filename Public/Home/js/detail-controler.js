@@ -138,7 +138,6 @@
                     $recom.position().top - 170
                 ];
             },
-
             /**
              * 套餐
              */
@@ -560,7 +559,6 @@
                     'transform': 'translateX(' + l + 'px)'
                 });
             },
-
             /**
              * others
              */

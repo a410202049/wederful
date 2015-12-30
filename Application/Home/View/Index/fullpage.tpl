@@ -9,8 +9,8 @@
 </block>
 
 <block name="css">
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/fullPage.css" />
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/product.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/fullPage.css?20151230" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/product.css?20151230" />
 </block>
 
 <block name="body">
@@ -128,6 +128,6 @@
 </block>
 
 <block name="footer-js">
-    <script src="__PUBLIC__/Home/js/fullPage.js"></script>
-    <script src="__PUBLIC__/Home/js/product.js"></script>
+    <script src="__PUBLIC__/Home/js/fullPage.js?20151230"></script>
+    <script src="__PUBLIC__/Home/js/product.js?20151230"></script>
 </block>

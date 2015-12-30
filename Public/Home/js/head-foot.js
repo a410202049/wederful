@@ -70,9 +70,9 @@
                 })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
                 _MEIQIA('entId', 3990);
                 // seo 自动推送
-                var bp = document.createElement('script');
+                var bp = document.createElement('script'),
+                    s = document.getElementsByTagName("script")[0];
                 bp.src = '//push.zhanzhang.baidu.com/push.js';
-                var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(bp, s);
             },
             regOut: function() {
@@ -156,7 +156,7 @@
                                         if (location.href.indexOf('#') === -1) {
                                             location.reload();
                                         } else {
-                                            location.href = location.href.slice(0,location.href.indexOf('#'));
+                                            location.href = location.href.slice(0, location.href.indexOf('#'));
                                         };
                                     }, 500);
                                 } else {
@@ -253,7 +253,7 @@
                                             if (location.href.indexOf('#') === -1) {
                                                 location.reload();
                                             } else {
-                                                location.href = location.href.slice(0,location.href.indexOf('#'));
+                                                location.href = location.href.slice(0, location.href.indexOf('#'));
                                             };
                                         }, 500);
                                     } else {
@@ -281,7 +281,7 @@
                         if (location.href.indexOf('#') === -1) {
                             location.reload();
                         } else {
-                            location.href = location.href.slice(0,location.href.indexOf('#'));
+                            location.href = location.href.slice(0, location.href.indexOf('#'));
                         };
                     }
                 });

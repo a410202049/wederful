@@ -16,14 +16,14 @@
     <link rel="shortcut icon" href="/dev_wederful/Public/Home/images/shutPng.png" type="image/png" sizes="16x16 32x32" />
 
     <!-- basic -->
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/base.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/base.css?20151230" />
     <!-- public -->
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/public.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/public.css?20151230" />
     <!-- header-footer -->
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/head-foot.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/head-foot.css?20151230" />
     <!-- this -->
     
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/list.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/list.css?20151230" />
 
 
     <!-- global javascript -->
@@ -424,8 +424,8 @@
     </footer>
 
     <!-- 功能 侧边栏 -->
-    <section id="asideFunc" class="aside-func pf">
-        <span class="func-contact i-aside i-s-contact cp db" tenantId="9597" title="联系客服"></span>
+    <section id="asideFunc" class="aside-func pf z2">
+        <!-- <span class="func-contact i-aside i-s-contact cp db" tenantId="9597" title="联系客服"></span> -->
         <span class="func-top i-aside i-s-top cp db" title="回到顶部"></span>
     </section>
 
@@ -435,14 +435,13 @@
     <!-- base -->
     <script src="/dev_wederful/Public/Home/js/jq.js"></script>
     <!-- public -->
-    <script src="/dev_wederful/Public/Home/js/public.js"></script>
-    <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script>
+    <script src="/dev_wederful/Public/Home/js/public.js?20151230"></script>
+    <!-- // <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script> -->
     <!-- header-footer -->
-    <script src="/dev_wederful/Public/Home/js/head-foot.js"></script>
+    <script src="/dev_wederful/Public/Home/js/head-foot.js?20151230"></script>
     <!-- this -->
     
-    <script src="/dev_wederful/Public/Home/js/list-controler.js"></script>
-
+    <script src="/dev_wederful/Public/Home/js/list-controler.js?20151230"></script>
 
 </body>
 

@@ -9,7 +9,7 @@
 </block>
 
 <block name="css">
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/custom.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/custom.css?20151230" />
 </block>
 
 <block name="global">
@@ -72,5 +72,5 @@
 </block>
 
 <block name="footer-js">
-    <script src="__PUBLIC__/Home/js/custom-controler.js"></script>
+    <script src="__PUBLIC__/Home/js/custom-controler.js?20151230"></script>
 </block>

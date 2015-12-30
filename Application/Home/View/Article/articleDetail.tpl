@@ -9,7 +9,7 @@
 </block>
 
 <block name="css">
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/article.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/article.css?20151230" />
 </block>
 
 <block name="global">
@@ -46,20 +46,23 @@
                 <div class="article-wrap fl">
                     <!-- 文章 -->
                     <article id="article">
+                        <!-- 标题 -->
+                        <h2 id="artTit" class="fc3 fs22 mt20 mb5">{$data.title}</h2>
+                        <!-- 作者时间 -->
+                        <section class="fc9 pb10 c">
+                            <dl class="dlb mr30">
+                                <dt class="dlb"><if condition="$data.source eq '0'">转载：<else />作者：</if></dt>
+                                <dd class="dlb">{$data.author}</dd>
+                            </dl>
+                            <time class="dlb">{$data.createtime|substr=0,10}</time>
+                        </section>
                         <!-- 文章大图 -->
                         <figure id="artImg">
                             <img draggable="false" class="w1" src="{$data.bigpic}" />
                         </figure>
-                        <h2 id="artTit" class="fc3 fs22 mt20 mb10">{$data.title}</h2>
-                        <h3 id="artSubTit" class="fs16 mb20">{$data.subtitle}</h3>
-                        <section class="i-b-t fc9 pt20 pb20 c">
-                            <time class="dlb mr30">{$data.createtime|substr=0,10}</time>
-                            <dl class="dlb">
-                                <dt class="dlb"><if condition="$data.source eq '0'">转载：<else />作者：</if></dt>
-                                <dd class="dlb">{$data.author}</dd>
-                            </dl>
-                        </section>
-                        <div class="article-con">{$data.content}</div>
+                        <!-- 小标题 -->
+                        <h3 id="artSubTit" class="fs16 mb10 mt10">{$data.subtitle}</h3>
+                        <div class="article-con i-b-t pt20">{$data.content}</div>
                     </article>
                     <!-- 点赞 -->
                     <button class="art-praise db" type="button"><b class="db fs18">+1</b></button>
@@ -143,6 +146,6 @@
 </block>
 
 <block name="footer-js">
-    <script src="__PUBLIC__/Home/js/qrcode.min.js"></script>
-    <script src="__PUBLIC__/Home/js/article.js"></script>
+    <script src="__PUBLIC__/Home/js/qrcode.min.js?20151230"></script>
+    <script src="__PUBLIC__/Home/js/article.js?20151230"></script>
 </block>

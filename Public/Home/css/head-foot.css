@@ -352,18 +352,18 @@ body {
 
 .func-none .aside-func,
 .func-top-none .func-top,
-.func-contact-none .func-contact {
-    display: none;
+.func-contact-none #MEIQIA-BTN-HOLDER {
+    display: none !important;
+}
+
+.func-top-none #MEIQIA-BTN-HOLDER {
+    bottom: 12px !important;
 }
 
 .aside-func {
     right: 12px;
     bottom: 12px;
     width: 40px;
-}
-
-.aside-func > span {
-    margin-top: 10px;
 }
 
 .i-aside {
@@ -377,23 +377,24 @@ body {
     background-position: 0 -40px;
 }
 
-.i-s-contact {
-    background-position: 0 0;
-}
-
-
 /*美洽重置*/
 
+.BODY-FOR-MEIQIA {
+    margin-bottom: 0 !important;
+}
+
 #MEIQIA-BTN-HOLDER {
+    left: auto !important;
     right: 12px !important;
+    width: 40px !important;
     bottom: 64px !important;
 }
 
 #MEIQIA-BTN {
+    height: 40px !important;
     border: none !important;
+    background-color: transparent !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .26) !important;
-    /*background-color: #f6f6f6 !important;*/
-    /*color: #bdb099 !important;*/
 }
 
 #MEIQIA-BTN-LINE {
@@ -402,6 +403,18 @@ body {
 
 #MEIQIA-BTN-TEXT {
     display: none !important;
+}
+
+#MEIQIA-BTN-ICON {
+    margin: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: url(../images/info/i-aside.png) no-repeat;
+    background-position: 0 0;
+}
+
+#pageChat .header {
+    background-color: #bdb099 !important;
 }
 
 

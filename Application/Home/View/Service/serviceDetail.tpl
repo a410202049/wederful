@@ -9,7 +9,7 @@
 </block>
 
 <block name="css">
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/detail.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/detail.css?20151230" />
 </block>
 <block name="global">
     <script>
@@ -96,13 +96,13 @@
             <article class="bc i-wm">
                 <h2 class="section-label"><if condition="($productData.category_id eq '56') or ($productData.category_id eq '57')">团队介绍<else />场地介绍</if></h2>
                 <section class="site-intro c">
-                    <div id="siteIntro" class="intro-text dlb i-w5 bb fl">
+                    <div id="siteIntro" class="intro-text pl20 dlb i-w5 bb fl">
                         <div class="ofh">
                             <p>{$productData.description}</p>
                         </div>
                         <span class="site-intro-btn db cp fcm mt15" data-i="open">显示全部</span>
                     </div>
-                    <div class="intro-ext dlb i-w5 bb fr">
+                    <div class="intro-ext dlb i-w5 bb fr pr20">
                         <volist name="productData.textAttrData" id="attr">
                             <dl class="mb5">
                                 <dt>{$attr.name}:</dt>
@@ -492,29 +492,34 @@
         </section>
         <!-- 地图 -->
         <!-- temp change -->
-        <section id="map" class="map i-bcm pr none">
-            <!-- 这是地图 -->
-            <div id="mapBox" class="w1 h1"></div>
-            <div class="map-box i-shadow tac i-bcm">
-                <figure class="w1">
-                    <img draggable="false" class="w1" src="http://7xo7hn.com1.z0.glb.clouddn.com/1450075236180" />
-                    <a class="center-lg map-lg db lh200 cp" data-lg="-8.80441, 115.2311">巴厘岛</a>
-                </figure>
-                <section class="bcf lh200 cp">
-                    <div id="mapExPrev">
-                        <i class="i-arrow i-arrow-t dlb pr"></i>
-                    </div>
-                    <div id="mapExCon" class="map-ex-wrap ofh">
-                        <section class="ts4">
-                            <a class="ex-lg map-lg" data-lg="-8.74608, 115.1672">推荐 - 巴厘岛机场</a>
-                        </section>
-                    </div>
-                    <div id="mapExNext">
-                        <i class="i-arrow i-arrow-b dlb pr"></i>
-                    </div>
-                </section>
-            </div>
-        </section>
+        <if condition="($productData.category_id neq '56') and ($productData.category_id neq '57')">
+            <section id="map" class="map i-bcm pr">
+                <!-- 这是地图 -->
+                <div id="mapBox" class="w1 h1"></div>
+                <div class="map-box i-shadow tac i-bcm">
+                    <figure class="w1">
+                        <img draggable="false" class="w1" src="{$productData.thumbnail}" />
+                        <!-- 输入经度和纬度 -->
+                        <a class="center-lg map-lg db lh200 cp" data-lg="{$productData.latitude},{$productData.longitude}">{$productData.name}</a>
+                    </figure>
+                    <!-- <section class="bcf lh200 cp">
+                        <div id="mapExPrev">
+                            <i class="i-arrow i-arrow-t dlb pr"></i>
+                        </div>
+                        <div id="mapExCon" class="map-ex-wrap ofh">
+                            <section class="ts4">
+                                输入经度和纬度
+                                <a class="ex-lg map-lg" data-lg="-8.74608, 115.1672">推荐 - 周围地区名字</a>
+                            </section>
+                        </div>
+                        <div id="mapExNext">
+                            <i class="i-arrow i-arrow-b dlb pr"></i>
+                        </div>
+                    </section> -->
+                </div>
+            </section>
+        </if>
+
         <!-- 推荐 -->
         <section id="recom" class="i-p80">
             <div class="bc i-wm">
@@ -550,69 +555,51 @@
 </block>
 
 <block name="footer-js">
-	<script>
-        var Map = (function() {
-            "use strict";
-            var geojson = [{
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-8.80441, 115.2311]
-                    },
-                    "properties": {
-                        "title": "\u5df4\u5398\u5c9b\u541b",
-                        "description": "\u5df4\u5398\u5c9b\u541b\u60a6\u5ea6\u5047\u9152\u5e97\u4f4d\u4e8e\u52aa\u6c99\u675c\u5df4\u5398\u5c9b",
-                        "icon": {
-                            "iconUrl": "__PUBLIC__\/Home\/images\/info\/resort.png",
-                            "iconSize": [30, 70],
-                            "iconAnchor": [15, 45],
-                            "popupAnchor": [0, -25],
-                            "className": "wdfMapIcon"
-                        }
-                    },
-                    "wdfTime": 0,
-                    "wdfType": "center"
-                }, {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-8.74608, 115.1672]
-                    },
-                    "properties": {
-                        "title": "\u5df4\u5398",
-                        "description": "\u670914\u4e2a\u767b\u673a\u95e8\uff0c\u5176\u4e2d\u516b\u5ea7\u8bbe\u6709\u7a7a\u6865\u3002",
-                        "icon": {
-                            "iconUrl": "__PUBLIC__\/Home\/images\/info\/airport.png",
-                            "iconSize": [30, 70],
-                            "iconAnchor": [15, 45],
-                            "popupAnchor": [0, -25],
-                            "className": "wdfMapIcon"
-                        }
-                    },
-                    "wdfTime": 0,
-                    "wdfType": "recommend"
-                }];
-
-            return {
-                // 获取地图数据
-                getgeojson: function() {
-                    return geojson;
-                },
-
-                // 获取套餐
-                getPack: function() {
-                    return pack;
-                }
-            };
-        })();
-    </script>
+    <if condition="($productData.category_id neq '56') and ($productData.category_id neq '57')">
+    	<script>
+            var Map = (function() {
+                "use strict";
+                var geojson = [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            // 经纬度
+                            "coordinates": ['{$productData.latitude}', '{$productData.longitude}']
+                        },
+                        "properties": {
+                            // 地区名字
+                            "title": "{$productData.name}",
+                            // 地区描述
+                            "description": "{$productData.description}",
+                            "icon": {
+                                "iconUrl": "__PUBLIC__\/Home\/images\/info\/resort.png",
+                                "iconSize": [30, 70],
+                                "iconAnchor": [15, 45],
+                                "popupAnchor": [0, -25],
+                                "className": "wdfMapIcon"
+                            }
+                        },
+                        "wdfTime": 0,
+                        "wdfType": "center"
+                    }];
+                return {
+                    // 获取地图数据
+                    getgeojson: function() {
+                        return geojson;
+                    }
+                };
+            })();
+        </script>
+    </if>
     <!-- 日历 -->
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/calendar.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/calendar.css?20151230" />
     <script src="__PUBLIC__/Home/js/calendar.js"></script>
     <!-- this -->
-    <script src="__PUBLIC__/Home/js/detail-controler.js"></script>
+    <script src="__PUBLIC__/Home/js/detail-controler.js?20151230"></script>
     <!-- 地图 -->
-    <!-- <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css" /> -->
-    <!--// <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js"></script>
-    // <script src="__PUBLIC__/Home/js/detail-map.js"></script> -->
+    <if condition="($productData.category_id neq '56') and ($productData.category_id neq '57')">
+        <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css?20151230" />
+        <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js?20151230"></script>
+        <script src="__PUBLIC__/Home/js/detail-map.js?20151230"></script>
+    </if>
 </block>

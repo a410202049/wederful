@@ -41,8 +41,8 @@
     background: url('../images/article/LGBT.png') no-repeat center center;
 }
 
-.header-top-line:active,
-.header-top-line:hover {
+.type-nav .header-top-line.active,
+.type-nav .header-top-line:hover {
     color: #bdb099;
 }
 

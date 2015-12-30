@@ -17,7 +17,7 @@
 </block>
 
 <block name="css">
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/article.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/article.css?20151230" />
 </block>
 
 <block name="body">
@@ -31,13 +31,13 @@
             <nav class="type-nav i-b-t tac">
                 <volist name="categorys" id="category">
                     <if condition="$category.id eq '4'">
-                        <a href="__ROOT__/lovelyplanet/lgbt" class="header-top-line lgbt text-hide">{$category.name}</a>
+                        <a href="__ROOT__/lovelyplanet/lgbt" class="header-top-line lgbt text-hide <if condition='$currenCategory eq lgbt'>active</if>">{$category.name}</a>
                     <elseif condition="$category.id eq '3'"/>
-                        <a href="__ROOT__/lovelyplanet/guru" class="header-top-line">{$category.name}</a>
+                        <a href="__ROOT__/lovelyplanet/guru" class="header-top-line <if condition='$currenCategory eq guru'>active</if>">{$category.name}</a>
                     <elseif condition="$category.id eq '2'"/>
-                        <a href="__ROOT__/lovelyplanet/story" class="header-top-line">{$category.name}</a>
+                        <a href="__ROOT__/lovelyplanet/story" class="header-top-line <if condition='$currenCategory eq story'>active</if>">{$category.name}</a>
                     <elseif condition="$category.id eq '1'"/>
-                        <a href="__ROOT__/lovelyplanet/inspired" class="header-top-line">{$category.name}</a>
+                        <a href="__ROOT__/lovelyplanet/inspired" class="header-top-line <if condition='$currenCategory eq inspired'>active</if>">{$category.name}</a>
                     </if>
                 </volist>
             </nav>
@@ -64,7 +64,7 @@
                                     <img draggable="false" class="db" src="{$li.bigpic}" />
                                 </a>
                                 <section class="w400 bb pr20 fr">
-                                    <time class="dlb fc9 mt10">{$li.createtime|substr=0,10}</time>
+                                    <time class="dlb fc9">{$li.createtime|substr=0,10}</time>
                                     <h2 class="fs22 fc3 mb30 mt15"><a class="w1 ofh dlb" href="__ROOT__/lovelyplanet/id/{$li.id}">{$li.title}</a></h2>
                                     <notempty name="li.author">
                                         <dl class="mb15 fc9">
@@ -120,5 +120,5 @@
 </block>
 
 <block name="footer-js">
-    <script src="__PUBLIC__/Home/js/article.js"></script>
+    <script src="__PUBLIC__/Home/js/article.js?20151230"></script>
 </block>

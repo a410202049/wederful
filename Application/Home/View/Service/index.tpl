@@ -18,7 +18,7 @@
 </block>
 
 <block name="css">
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/list.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/list.css?20151230" />
 </block>
 
 <block name="body">
@@ -178,5 +178,5 @@
 </block>
 
 <block name="footer-js">
-    <script src="__PUBLIC__/Home/js/list-controler.js"></script>
+    <script src="__PUBLIC__/Home/js/list-controler.js?20151230"></script>
 </block>

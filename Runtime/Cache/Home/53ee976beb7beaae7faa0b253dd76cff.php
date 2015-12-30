@@ -16,14 +16,14 @@
     <link rel="shortcut icon" href="/dev_wederful/Public/Home/images/shutPng.png" type="image/png" sizes="16x16 32x32" />
 
     <!-- basic -->
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/base.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/base.css?20151230" />
     <!-- public -->
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/public.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/public.css?20151230" />
     <!-- header-footer -->
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/head-foot.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/head-foot.css?20151230" />
     <!-- this -->
     
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/detail.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/detail.css?20151230" />
 
 
     <!-- global javascript -->
@@ -291,13 +291,13 @@
             <article class="bc i-wm">
                 <h2 class="section-label"><?php if(($productData["category_id"] == '56') or ($productData["category_id"] == '57')): ?>团队介绍<?php else: ?>场地介绍<?php endif; ?></h2>
                 <section class="site-intro c">
-                    <div id="siteIntro" class="intro-text dlb i-w5 bb fl">
+                    <div id="siteIntro" class="intro-text pl20 dlb i-w5 bb fl">
                         <div class="ofh">
                             <p><?php echo ($productData["description"]); ?></p>
                         </div>
                         <span class="site-intro-btn db cp fcm mt15" data-i="open">显示全部</span>
                     </div>
-                    <div class="intro-ext dlb i-w5 bb fr">
+                    <div class="intro-ext dlb i-w5 bb fr pr20">
                         <?php if(is_array($productData["textAttrData"])): $i = 0; $__LIST__ = $productData["textAttrData"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$attr): $mod = ($i % 2 );++$i;?><dl class="mb5">
                                 <dt><?php echo ($attr["name"]); ?>:</dt>
                                 <?php if($attr["type"] == 'radio' || $attr["type"] == 'select'): if(is_array($attr["options"])): $i = 0; $__LIST__ = $attr["options"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$op): $mod = ($i % 2 );++$i; if($attr["value"] == $op['id']): ?><dd><?php echo ($op["option"]); ?></dd><?php endif; endforeach; endif; else: echo "" ;endif; ?>
@@ -611,36 +611,39 @@
         </section>
         <!-- 地图 -->
         <!-- temp change -->
-        <section id="map" class="map i-bcm pr none">
-            <!-- 这是地图 -->
-            <div id="mapBox" class="w1 h1"></div>
-            <div class="map-box i-shadow tac i-bcm">
-                <figure class="w1">
-                    <img draggable="false" class="w1" src="http://7xo7hn.com1.z0.glb.clouddn.com/1450075236180" />
-                    <a class="center-lg map-lg db lh200 cp" data-lg="-8.80441, 115.2311">巴厘岛</a>
-                </figure>
-                <section class="bcf lh200 cp">
-                    <div id="mapExPrev">
-                        <i class="i-arrow i-arrow-t dlb pr"></i>
-                    </div>
-                    <div id="mapExCon" class="map-ex-wrap ofh">
-                        <section class="ts4">
-                            <a class="ex-lg map-lg" data-lg="-8.74608, 115.1672">推荐 - 巴厘岛机场</a>
-                        </section>
-                    </div>
-                    <div id="mapExNext">
-                        <i class="i-arrow i-arrow-b dlb pr"></i>
-                    </div>
-                </section>
-            </div>
-        </section>
+        <?php if(($productData["category_id"] != '56') and ($productData["category_id"] != '57')): ?><section id="map" class="map i-bcm pr">
+                <!-- 这是地图 -->
+                <div id="mapBox" class="w1 h1"></div>
+                <div class="map-box i-shadow tac i-bcm">
+                    <figure class="w1">
+                        <img draggable="false" class="w1" src="<?php echo ($productData["thumbnail"]); ?>" />
+                        <!-- 输入经度和纬度 -->
+                        <a class="center-lg map-lg db lh200 cp" data-lg="<?php echo ($productData["latitude"]); ?>,<?php echo ($productData["longitude"]); ?>"><?php echo ($productData["name"]); ?></a>
+                    </figure>
+                    <!-- <section class="bcf lh200 cp">
+                        <div id="mapExPrev">
+                            <i class="i-arrow i-arrow-t dlb pr"></i>
+                        </div>
+                        <div id="mapExCon" class="map-ex-wrap ofh">
+                            <section class="ts4">
+                                输入经度和纬度
+                                <a class="ex-lg map-lg" data-lg="-8.74608, 115.1672">推荐 - 周围地区名字</a>
+                            </section>
+                        </div>
+                        <div id="mapExNext">
+                            <i class="i-arrow i-arrow-b dlb pr"></i>
+                        </div>
+                    </section> -->
+                </div>
+            </section><?php endif; ?>
+
         <!-- 推荐 -->
         <section id="recom" class="i-p80">
             <div class="bc i-wm">
                 <h2 class="section-label">其他推荐</h2>
                 <nav id="recomNav" class="recom-nav pb20 tar">
                     <!-- 初始化的时候给第一个a加上active -->
-                    <?php $__FOR_START_2673__=0;$__FOR_END_2673__=$randLength;for($i=$__FOR_START_2673__;$i < $__FOR_END_2673__;$i+=1){ ?><a class="ts4 dlb cp ml15 r50 <?php if($i == 0): ?>active<?php endif; ?>" data-i="<?php echo ($i); ?>"></a><?php } ?>
+                    <?php $__FOR_START_313__=0;$__FOR_END_313__=$randLength;for($i=$__FOR_START_313__;$i < $__FOR_END_313__;$i+=1){ ?><a class="ts4 dlb cp ml15 r50 <?php if($i == 0): ?>active<?php endif; ?>" data-i="<?php echo ($i); ?>"></a><?php } ?>
                 </nav>
                 <section class="ofh">
                     <ul id="recomCon" class="recom-con tac lh150 c">
@@ -720,8 +723,8 @@
     </footer>
 
     <!-- 功能 侧边栏 -->
-    <section id="asideFunc" class="aside-func pf">
-        <span class="func-contact i-aside i-s-contact cp db" tenantId="9597" title="联系客服"></span>
+    <section id="asideFunc" class="aside-func pf z2">
+        <!-- <span class="func-contact i-aside i-s-contact cp db" tenantId="9597" title="联系客服"></span> -->
         <span class="func-top i-aside i-s-top cp db" title="回到顶部"></span>
     </section>
 
@@ -731,78 +734,55 @@
     <!-- base -->
     <script src="/dev_wederful/Public/Home/js/jq.js"></script>
     <!-- public -->
-    <script src="/dev_wederful/Public/Home/js/public.js"></script>
-    <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script>
+    <script src="/dev_wederful/Public/Home/js/public.js?20151230"></script>
+    <!-- // <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script> -->
     <!-- header-footer -->
-    <script src="/dev_wederful/Public/Home/js/head-foot.js"></script>
+    <script src="/dev_wederful/Public/Home/js/head-foot.js?20151230"></script>
     <!-- this -->
     
-	<script>
-        var Map = (function() {
-            "use strict";
-            var geojson = [{
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-8.80441, 115.2311]
-                    },
-                    "properties": {
-                        "title": "\u5df4\u5398\u5c9b\u541b",
-                        "description": "\u5df4\u5398\u5c9b\u541b\u60a6\u5ea6\u5047\u9152\u5e97\u4f4d\u4e8e\u52aa\u6c99\u675c\u5df4\u5398\u5c9b",
-                        "icon": {
-                            "iconUrl": "/dev_wederful/Public\/Home\/images\/info\/resort.png",
-                            "iconSize": [30, 70],
-                            "iconAnchor": [15, 45],
-                            "popupAnchor": [0, -25],
-                            "className": "wdfMapIcon"
-                        }
-                    },
-                    "wdfTime": 0,
-                    "wdfType": "center"
-                }, {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-8.74608, 115.1672]
-                    },
-                    "properties": {
-                        "title": "\u5df4\u5398",
-                        "description": "\u670914\u4e2a\u767b\u673a\u95e8\uff0c\u5176\u4e2d\u516b\u5ea7\u8bbe\u6709\u7a7a\u6865\u3002",
-                        "icon": {
-                            "iconUrl": "/dev_wederful/Public\/Home\/images\/info\/airport.png",
-                            "iconSize": [30, 70],
-                            "iconAnchor": [15, 45],
-                            "popupAnchor": [0, -25],
-                            "className": "wdfMapIcon"
-                        }
-                    },
-                    "wdfTime": 0,
-                    "wdfType": "recommend"
-                }];
-
-            return {
-                // 获取地图数据
-                getgeojson: function() {
-                    return geojson;
-                },
-
-                // 获取套餐
-                getPack: function() {
-                    return pack;
-                }
-            };
-        })();
-    </script>
+    <?php if(($productData["category_id"] != '56') and ($productData["category_id"] != '57')): ?><script>
+            var Map = (function() {
+                "use strict";
+                var geojson = [{
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            // 经纬度
+                            "coordinates": ['<?php echo ($productData["latitude"]); ?>', '<?php echo ($productData["longitude"]); ?>']
+                        },
+                        "properties": {
+                            // 地区名字
+                            "title": "<?php echo ($productData["name"]); ?>",
+                            // 地区描述
+                            "description": "<?php echo ($productData["description"]); ?>",
+                            "icon": {
+                                "iconUrl": "/dev_wederful/Public\/Home\/images\/info\/resort.png",
+                                "iconSize": [30, 70],
+                                "iconAnchor": [15, 45],
+                                "popupAnchor": [0, -25],
+                                "className": "wdfMapIcon"
+                            }
+                        },
+                        "wdfTime": 0,
+                        "wdfType": "center"
+                    }];
+                return {
+                    // 获取地图数据
+                    getgeojson: function() {
+                        return geojson;
+                    }
+                };
+            })();
+        </script><?php endif; ?>
     <!-- 日历 -->
-    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/calendar.css" />
+    <link rel="stylesheet" href="/dev_wederful/Public/Home/css/calendar.css?20151230" />
     <script src="/dev_wederful/Public/Home/js/calendar.js"></script>
     <!-- this -->
-    <script src="/dev_wederful/Public/Home/js/detail-controler.js"></script>
+    <script src="/dev_wederful/Public/Home/js/detail-controler.js?20151230"></script>
     <!-- 地图 -->
-    <!-- <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css" /> -->
-    <!--// <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js"></script>
-    // <script src="/dev_wederful/Public/Home/js/detail-map.js"></script> -->
-
+    <?php if(($productData["category_id"] != '56') and ($productData["category_id"] != '57')): ?><link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css?20151230" />
+        <script src="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js?20151230"></script>
+        <script src="/dev_wederful/Public/Home/js/detail-map.js?20151230"></script><?php endif; ?>
 
 </body>
 

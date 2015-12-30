@@ -11,6 +11,7 @@ class ArticleController extends BaseController {
     public function index(){
         $arr = I();
         $article = M('article');
+        $currenCategory = $_SERVER['CATEGORY'];
         $articleCategory = M('article_category');
         $articleCategorys = $articleCategory->select();
 
@@ -29,6 +30,7 @@ class ArticleController extends BaseController {
 
         $list = $article->where($where)->limit($page->firstRow.','.$page->listRows)->order('is_top desc')->select();
 
+        $this->assign('currenCategory',$currenCategory);
         $this->assign('categorys',$articleCategorys);
         $this->assign('page', $page->show());
         $this->assign('list', $list);

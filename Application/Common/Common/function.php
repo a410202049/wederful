@@ -35,7 +35,7 @@ function is_admin() {
  */
 function getpage($count, $pagesize = 10) {
     $page = new Page($count, $pagesize);
-    $page->rollPage = 5;
+    $page->rollPage = 6;
     $page->lastSuffix = false;
     $page->setConfig('last','…&emsp;%TOTAL_PAGE%');
     $page->setConfig('first','1&emsp;…');

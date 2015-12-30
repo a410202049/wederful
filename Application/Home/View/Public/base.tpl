@@ -10,11 +10,11 @@
     <link rel="shortcut icon" href="__PUBLIC__/Home/images/shutPng.png" type="image/png" sizes="16x16 32x32" />
 
     <!-- basic -->
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/base.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/base.css?20151230" />
     <!-- public -->
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/public.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/public.css?20151230" />
     <!-- header-footer -->
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/head-foot.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/head-foot.css?20151230" />
     <!-- this -->
     <block name="css"></block>
 
@@ -279,10 +279,10 @@
     <!-- base -->
     <script src="__PUBLIC__/Home/js/jq.js"></script>
     <!-- public -->
-    <script src="__PUBLIC__/Home/js/public.js"></script>
+    <script src="__PUBLIC__/Home/js/public.js?20151230"></script>
     <!-- // <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script> -->
     <!-- header-footer -->
-    <script src="__PUBLIC__/Home/js/head-foot.js"></script>
+    <script src="__PUBLIC__/Home/js/head-foot.js?20151230"></script>
     <!-- this -->
     <block name="footer-js"></block>
 </body>

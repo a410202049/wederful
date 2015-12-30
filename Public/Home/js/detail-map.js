@@ -116,7 +116,6 @@
         };
     })();
 
-
     // mapbox地图
     setMap.ini();
 

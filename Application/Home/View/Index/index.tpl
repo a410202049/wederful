@@ -9,7 +9,7 @@
 </block>
 
 <block name="css">
-    <link rel="stylesheet" href="__PUBLIC__/Home/css/index.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/index.css?20151230" />
 </block>
 
 <block name="body">
@@ -231,5 +231,5 @@
 </block>
 
 <block name="footer-js">
-    <script src="__PUBLIC__/Home/js/index-controler.js"></script>
+    <script src="__PUBLIC__/Home/js/index-controler.js?20151230"></script>
 </block>
