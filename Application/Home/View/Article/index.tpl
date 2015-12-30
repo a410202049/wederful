@@ -31,13 +31,13 @@
             <nav class="type-nav i-b-t tac">
                 <volist name="categorys" id="category">
                     <if condition="$category.id eq '4'">
-                        <a href="__ROOT__/lovelyplanet/lgbt" class="lgbt text-hide">{$category.name}</a>
+                        <a href="__ROOT__/lovelyplanet/lgbt" class="header-top-line lgbt text-hide">{$category.name}</a>
                     <elseif condition="$category.id eq '3'"/>
-                        <a href="__ROOT__/lovelyplanet/guru" >{$category.name}</a>
+                        <a href="__ROOT__/lovelyplanet/guru" class="header-top-line">{$category.name}</a>
                     <elseif condition="$category.id eq '2'"/>
-                        <a href="__ROOT__/lovelyplanet/story" >{$category.name}</a>
+                        <a href="__ROOT__/lovelyplanet/story" class="header-top-line">{$category.name}</a>
                     <elseif condition="$category.id eq '1'"/>
-                        <a href="__ROOT__/lovelyplanet/inspired" >{$category.name}</a>
+                        <a href="__ROOT__/lovelyplanet/inspired" class="header-top-line">{$category.name}</a>
                     </if>
                 </volist>
             </nav>
@@ -66,10 +66,12 @@
                                 <section class="w400 bb pr20 fr">
                                     <time class="dlb fc9 mt10">{$li.createtime|substr=0,10}</time>
                                     <h2 class="fs22 fc3 mb30 mt15"><a class="w1 ofh dlb" href="__ROOT__/lovelyplanet/id/{$li.id}">{$li.title}</a></h2>
-                                    <dl class="mb15 fc9">
-                                        <dt class="dlb"><if condition="$li.source eq '0'">转载：<else />作者：</if></dt>
-                                        <dd class="dlb">{$li.author}</dd>
-                                    </dl>
+                                    <notempty name="li.author">
+                                        <dl class="mb15 fc9">
+                                            <dt class="dlb"><if condition="$li.source eq '0'">作者：<else />转载：</if></dt>
+                                            <dd class="dlb">{$li.author}</dd>
+                                        </dl>
+                                    </notempty>
                                     <h3>{$li.subtitle}</h3>
                                 </section>
                             </article>

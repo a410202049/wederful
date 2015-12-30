@@ -1,5 +1,6 @@
 <?php
 use Common\Tools\Page;
+use Common\Tools\HttpClient;
 /**
  * 检测用户是否登录
  * @return integer 0-未登录，大于0-当前登录用户ID
@@ -107,6 +108,20 @@ function usdtosny($amount = 0){
     return ceil($res['value']*$amount);
 }
 
+function getMobileArea($mobile){
+    $url = 'http://apistore.baidu.com/microservice/mobilephone?tel='.$mobile;
+    $response = HttpClient::get($url);
+    return $response['retData']['carrier'];
+}
+
+/**
+ * [deCodeMd5 密码加密]
+ * @return [type] [description]
+ */
+function deCodeMd5($password){
+    return md5('wdf:'.$password);
+}
+
 /**
  * [i_array_column 二维数组转一维数组]
  * @param  [type] $input     [description]
@@ -142,4 +157,66 @@ function i_array_column($input, $columnKey, $indexKey=null){
     }else{
         return array_column($input, $columnKey, $indexKey);
     }
+}
+
+
+/**
+ * 将闭包函数转为字符串
+ * @param Closure $c
+ * @param boolen $escape
+ * @return string
+ */
+function closure_dump(Closure $c, $escape = true) {
+    $str = 'function (';
+    $r = new ReflectionFunction($c);
+    $params = array();
+    foreach($r->getParameters() as $p) {
+        $s = '';
+        if($p->isArray()) {
+            $s .= 'array ';
+        } else if($p->getClass()) {
+            $s .= $p->getClass()->name . ' ';
+        }
+        if($p->isPassedByReference()){
+            $s .= '&';
+        }
+        $s .= '$' . $p->name;
+        if($p->isOptional()) {
+            $s .= ' = ' . var_export($p->getDefaultValue(), TRUE);
+        }
+        $params []= $s;
+    }
+    $str .= implode(', ', $params);
+    $str .= '){' . PHP_EOL;
+    $lines = file($r->getFileName());
+    for($l = $r->getStartLine(); $l < $r->getEndLine(); $l++) {
+        $str .= $lines[$l];
+    }
+    if($escape){
+        $str = preg_replace('/[\r\n\t]/', '', $str);
+    }
+    $str = preg_replace('/}[,;]$/', '}', $str);
+    return $str;
+}
+
+/**
+ * 将变量转为输出到字符串
+ * @param mixed $expression
+ * @param boolen $escape
+ * @return string 
+ */
+function custom_var_export($expression, $escape = true){
+    $str = '';
+    if(is_array($expression)){
+        $str .= 'array(';
+        foreach ($expression as $key => $val){
+            $str .= "'".$key."' => ".custom_var_export($val).',';
+        }
+        $str .= ')';
+    }else if($expression instanceof \Closure){
+        $str .= closure_dump($expression);
+    }else{
+        $str .= var_export($expression, true);
+    }
+    return $str;
 }

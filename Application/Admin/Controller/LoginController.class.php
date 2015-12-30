@@ -23,7 +23,7 @@ class LoginController extends Controller {
             E('页面不存在', 404);
         }
         $arr = I();
-        $password = md5($arr['password']);
+        $password = deCodeMd5($arr['password']);
         $username = $arr['username'];
 
         $where = array(

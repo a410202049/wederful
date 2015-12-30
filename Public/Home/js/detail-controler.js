@@ -6,11 +6,11 @@
 ! function($) {
     "use strict";
     var $nav = $('#nav'), // 固定导航
-        $nav2 = $('#navNative'); //默认导航
+        $nav2 = $('#navNative'), //默认导航
+        $pkg = $('#package');
     var Pj = (function() {
         var $body = $('html, body'),
             $intro = $('#intro'),
-            $pkg = $('#package'),
             $notice = $('#notice'),
             $prompt = $('#prompt'),
             // $map = $('#map'),
@@ -37,6 +37,10 @@
             _rollImg_left = ~~(_rollImg_len / 2) + 1,
             _rollImg_right = _rollImg_left + _rollImg_len - 1,
             _roll_is = true,
+            // ******************************
+            // 商品日期价格对象
+            _goods = {},
+            _operation = true,
             // ******************************
             _like_pack = true,
             $recom = $('#recomCon'); // 其他推荐 wrap
@@ -81,28 +85,11 @@
                         }
                     }, 50);
 
+                // 套餐信息载入
+                Pj.loadPkg();
+
                 // 日历实例化对象
-                $('#package').find('.calendar-con').each(function() {
-                    $(this).fullCalendar({
-                        dayClick: function(_d) {
-                            var _cur_d = $.fullCalendar.formatDate(_d, "yyyy-MM-dd");
-                            $.ajax({
-                                type: 'POST',
-                                // url: global.###,
-                                dataType: 'json',
-                                data: {
-                                    date: _cur_d
-                                },
-                                success: function(r) {
-                                    if (r.status === 'success') {
-                                    } else {
-                                        $.remaind("当前日期不可选", true);
-                                    };
-                                }
-                            });
-                        }
-                    });
-                });
+                Pj.calendar();
 
                 // 图片描述 roll img 事件
                 Pj.rollImgCheck();
@@ -155,8 +142,254 @@
             /**
              * 套餐
              */
+            calendar: function() {
+                // 日历实例化对象
+                $pkg.find('.calendar-con').each(function() {
+                    var $this = $(this),
+                        $goods = $this.closest('.package-item');
+                    $this.fullCalendar({
+                        // events: {
+                        //     url: 'http://localhost/wederful/tp_wederful/a.php',
+                        //     type: 'POST',
+                        //     textColor: '#ff2c55',
+                        //     success: function(_r) {
+                        //     }
+                        // },
+                        dayClick: function(_d) {
+                            _d = $.fullCalendar.formatDate(_d, "yyyy-MM-dd");
+                            $.ajax({
+                                type: 'POST',
+                                url: global.getGoodDatePrice,
+                                dataType: 'json',
+                                data: {
+                                    pid: $goods.data('id'),
+                                    date: _d
+                                },
+                                success: function(_r) {
+                                    if (_r.status === 'success') {
+                                        if (_r.data === '0') { // 当天不可提供
+                                            // $.remaind(_r.message, true);
+                                            console.log(_r.message);
+                                        } else {
+                                            _goods[$goods.data('id')].basePrice = _r.data;
+                                            _goods[$goods.data('id')].date = _d;
+                                            // 渲染值
+                                            Pj.renderPrice($goods);
+                                            // 隐藏日历 且改变节点值
+                                            $this.closest('.calendar-wrap').addClass('hide').find('.now-date').html(_d);
+                                        };
+                                    } else { // 价格设置交叉（联系后台管理员）
+                                        // $.remaind(_r.message, true);
+                                        console.log(_r.message);
+                                    };
+                                }
+                            });
+                        }
+                    });
+                });
+            },
+            loadPkg: function() {
+                var $goods = $pkg.find('.package-item'),
+                    _goods_l = $goods.length,
+                    $ext,
+                    _ext_l,
+                    _temp;
+                while (_goods_l--) {
+                    _goods[$goods.eq(_goods_l).data('id')] = {
+                        name: $goods.eq(_goods_l).data('name'),
+                        min: $goods.eq(_goods_l).data('min'),
+                        num: $goods.eq(_goods_l).data('min'), // 当前人数 默认为最小人数
+                        max: $goods.eq(_goods_l).data('max'),
+                        date: '',
+                        basePrice: $goods.eq(_goods_l).data('price').replace(/\,/g, ''), // 用户点击日期时候这个价格会改变
+                        // ext: [{ // ext 为空数组表示这个商品没有增值服务
+                        //     id: ,
+                        //     price: ,
+                        //     min: ,
+                        //     max: ,
+                        //     name: '',
+                        //     num: , // 选中数量 默认为1
+                        //     tag: false // 用户是否选中 默认为false
+                        // }],
+                        charge: $goods.eq(_goods_l).data('charge') // 每个多余的人多少钱
+                    };
+                    $ext = $goods.eq(_goods_l).find('.ext-item');
+                    _ext_l = $ext.length;
+                    _temp = [];
+                    while (_ext_l--) {
+                        _temp.push({
+                            id: $ext.eq(_ext_l).data('id'),
+                            price: $ext.eq(_ext_l).attr('data-price').replace(/\,/g, ''),
+                            min: $ext.eq(_ext_l).data('min'),
+                            max: $ext.eq(_ext_l).data('max'),
+                            name: $ext.eq(_ext_l).data('name'),
+                            num: 1,
+                            tag: false // 时候购买
+                        });
+                    };
+                    _goods[$goods.eq(_goods_l).data('id')].ext = _temp;
+                };
+            },
+            renderPrice: function($goods) { // $goods package-item
+                // 日期价（基本价） + 人数多于价位 + 增值服务价位
+                var _price = 0,
+                    _id = $goods.data('id'),
+                    _l;
+                // 基本价
+                _price += ~~_goods[_id].basePrice;
+                // 人数价
+                if ((_goods[_id].num - _goods[_id].min) > 0 && _goods[_id].charge > 0) { // 超出人数需要额外价格才加价格
+                    _price += (_goods[_id].num - _goods[_id].min) * _goods[_id].charge;
+                };
+                // 增值服务价
+                _l = _goods[_id].ext.length;
+                while(_l--) {
+                    if (_goods[_id].ext[_l].tag) {
+                        _price += _goods[_id].ext[_l].price * _goods[_id].ext[_l].num;
+                    };
+                };
+                // 渲染价格
+                $goods.find('.package-money').html('RMB ' + tools.toThousands(_price));
+            },
             openPackage: function($this) {
                 $this.closest('.package-item').siblings().removeClass('active').end().toggleClass('active');
+            },
+            numFunc: function($ipt, _d, _t) { // iptDom direction type
+                var _v = ~~$ipt.val(),
+                    $goods = $ipt.closest('.package-item'),
+                    $err = $ipt.next().next(),
+                    _ext,
+                    _l;
+                _d === 'up' && _v++;
+                _d === 'down' && _v--;
+                if (_t === 'num') { // 人数操作
+                    if(_v > _goods[$goods.data('id')].max) {
+                        $err.html('超出最大人数: ' + _goods[$goods.data('id')].max);
+                        $ipt.val(_goods[$goods.data('id')].max);
+                        return;
+                    };
+                    if(_v < 2) {
+                        $err.html('少于最小人数: 2');
+                        $ipt.val(2);
+                        return;
+                    };
+                    _goods[$goods.data('id')].num = _v;
+                } else {
+                    _ext = _goods[$goods.data('id')].ext;
+                    _l = _ext.length;
+                    while(_l--) {
+                        if (_ext[_l].id === $ipt.closest('.ext-item').data('id')) {
+                            if(_v > _ext[_l].max) {
+                                $err.html('超出最大个数: ' + _ext[_l].max);
+                                $ipt.val(_ext[_l].max);
+                                return;
+                            };
+                            if(_v < _ext[_l].min) {
+                                $err.html('少于最小个数: ' + _ext[_l].min);
+                                $ipt.val(_ext[_l].min);
+                                return;
+                            };
+                            _goods[$goods.data('id')].ext[_l].num = _v;
+                            break;
+                        };
+                    };
+                };
+                $err.html('&emsp;');
+                $ipt.val(_v);
+                Pj.renderPrice($goods);
+            },
+            extFunc: function($this) {
+                var $goods = $this.closest('.package-item'),
+                    _ext = _goods[$goods.data('id')].ext,
+                    _l = _ext.length;
+                $this.toggleClass('active');
+                while(_l--) {
+                    if (_ext[_l].id === $this.closest('.ext-item').data('id')) {
+                        _goods[$goods.data('id')].ext[_l].tag = $this.is('.active');
+                        Pj.renderPrice($goods);
+                        break;
+                    };
+                };
+            },
+            pkgOrder: function($this) {
+                var $goods,
+                    _temp = {},
+                    _id,
+                    _ext,
+                    _l;
+                if (_operation) {
+                    _operation = false;
+                    $goods = $this.closest('.package-item');
+                    _id = $goods.data('id');
+                    if (_goods[$goods.data('id')].date) {
+                        // 获取数据
+                        _temp.name = _goods[_id].name;
+                        _temp.id = _id;
+                        _temp.date = _goods[_id].date;
+                        _temp.number = _goods[_id].num;
+                        _temp.add = [];
+
+                        _ext = _goods[_id].ext;
+                        _l = _ext.length;
+                        while(_l--) {
+                            if (_ext[_l].tag) {
+                                _temp.add.push({
+                                    id: _ext[_l].id,
+                                    name: _ext[_l].name,
+                                    number: _ext[_l].num
+                                });
+                            };
+                        };
+                        // 发送数据
+                        $this.html('预定中…');
+                        $.ajax({
+                            type: 'POST',
+                            url: global.placeOrder,
+                            data: _temp,
+                            dataType: 'json',
+                            success: function(_r) {
+                                if (_r.message === '尚未登录') {
+                                    $('#header').find('.login-trigger').trigger('click');
+                                } else {
+                                    // 提示成功
+                                    $mask.html('<img class="middle" src="' + global.imgUrl + 'order-letter.png" alt="提交成功 succes" />').fadeIn(400);
+                                    setTimeout(function() {
+                                        $.showMask(false);
+                                    }, 4000);
+                                };
+                                $this.html('申请预定');
+                                _operation = true;
+                            },
+                            error: function() {
+                                _operation = true;
+                            }
+                        });
+                    } else {
+                        $.remaind('请选择日期', true);
+                        _operation = true;
+                    };
+                };
+            },
+            likePack: function($this) {
+                if (_like_pack) {
+                    _like_pack = false;
+                    $.ajax({
+                        type: 'POST',
+                        url: global.collectionPackage,
+                        dataType: 'json',
+                        data: {
+                            pid: $this.closest('.package-item').data('id')
+                        },
+                        success: function(r) {
+                            if (r.message === '尚未登录') {
+                                $('#header').find('.login-trigger').trigger('click');
+                            } else {
+                                $this.attr('title', r.data === '0' ? '收藏' : '取消收藏').find('.css-hart').toggleClass('active');
+                            };
+                            _like_pack = true;
+                        }
+                    });
+                };
             },
             /**
              * [图片描述 roll img 方法]
@@ -314,28 +547,6 @@
                     }, 500);
                 };
             },
-            likePack: function($this) {
-                if (_like_pack) {
-                    _like_pack = false;
-                    $.ajax({
-                        type: 'POST',
-                        url: global.collectionPackage,
-                        dataType: 'json',
-                        data: {
-                            pid: $this.closest('.package-item').data('id')
-                        },
-                        success: function(r) {
-                            if (r.message === '尚未登录') {
-                                $('#header').find('.login-trigger').trigger('click');
-                            } else {
-                                $this.attr('title', r.data === '0' ? '收藏' : '取消收藏').find('.css-hart').toggleClass('active');
-                            };
-                            _like_pack = true;
-                        }
-                    });
-                };
-            },
-
             /**
              * 其他推荐
              */
@@ -412,21 +623,46 @@
     /**
      * 套餐
      */
-    // 打开选择日期
-    $('#package').on('click', '.calendar-tit', function() {
-        $(this).parent().toggleClass('hide');
-    });
-
-    // 增值服务选择
-    $('#package').on('click', '.p-ext-tit', function() {
-        $(this).toggleClass('active');
-    });
-
     // 打开套餐
-    $('#package').on('click', '.open-pack', function() {
+    $pkg.on('click', '.open-pack', function() {
         Pj.openPackage($(this));
     });
-
+    // 打开选择日期
+    $pkg.on('click', '.calendar-tit', function() {
+        $(this).parent().toggleClass('hide');
+    });
+    // 人数增加（减少）
+    $pkg.on('click', '.num-up', function() {
+        Pj.numFunc($(this).prev(), 'up', 'num');
+    });
+    $pkg.on('click', '.num-down', function() {
+        Pj.numFunc($(this).next(), 'down', 'num');
+    });
+    $pkg.on('click', '.ext-up', function() {
+        Pj.numFunc($(this).prev(), 'up', 'ext');
+    });
+    $pkg.on('click', '.ext-down', function() {
+        Pj.numFunc($(this).next(), 'down', 'ext');
+    });
+    // 取消错误提示
+    $pkg.on('keyup', '.only-num', function(e) {
+        $(this).next().next().html('&emsp;');
+        if ([37, 38, 39, 40, 46, 13, 8].indexOf($.getKey(e)) !== -1) { // 四个方向键 delete 回车 backspace
+            return;
+        };
+        Pj.numFunc($(this), 'ipt', $(this).data('type'));
+    });
+    $pkg.on('focus blur', '.only-num', function(e) {
+        $(this).next().next().html('&emsp;');
+    });
+    // 增值服务选择
+    $pkg.on('click', '.p-ext-tit', function() {
+        Pj.extFunc($(this));
+    });
+    // 预定套餐
+    $pkg.on('click', '.pkg-order', function() {
+        Pj.pkgOrder($(this));
+    });
     // 收藏套餐
     $('#package').on('click', '.like-pack', function() {
         Pj.likePack($(this));

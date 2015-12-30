@@ -77,7 +77,7 @@
                     <!-- 标签和分享 -->
                     <section class="c">
                         <dl class="fl">
-                            <dt class="dlb fcm">标签：</dt>
+                            <dt class="dlb fcm vat">标签：</dt>
                             <dd class="art-tag dlb">
                                 <volist name="tag" id="t">
                                     <a>{$t.name}</a>
@@ -88,7 +88,9 @@
                             <dt class="dlb fc9 mr20">分享到</dt>
                             <dd class="dlb vam">
                                 <a target="_blank" class="share-weibo cp mr10"></a>
-                                <!-- <a target="_blank" class="share-weixin cp"></a> -->
+                                <span class="share-weixin cd pr">
+                                    <div class="qrcode bcf pa" id="qrCode"></div>
+                                </span>
                             </dd>
                         </dl>
                     </section>
@@ -141,5 +143,6 @@
 </block>
 
 <block name="footer-js">
+    <script src="__PUBLIC__/Home/js/qrcode.min.js"></script>
     <script src="__PUBLIC__/Home/js/article.js"></script>
 </block>

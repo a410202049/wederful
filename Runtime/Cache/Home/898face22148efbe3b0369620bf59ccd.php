@@ -86,11 +86,14 @@
                         </ul>
                     </section>
                 </li>
-               <li class="header-top-line fl h1 fs0">
+                <li class="header-top-line fl h1">
+                    <a class="header-list ts4 dlb" href="/dev_wederful/lovelyplanet">社区</a>
+                </li>
+                <!-- <li class="header-top-line fl h1 fs0">
                     <a class="h1 dlb" href="/dev_wederful/lovelyplanet">
                         <img class="h-down2 mt20 h20 fs18 fcm" src="/dev_wederful/Public/Home/images/Lonvely_Planet_logo.png" alt="爱的行星" />
                     </a>
-                </li>
+                </li> -->
             </ul>
             <ul class="fr h1">
                 <li class="fl h1 fs0 mr30">
@@ -113,7 +116,7 @@
                         <ul class="header-down-con w1 pa tac z3 lh200">
                             <li><a href="/dev_wederful/account" class="dlb w1 ts4">个人资料</a></li>
                             <li><a href="/dev_wederful/favor" class="dlb w1 ts4">收藏夹</a></li>
-                            <li><a href="<?php echo U('Home/User/orders/');?>" class="dlb w1 ts4">订单信息</a></li>
+                            <!-- <li><a href="<?php echo U('Home/User/orders/');?>" class="dlb w1 ts4">订单信息</a></li> -->
                             <li><a class="sign-out dlb w1 cp ts4">退出</a></li>
                         </ul>
                     </li>
@@ -256,10 +259,10 @@
                                 <section class="w400 bb pr20 fr">
                                     <time class="dlb fc9 mt10"><?php echo (substr($li["createtime"],0,10)); ?></time>
                                     <h2 class="fs22 fc3 mb30 mt15"><a class="w1 ofh dlb" href="/dev_wederful/lovelyplanet/id/<?php echo ($li["id"]); ?>"><?php echo ($li["title"]); ?></a></h2>
-                                    <dl class="mb15 fc9">
-                                        <dt class="dlb"><?php if($li["source"] == '0'): ?>转载：<?php else: ?>作者：<?php endif; ?></dt>
-                                        <dd class="dlb"><?php echo ($li["author"]); ?></dd>
-                                    </dl>
+                                    <?php if(!empty($li["author"])): ?><dl class="mb15 fc9">
+                                            <dt class="dlb"><?php if($li["source"] == '0'): ?>作者：<?php else: ?>转载：<?php endif; ?></dt>
+                                            <dd class="dlb"><?php echo ($li["author"]); ?></dd>
+                                        </dl><?php endif; ?>
                                     <h3><?php echo ($li["subtitle"]); ?></h3>
                                 </section>
                             </article><?php endif; endforeach; endif; else: echo "" ;endif; ?>
@@ -351,7 +354,6 @@
         <section class="footer-friends i-fcb bc fc9 pt15 c">
             <span class="fl">友情链接</span>
             <nav class="f-fri-con ml20 dlb fr">
-                <a href="<?php echo U('/');?>">wederful</a>
             </nav>
         </section>
         <section class="tac i-fcb">

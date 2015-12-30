@@ -70,10 +70,9 @@ var $mask = $('#mask'),
             ini: function() {
                 G.$numOnly.length > 0 &&
                     $('.only-num').on('keyup', function(e) {
-                        var _k = $.getKey(e);
-                        if (_k >= 37 && _k <= 40 || _k === 46) {
+                        if ([37, 38, 39, 40, 46, 13, 8].indexOf($.getKey(e)) !== -1) { // 四个方向键 delete 回车 backspace
                             return;
-                        };
+                        }
                         $(this).val($(this).val().replace(/\D/gi, ''));
                     });
                 delete G.$numOnly;
@@ -134,12 +133,17 @@ var tools = (function() {
         },
 
         toThousands: function(n) {
-            n += '';
-            var fix = n.slice(n.indexOf('.')),
-                n = n.slice(0, n.indexOf('.')),
+            var _dot_index,
+                fix = '', // 包括小数点后面的字符串
                 result = '';
+            n += '';
+            _dot_index = n.indexOf('.');
+            if (_dot_index >-1) {
+                fix = n.slice(_dot_index);
+                n = n.slice(0, _dot_index);
+            };
             while (n.length > 3) {
-                result = ' , ' + n.slice(-3) + result;
+                result = ',' + n.slice(-3) + result;
                 n = n.slice(0, n.length - 3);
             };
             if (n) {

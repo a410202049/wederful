@@ -9,9 +9,76 @@ return array(
 	// URL模式
 	'URL_MODEL' => 2,
 	'DEFAULT_FILTER' =>  '',//关闭转义
-	'URL_ROUTE_RULES' => array(
+    'URL_ROUTE_RULES' => array(
         'account$'=>'Home/User/index',
         'favor$'=>'Home/User/favorites',
+        'package/show/:id'=>function($id){
+            switch ($id) {
+                case '85':
+                    redirect(__ROOT__.'/bali/221');
+                    break;
+                case '68':
+                    redirect(__ROOT__.'/bali/173');
+                    break;
+                case '73':
+                    redirect(__ROOT__.'/bali/173');
+                    break;
+                case '60':
+                    redirect(__ROOT__.'/bali/167');
+                    break;
+                case '67':
+                    redirect(__ROOT__.'/bali/122');
+                    break;
+                case '6':
+                    redirect(__ROOT__.'/bali/178');
+                    break;
+                case '74':
+                    redirect(__ROOT__.'/bali/121');
+                    break;
+                case '64':
+                    redirect(__ROOT__.'/bali/162');
+                    break;
+                case '82':
+                    redirect(__ROOT__.'/bali/164');
+                    break;
+                case '62':
+                    redirect(__ROOT__.'/bali/190');
+                    break;
+                case '59':
+                    redirect(__ROOT__.'/bali/163');
+                    break;
+                case '58':
+                    redirect(__ROOT__.'/bali/174');
+                    break;
+                case '75':
+                    redirect(__ROOT__.'/bali/177');
+                    break;
+                case '72':
+                    redirect(__ROOT__.'/bali/175');
+                    break;
+                case '60':
+                    redirect(__ROOT__.'/bali/167');
+                    break;
+                case '65':
+                    redirect(__ROOT__.'/bali/179');
+                    break;
+                case '81':
+                    redirect(__ROOT__.'/bali/195');
+                    break;
+                case '79':
+                    redirect(__ROOT__.'/bali/201');
+                    break;
+                case '83':
+                    redirect(__ROOT__.'/bali/199');
+                    break;
+                case '117':
+                    redirect(__ROOT__.'/bali/205');
+                    break;
+
+            }
+            
+            return false; 
+        },
         // 'account$'=>'Home/User/index',
         'lovelyplanet/[:p\d]$'=>'Home/Article/index',
         'lovelyplanet/id/:id\d'=>'Home/Article/articleDetail',
@@ -65,7 +132,7 @@ return array(
             $_SERVER['PATH_INFO'] = 'Service/serviceDetail/id/'.$id.'/area/'.$areaid;
             return false;             
         },
-		':area/:category/[:p]\d'=>function($area,$category,$p){
+        ':area/:category/[:p]\d'=>function($area,$category,$p){
             $areaid = "";
             $categoryid = "";
             /**
@@ -114,7 +181,7 @@ return array(
             $_SERVER['PATH_INFO'] = 'Service/index/area/'.$areaid.'/categoryid/'.$categoryid.'/p/'.$p;
             return false; 
         }
-	),
+    ),
 	// 配置邮件发送服务器
     'MAIL_HOST' =>'smtp.qq.com',//smtp服务器的名称
     'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
@@ -183,6 +250,6 @@ return array(
     				)
     ),
     'DEPOSIT_RATIO' => array('10','20','30','40','50','60','70','80','90','100'),//定金比例
-
+    
     'MODULE_ALLOW_LIST' => array('Home','Admin')
 );

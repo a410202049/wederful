@@ -5,6 +5,7 @@
 <block name="global">
     <script>
         var global = {
+            area: '{$areaid}', // 当前地区
             localUrl: '{:U("Goods/index")}', // 页面基本地址
             categoryid: '{$categoryid}', // 当前类型
             keywords: '{$keywords}', // 当前搜索关键字
@@ -47,6 +48,12 @@
             <option value="null">选择服务商</option>
             <volist name="vendorsArr" id="vendors">
                 <option value="{$vendors.id}">{$vendors.name}</option>
+            </volist>
+        </select>
+        <select class="area-type-list i-select fl" name="area">
+            <option value="null">选择地区</option>
+            <volist name="destinations" id="destination">
+                <option value="{$destination.id}">{$destination.name}</option>
             </volist>
         </select>
     </div>

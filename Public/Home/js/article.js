@@ -14,7 +14,13 @@
             $duc = $(document);
         return {
             ini: function() {
+                // 给所有文章的图片不可拖动
                 $('#article').find('.article-con').find('img').attr('draggable', 'false');
+                // 生成页面二维码
+                var $qrcode = $('#qrCode');
+                if ($qrcode.length > 0) {
+                    $qrcode.qrcode(location.href);
+                };
             },
             scroll: function($win) {
                 var _win_top = $win.scrollTop(),
@@ -66,7 +72,7 @@
             },
             // 分享到新浪微博
             shareWeibo: function($this) {
-                var str = '《' + $('#artTit').html() + '》\n' + $('#artSubTit').html() + '\n@Wederful海外婚礼',
+                var str = '#' + $('#artTit').html() + '#\n' + $('#artSubTit').html() + '\n@Wederful海外婚礼',
                     $img = $('#article').find('img'),
                     _img_l = $img.length,
                     // 图片字符串

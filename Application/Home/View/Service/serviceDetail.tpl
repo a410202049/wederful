@@ -1,11 +1,11 @@
 <extend name="Public/base" />
 
 <block name="meta">
-    <title>详情页 - wederful</title>
+    <title>{$productData.name} - Wederful 海外婚礼</title>
     <meta name="author" content="wederfull" />
-    <meta name="keywords" content="Wederful,海外婚礼,海外婚礼场地,海外婚礼旅拍" />
+    <meta name="keywords" content="{$productData.seo_keywords}" />
     <meta name="Copyright" content="wederful.com &copy;" />
-    <meta name="description" content="国内首家海外婚礼垂直电商,提供海外婚礼场地、全球知名婚礼及旅拍摄影师、海外婚礼团队住宿、交通服务、当地游活动及婚礼装扮等服务预定。DIY 海外婚礼,从此变得很简单。" />
+    <meta name="description" content="{$productData.seo_description}" />
 </block>
 
 <block name="css">
@@ -14,7 +14,10 @@
 <block name="global">
     <script>
         var global = {
-            collectionPackage: "{:U('User/collectionPackage')}"
+            imgUrl: '__PUBLIC__/Home/images/',
+            collectionPackage: "{:U('User/collectionPackage')}",
+            getGoodDatePrice:"{:U('Service/getGoodDatePrice')}",
+            placeOrder:"{:U('Service/placeOrder')}"
         };
     </script>
 </block>
@@ -101,7 +104,6 @@
                     </div>
                     <div class="intro-ext dlb i-w5 bb fr">
                         <volist name="productData.textAttrData" id="attr">
-
                             <dl class="mb5">
                                 <dt>{$attr.name}:</dt>
                                 <if condition="$attr.type eq 'radio' || $attr.type eq 'select'">
@@ -155,7 +157,7 @@
                 <section class="package r4">
                     <!-- 给package-item 加上active 表示展开-->
                     <volist name="productData.packageData" id="package">
-                        <div class="package-item ofh i-bc" data-id="{$package.id}">
+                        <div class="package-item ofh i-bc" data-name="{$package.name}" data-id="{$package.id}" data-min="{$package.number_range_min}" data-max="{$package.number_range_max}" data-charge="{$package.out_charge}" data-price="{$package.price}">
                             <div class="p-i-head">
                                 <div class="p-i-h-tit open-pack fs18 h1 bb fl cp lh150 c">
                                     <div class="dlb fc3 fl">
@@ -210,7 +212,7 @@
                                     <div class="calendar-wrap pr dlb hide fl">
                                         <section class="calendar-tit w1 bcf cp i-bc bb tac c">
                                             <span class="dlb fc3 fs16 ml20 fl">选择日期</span>
-                                            <span class="now-date mr20 fs16 dlb">2015-12-12</span>
+                                            <span class="now-date mr20 fs16 dlb"></span>
                                             <i class="i-arrow i-arrow-t dlb mr20 ts4 fr"></i>
                                         </section>
                                         <div class="calendar-con pa l0 w1 bcf i-bc bb z1"></div>
@@ -218,13 +220,10 @@
                                     <dl class="num-wrap dlb fl">
                                         <dt class="dlb fc3 fs16 mr15 fl">选择人数</dt>
                                         <dd class="dlb fl">
-                                            <span class="num-up dlb i-bc cp bcf fl mr5" title="增加人数">-</span>
-                                            <input class="num-ipt only-num tac i-bc fl" type="text" placeholder="最大容纳{$package.number_range_max}人" value="{$package.number_range_min}"/>
-                                            <span class="num-down dlb i-bc cp bcf fl ml5" title="减少人数">+</span>
-                                            <input type="hidden" class="min_num" value="{$package.number_range_min}">
-                                            <input type="hidden" class="max_num" value="{$package.number_range_max}">
-                                            <input type="hidden" class="out_charge" value="{$package.out_charge}">
-                                            <span class="fl ml10">&emsp;</span>
+                                            <span class="num-down dlb i-bc cp bcf fl mr5" title="增加人数">-</span>
+                                            <input class="num-ipt only-num tac i-bc fl" type="text" placeholder="最大容纳{$package.number_range_max}人" value="{$package.number_range_min}" data-type="num" />
+                                            <span class="num-up dlb i-bc cp bcf fl ml5" title="减少人数">+</span>
+                                            <span class="remind-err fl ml10">&emsp;</span>
                                         </dd>
                                     </dl>
                                 </section>
@@ -245,7 +244,7 @@
                                         <h4 class="fc3 fs16 p-h4 pl20">增值服务</h4>
                                         <ul class="p-i-ext">
                                             <volist name="package.addValue" id="add">
-                                                <li class="c mb10">
+                                                <li class="ext-item c mb10" data-price="{$add.price}" data-id="{$add.id}" data-min="{$add.min_num}" data-max="{$add.max_num}" data-name="{$add.name}">
                                                     <!-- 加上 avtive 表示选中 -->
                                                     <section class="p-ext-tit cp fl mr20" title="{$add.name}">
                                                         <i class="fl dlb h10 w10 mr10"></i>
@@ -253,9 +252,10 @@
                                                     </section>
                                                     <if condition="($add.min_num neq '0') and ($add.max_num neq '0')">
                                                         <section class="p-ext-num dlb fl tac">
-                                                            <span class="dlb w20 i-bc cp fl mr5">-</span>
-                                                            <input class="only-num i-bc fl" type="text" placeholder="{$add.min_num}个到{$add.max_num}个" />
-                                                            <span class="dlb w20 i-bc cp fl ml5">+</span>
+                                                            <span class="ext-down dlb w20 i-bc cp fl mr5">-</span>
+                                                            <input class="only-num i-bc fl" type="text" placeholder="{$add.min_num}个到{$add.max_num}个" data-type="ext" />
+                                                            <span class="ext-up dlb w20 i-bc cp fl ml5">+</span>
+                                                            <span class="remind-err fl ml10">&emsp;</span>
                                                         </section>
                                                     </if>
                                                     <span class="fr p-ext-money" data-price="{$add.price}">￥{$add.price}</span>
@@ -270,7 +270,7 @@
                                     <dt class="dlb">总计:</dt>
                                     <dd class="package-money dlb">RMB {$package.price}</dd>
                                 </dl>
-                                <span class="ml15 dlb vam r4 bcm fcf pl15 pr15 pt10 pb10 cp mr5">申请预定</span>
+                                <span class="pkg-order ml15 dlb vam r4 bcm fcf pl15 pr15 pt10 pb10 cp mr5">申请预定</span>
                             </div>
                         </div>
                     </volist>

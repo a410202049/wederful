@@ -70,11 +70,14 @@
                         </ul>
                     </section>
                 </li>
-               <li class="header-top-line fl h1 fs0">
+                <li class="header-top-line fl h1">
+                    <a class="header-list ts4 dlb" href="__ROOT__/lovelyplanet">社区</a>
+                </li>
+                <!-- <li class="header-top-line fl h1 fs0">
                     <a class="h1 dlb" href="__ROOT__/lovelyplanet">
                         <img class="h-down2 mt20 h20 fs18 fcm" src="__PUBLIC__/Home/images/Lonvely_Planet_logo.png" alt="爱的行星" />
                     </a>
-                </li>
+                </li> -->
             </ul>
             <ul class="fr h1">
                 <li class="fl h1 fs0 mr30">
@@ -98,7 +101,7 @@
                         <ul class="header-down-con w1 pa tac z3 lh200">
                             <li><a href="__ROOT__/account" class="dlb w1 ts4">个人资料</a></li>
                             <li><a href="__ROOT__/favor" class="dlb w1 ts4">收藏夹</a></li>
-                            <li><a href="{:U('Home/User/orders/')}" class="dlb w1 ts4">订单信息</a></li>
+                            <!-- <li><a href="{:U('Home/User/orders/')}" class="dlb w1 ts4">订单信息</a></li> -->
                             <li><a class="sign-out dlb w1 cp ts4">退出</a></li>
                         </ul>
                     </li>
@@ -257,7 +260,6 @@
         <section class="footer-friends i-fcb bc fc9 pt15 c">
             <span class="fl">友情链接</span>
             <nav class="f-fri-con ml20 dlb fr">
-                <a href="{:U('/')}">wederful</a>
             </nav>
         </section>
         <section class="tac i-fcb">
@@ -266,8 +268,8 @@
     </footer>
 
     <!-- 功能 侧边栏 -->
-    <section id="asideFunc" class="aside-func pf">
-        <span class="func-contact i-aside i-s-contact cp db" tenantId="9597" title="联系客服"></span>
+    <section id="asideFunc" class="aside-func pf z2">
+        <!-- <span class="func-contact i-aside i-s-contact cp db" tenantId="9597" title="联系客服"></span> -->
         <span class="func-top i-aside i-s-top cp db" title="回到顶部"></span>
     </section>
 
@@ -278,12 +280,11 @@
     <script src="__PUBLIC__/Home/js/jq.js"></script>
     <!-- public -->
     <script src="__PUBLIC__/Home/js/public.js"></script>
-    <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script>
+    <!-- // <script src='//kefu.easemob.com/webim/easemob.js?tenantId=9597&hide=true' async='async'></script> -->
     <!-- header-footer -->
     <script src="__PUBLIC__/Home/js/head-foot.js"></script>
     <!-- this -->
     <block name="footer-js"></block>
-
 </body>
 
 </html>

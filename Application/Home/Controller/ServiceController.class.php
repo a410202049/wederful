@@ -22,10 +22,7 @@ class ServiceController extends BaseController {
         if (!$destinationData) {
             $this->error('当前目的地不存在');
         }
-
         $model = M();
-
-
         $productCategoryData = $ProductCategory->where(array(
             'parent_id' => '0'
         ))->select();
@@ -39,7 +36,6 @@ class ServiceController extends BaseController {
                 $productCategoryData[$h]['is_show'] = 1;
             }
         }
-
         $categoryArray = array();
         $cid = $_SERVER['CID'];//默认选中分类为场地
         foreach ($productCategoryData as $x => $y) {
@@ -61,6 +57,45 @@ class ServiceController extends BaseController {
 
             $_SERVER['CATEGORY'] = $categoryName;
         }
+
+           switch ($area) {
+                case 'bali':
+                    if($categoryName =='venue'){                    
+                        $title = '巴厘岛婚礼_巴厘岛婚礼场地_婚礼策划-Wederful海外婚礼';
+                        $keywords = '巴厘岛婚礼,巴厘岛婚礼场地,巴厘岛婚礼策划';
+                        $description = 'Wederful海外婚礼，为广大新人提供众多巴厘岛婚礼场地，巴厘岛婚礼场地,巴厘岛婚礼策划，更多服务请咨询专业的婚嫁社区Wederful海外婚礼热线：400-070-2080';
+                    }else{
+                        $title = '巴厘岛婚纱摄影_婚礼摄影-Wederful海外婚礼';
+                        $keywords = '巴厘岛婚纱摄影,巴厘岛婚礼摄影';
+                        $description = 'Wederful海外婚礼，为广大新人提供众多巴厘岛婚纱摄影，更多服务请咨询专业的婚嫁社区Wederful海外婚礼热线：400-070-2080';
+                    }
+                    break;
+                case 'maldive':
+                    $title = '马尔代夫婚礼_马尔代夫婚礼场地_婚礼策划-Wederful海外婚礼';
+                    $keywords = '马尔代夫婚礼,马尔代夫场地,马尔代夫婚礼策划';
+                    $description = 'Wederful海外婚礼，为广大新人提供众多马尔代夫婚礼场地，马尔代夫婚礼场地,马尔代夫婚礼策划，更多服务请咨询专业的婚嫁社区Wederful海外婚礼热线：400-070-2080';
+                    break;
+                case 'australia':
+                    $title = '澳大利亚婚礼_澳大利亚婚礼场地_婚礼策划-Wederful海外婚礼';
+                    $keywords = '澳大利亚婚礼,澳大利亚场地,澳大利亚婚礼策划';
+                    $description = 'Wederful海外婚礼，为广大新人提供众多澳大利亚婚礼场地，澳大利亚婚礼场地,澳大利亚婚礼策划，更多服务请咨询专业的婚嫁社区Wederful海外婚礼热线：400-070-2080';
+                    break;
+                case 'thailand':
+                    $title = '泰国婚礼_泰国婚礼场地_婚礼策划-Wederful海外婚礼';
+                    $keywords = '泰国婚礼,泰国婚礼场地,泰国婚礼策划';
+                    $description = 'Wederful海外婚礼，为广大新人提供众多泰国婚礼场地，泰国婚礼场地,泰国婚礼策划，更多服务请咨询专业的婚嫁社区Wederful海外婚礼热线：400-070-2080';
+                    break;
+                case 'japan':
+                    $title = '日本婚礼_日本婚礼场地_婚礼策划-Wederful海外婚礼';
+                    $keywords = '日本婚礼,日本婚礼场地,日本婚礼策划';
+                    $description = 'Wederful海外婚礼，为广大新人提供众多日本婚礼场地，日本婚礼场地,日本婚礼策划，更多服务请咨询专业的婚嫁社区Wederful海外婚礼热线：400-070-2080';
+                    break;
+                case 'unitedkingdom':
+                    $title = '英国婚礼_英国婚礼场地_婚礼策划-Wederful海外婚礼';
+                    $keywords = '英国婚礼,英国婚礼场地,英国婚礼策划';
+                    $description = 'Wederful海外婚礼，为广大新人提供众多英国婚礼场地，英国婚礼场地,英国婚礼策划，更多服务请咨询专业的婚嫁社区Wederful海外婚礼热线：400-070-2080';
+                    break;           
+            }
 
         $categoryId = isset($arr['categoryid']) ? $arr['categoryid'] : $cid; //判断是否传分类id 默认为47
         $condition = array('p.is_del'=>'0','k.is_show'=>'1','k.is_del'=>'0','k.area_id'=>$destinationid,'p.category_id'=>$categoryId);
@@ -99,6 +134,9 @@ class ServiceController extends BaseController {
         }
 
 
+        $this->assign('title',$title);
+        $this->assign('keywords',$keywords);
+        $this->assign('description',$description);
         $this->assign('destinationData', $destinationData);
         $this->assign('ProductCategoryData', $productCategoryData);
         $this->assign('productData', $productData);
@@ -154,6 +192,7 @@ class ServiceController extends BaseController {
             }
             $packageData[$key]['addValue'] = $addService;
             $packageData[$key]['price'] = number_format(usdtosny($packageData[$key]['price']));
+            $packageData[$key]['out_charge'] = usdtosny($packageData[$key]['out_charge']);
             $collection = M('userCollection');
             $status = is_login();
             $is_collection = $collection->where(array('uid'=>$status,'package_id'=>$value['id']))->find();
@@ -238,8 +277,49 @@ class ServiceController extends BaseController {
         $this->display();
     }
     
-    public function getGoodDatePrices(){
-        echo "";
+    public function getGoodDatePrice(){
+        $arr = I();
+        $pid = $arr['pid'];
+        $date = $arr['date'];
+        if($date < date('Y-m-d')){
+            $this->resultMsg('error','选择日期不能小于今天','0');
+        }
+        $package = M('package');
+        $model = M();
+        $count = $model->query("SELECT count(*) as count from package_no_provide_date where package_id = '%s' and '%s' BETWEEN startdate and enddate",$pid,$date);
+        if(!$count[0]['count']){
+            $price = $model->query("SELECT price from package_date_price where package_id = '%s' and '%s' BETWEEN startdate and enddate",$pid,$date);
+            if(count($price)>1){
+                $this->resultMsg('error','请联系管理员','0');
+            }else if(count($price) == 1){
+                $this->resultMsg('success','当前价格',usdtosny($price[0]['price']));
+            }else{
+                $pack = $package->where(array('id'=>$pid))->find();
+                $this->resultMsg('success','当前价格',usdtosny($pack['price']));
+            }
+        }else{
+            $this->resultMsg('success','当日不可提供价格','0');
+        }
+    }
+
+    public function placeOrder(){
+        if($status = is_login()){
+            $arr = I();
+            $proName = $arr['name'];
+            $number = $arr['number'];
+            $date = $arr['date'];
+            $addArr = $arr['add'];
+            $str = "";
+            foreach ($addArr as $key => $value) {
+                $str.=($key+1).'.'.$value['name']."<br>";
+            }
+            sendMail('hi@wederful.com', '用户下单提醒', '申请时间：'.date('y-m-d h:i:s',time()).'<br>申请产品：'.$proName.'<br>服务日期：'.$date.'（婚礼服务日期）<br>人数：'.$number.'人<br>增值服务：<br>'.$str);
+            $this->resultMsg('success','下单成功');
+        }else{
+            $this->resultMsg('error','尚未登录');
+        }
+
+        
     }
 
 }

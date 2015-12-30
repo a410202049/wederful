@@ -5,10 +5,15 @@ use Think\Controller;
 
 class IndexController extends BaseController {
     public function index() {
-        // $params = array('123456','10');
-        // $sms = new Sms('15208491440',$params);
-        // $d = $sms->sendSms();
-        // print_r($d);
+        // echo deCodeMd5('Linry2015');
+        // exit;
+        // $info = M('userInfo');
+        // $user = M('user');
+        // $d = $user->select();
+        // foreach ($d as $key => $value) {
+        //     $info->data(array('uid'=>$value['id'],'mobile'=>$value['username']))->add();
+        // }
+        // exit();
         $this->display();
     }
 

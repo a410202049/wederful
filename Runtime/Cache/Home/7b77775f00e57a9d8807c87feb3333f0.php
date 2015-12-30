@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     
-    <title>首页 - wederful</title>
+    <title>Wederful海外婚礼_婚纱摄影_蜜月旅行网站</title>
     <meta name="author" content="wederfull" />
-    <meta name="keywords" content="Wederful,海外婚礼,海外婚礼场地,海外婚礼旅拍" />
+    <meta name="keywords" content="wederful,海外婚礼,旅行结婚,蜜月旅行,国外婚礼,海外婚纱摄影" />
     <meta name="Copyright" content="wederful.com &copy;" />
-    <meta name="description" content="国内首家海外婚礼垂直电商,提供海外婚礼场地、全球知名婚礼及旅拍摄影师、海外婚礼团队住宿、交通服务、当地游活动及婚礼装扮等服务预定。DIY 海外婚礼,从此变得很简单。" />
+    <meta name="description" content="Wederful.com-最专业的海外婚礼定制平台,发现并预定全世界独一无二的婚礼场地、教堂、海岛、婚礼拍摄、婚纱照拍摄、化妆造型、旅拍、航拍、蜜月、纪念日等多种服务，专业的婚嫁社区为您的决策提供帮服务热线：400-070-2080" />
 
 
     <!-- icon -->
@@ -80,11 +80,14 @@
                         </ul>
                     </section>
                 </li>
-               <li class="header-top-line fl h1 fs0">
+                <li class="header-top-line fl h1">
+                    <a class="header-list ts4 dlb" href="/dev_wederful/lovelyplanet">社区</a>
+                </li>
+                <!-- <li class="header-top-line fl h1 fs0">
                     <a class="h1 dlb" href="/dev_wederful/lovelyplanet">
                         <img class="h-down2 mt20 h20 fs18 fcm" src="/dev_wederful/Public/Home/images/Lonvely_Planet_logo.png" alt="爱的行星" />
                     </a>
-                </li>
+                </li> -->
             </ul>
             <ul class="fr h1">
                 <li class="fl h1 fs0 mr30">
@@ -107,7 +110,7 @@
                         <ul class="header-down-con w1 pa tac z3 lh200">
                             <li><a href="/dev_wederful/account" class="dlb w1 ts4">个人资料</a></li>
                             <li><a href="/dev_wederful/favor" class="dlb w1 ts4">收藏夹</a></li>
-                            <li><a href="<?php echo U('Home/User/orders/');?>" class="dlb w1 ts4">订单信息</a></li>
+                            <!-- <li><a href="<?php echo U('Home/User/orders/');?>" class="dlb w1 ts4">订单信息</a></li> -->
                             <li><a class="sign-out dlb w1 cp ts4">退出</a></li>
                         </ul>
                     </li>
@@ -342,29 +345,7 @@
             </figure>
         </section>
         <!-- 促销 -->
-        <section class="each-item item-nav i-bcm none">
-            <h2 class="font-promotion text-hide">促销也能淘精品</h2>
-            <div class="each-wrap ofh">
-                <article class="promotion roll-nav-wrap c" data-min="3">
-                    <?php if(is_array($promotionData)): $i = 0; $__LIST__ = $promotionData;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$pda): $mod = ($i % 2 );++$i;?><figure>
-                            <a href="#">
-                                <img src="<?php echo ($pda["thumbnail"]); ?>" />
-                                <span><?php echo ($pda["value"]); ?>% OFF<i></i></span>
-                                <aside class="c bb">
-                                    <h3><?php echo ($pda["name"]); ?></h3>
-                                    <span>￥25,234</span>
-                                    <em>￥12,123</em>
-                                </aside>
-                            </a>
-                            <p>一级分类 / 一起地区，二级地区</p>
-                        </figure><?php endforeach; endif; else: echo "" ;endif; ?>
-                </article>
-            </div>
-            <nav class="roll-nav">
-                <a data-i="0" class="ts4 active"></a>
-                <a data-i="1" class="ts4"></a>
-            </nav>
-        </section>
+
         <!-- 用户反馈 -->
         <section class="each-item item-nav user-feedback">
             <h2 class="font-feedback text-hide">真实用户反馈</h2>
@@ -498,7 +479,6 @@
         <section class="footer-friends i-fcb bc fc9 pt15 c">
             <span class="fl">友情链接</span>
             <nav class="f-fri-con ml20 dlb fr">
-                <a href="<?php echo U('/');?>">wederful</a>
             </nav>
         </section>
         <section class="tac i-fcb">

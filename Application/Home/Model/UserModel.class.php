@@ -24,4 +24,8 @@ class UserModel extends Model {
         
         return date('Y-m-d H:i:s');
     }
+
+    public function autoMd5($password){
+        return deCodeMd5($password);
+    }
 }

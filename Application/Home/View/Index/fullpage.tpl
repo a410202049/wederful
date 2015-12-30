@@ -113,36 +113,6 @@
                 <section class="footer-friends i-fcb bc pt15 c">
                     <span class="fs16 fl fc9">友情链接</span>
                     <nav class="f-fri-con ml20 dlb fr">
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
-                        <a href="###">梦幻旅</a>
                     </nav>
                 </section>
                 <section class="tac i-fcb">

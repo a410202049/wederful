@@ -42,7 +42,7 @@
                 我们非常重视您留下的每一条信息<br />
                 并时刻准备为您提供满意的服务和有效的帮助。<br />
                 <br />
-                客服热线：&emsp;&ensp;400-070-2080 （周一至周日 09:00-22:00）<br />
+                客服热线：&emsp;&ensp;400-070-2080 (09:00-20:00)<br />
                 商务合作：&emsp;&ensp;bd@wederful.com<br />
                 媒体采访：&emsp;&ensp;pr@wederful.com<br />
                 加入我们：&emsp;&ensp;hr@wederful.com</p>

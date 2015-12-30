@@ -63,7 +63,7 @@
                 <tr>
                     <td>文章作者</td>
                     <td>
-                        <select class="i-select i-w-short i-mr10" name="source">
+                        <select class="i-select i-w-short i-mr10 mb10" name="source">
                             <option value="null">选择作者/转载</option>
                             <option value="0" <if condition="'0' eq $result['source']">selected="selected"</if>>作者</option>
                             <option value="1" <if condition="'1' eq $result['source']">selected="selected"</if>>转载</option>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>404 - wederful</title>
-    <link rel="shortcut icon" href="/dev_wederful/Public/Home/images/shutIco.ico" type="image/x-icon" sizes="16x16 32x32" />
+    <link rel="shortcut icon" href="/dev_wederful/Public/Home/images/shutPng.png" type="image/png" sizes="16x16 32x32" />
     <style>
         html,
         body {

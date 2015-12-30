@@ -27,6 +27,9 @@
                 global.vendorid && ( // 页面如果有当前文章类型 处触改变
                     $allWrap.find('.provider-type-list').find('option[value="' + global.vendorid + '"]').attr('selected', 'selected')
                 );
+                global.area && ( // 页面如果有当前文章类型 处触改变
+                    $allWrap.find('.area-type-list').find('option[value="' + global.area + '"]').attr('selected', 'selected')
+                );
                 global.keywords && ( // 页面如果有搜索关键字 处触改变
                     $allWrap.find('.search-list').val(global.keywords)
                 );
@@ -110,22 +113,25 @@
                         $this.val(),
                         global.categoryid,
                         global.vendorid,
-                        global.keywords
+                        global.area,
+                        global.keywords,
+                        global.order
                     );
                 };
             },
-            pagingGo: function(page, type, type2, search, order) { // 页数 商品大类 服务商 搜索关键字 排序
+            pagingGo: function(page, type, type2, area, search, order) { // 页数 商品大类 服务商 搜索关键字 排序
                 var _u = global.localUrl;
                 _u += (page ? '/p/' + page : '') +
                     (type ? '/categoryid/' + type : '') +
                     (type2 ? '/vendorid/' + type2 : '') +
+                    (area ? '/area/' + area : '') +
                     (search ? '/search/' + search : '') +
                     (order ? '/order/' + order : '');
                 // 跳转
                 location.href = _u;
             },
             search: function(_s) {
-                Goods.pagingGo('', global.categoryid, global.vendorid, _s);
+                Goods.pagingGo('', '', '', '', _s);
             },
             operation: function($this, _type) {
                 var $tr = $this.closest('tr'),
@@ -180,10 +186,13 @@
     });
     // 板块选择
     $allWrap.on('change', '.category-type-list', function() {
-        Goods.pagingGo('', $(this).val(), '', '');
+        Goods.pagingGo('', $(this).val());
     });
     $allWrap.on('change', '.provider-type-list', function() {
-        Goods.pagingGo('', global.categoryid, $(this).val(), '');
+        Goods.pagingGo('', global.categoryid, $(this).val());
+    });
+    $allWrap.on('change', '.area-type-list', function() {
+        Goods.pagingGo('', global.categoryid, '',$(this).val());
     });
     // 关键字搜索
     $allWrap.on('click', '.goods-search-btn', function() {
@@ -200,7 +209,7 @@
             'asc': '',
             '': 'desc'
         };
-        Goods.pagingGo('', global.categoryid, global.vendorid, global.keywords, _o[global.order]);
+        Goods.pagingGo('', global.categoryid, global.vendorid, global.area, global.keywords, _o[global.order]);
     });
     // 删除
     $allWrap.on('click', '.goods-del', function() {

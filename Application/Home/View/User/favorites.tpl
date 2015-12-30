@@ -52,10 +52,10 @@
                         <i class="i-icon i-icon-fav"></i>
                         收藏夹&emsp;
                     </a>
-                    <a href="{:U('Home/User/orders/')}" class="icon-mes db">
+                    <!-- <a href="{:U('Home/User/orders/')}" class="icon-mes db">
                         <i class="i-icon i-icon-mes"></i>
                         订单信息
-                    </a>
+                    </a> -->
                 </nav>
             </aside>
             <div id="goodsWrap" class="con-main fr">

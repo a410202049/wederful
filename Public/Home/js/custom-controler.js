@@ -54,7 +54,7 @@
                                     $mask.html('<img class="middle" src="' + global.imgUrl + 'letter.png" alt="提交成功 succes" />').fadeIn(400);
                                     setTimeout(function() {
                                         location.reload(true);
-                                    }, 2000);
+                                    }, 4000);
                                 } else {
                                     $.remaind(r.message, true);
                                 };
@@ -70,7 +70,6 @@
                     };
                 };
             },
-
             inputTip: function($dom, _text) {
                 $dom.val(_text).css('color', '#f33');
                 setTimeout(function() {

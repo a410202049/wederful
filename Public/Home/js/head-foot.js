@@ -55,6 +55,25 @@
                 // 触发登陆和注册弹框
                 location.hash === '#login' && Hf.logOut();
                 location.hash === '#register' && Hf.regOut();
+
+                // 在线咨询
+                (function(m, ei, q, i, a, j, s) {
+                    m[a] = m[a] || function() {
+                        (m[a].a = m[a].a || []).push(arguments)
+                    };
+                    j = ei.createElement(q),
+                        s = ei.getElementsByTagName(q)[0];
+                    j.async = true;
+                    j.charset = 'UTF-8';
+                    j.src = i;
+                    s.parentNode.insertBefore(j, s)
+                })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
+                _MEIQIA('entId', 3990);
+                // seo 自动推送
+                var bp = document.createElement('script');
+                bp.src = '//push.zhanzhang.baidu.com/push.js';
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
             },
             regOut: function() {
                 Hf.clearRegLog();
@@ -349,9 +368,9 @@
      * *******************************************************************************
      */
     // 联系客服
-    $('#asideFunc').on('click', '.func-contact', function() {
-        easemobIM();
-    });
+    // $('#asideFunc').on('click', '.func-contact', function() {
+    //     easemobIM();
+    // });
     // 回答顶部
     $('#asideFunc').on('click', '.func-top', function() {
         Hf.goTop();

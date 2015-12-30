@@ -1,11 +1,11 @@
 <extend name="Public/base" />
 
 <block name="meta">
-    <title>首页 - wederful</title>
+    <title>Wederful海外婚礼_婚纱摄影_蜜月旅行网站</title>
     <meta name="author" content="wederfull" />
-    <meta name="keywords" content="Wederful,海外婚礼,海外婚礼场地,海外婚礼旅拍" />
+    <meta name="keywords" content="wederful,海外婚礼,旅行结婚,蜜月旅行,国外婚礼,海外婚纱摄影" />
     <meta name="Copyright" content="wederful.com &copy;" />
-    <meta name="description" content="国内首家海外婚礼垂直电商,提供海外婚礼场地、全球知名婚礼及旅拍摄影师、海外婚礼团队住宿、交通服务、当地游活动及婚礼装扮等服务预定。DIY 海外婚礼,从此变得很简单。" />
+    <meta name="description" content="Wederful.com-最专业的海外婚礼定制平台,发现并预定全世界独一无二的婚礼场地、教堂、海岛、婚礼拍摄、婚纱照拍摄、化妆造型、旅拍、航拍、蜜月、纪念日等多种服务，专业的婚嫁社区为您的决策提供帮服务热线：400-070-2080" />
 </block>
 
 <block name="css">
@@ -144,31 +144,7 @@
             </figure>
         </section>
         <!-- 促销 -->
-        <section class="each-item item-nav i-bcm none">
-            <h2 class="font-promotion text-hide">促销也能淘精品</h2>
-            <div class="each-wrap ofh">
-                <article class="promotion roll-nav-wrap c" data-min="3">
-                    <volist name="promotionData" id="pda">
-                        <figure>
-                            <a href="#">
-                                <img src="{$pda.thumbnail}" />
-                                <span>{$pda.value}% OFF<i></i></span>
-                                <aside class="c bb">
-                                    <h3>{$pda.name}</h3>
-                                    <span>￥25,234</span>
-                                    <em>￥12,123</em>
-                                </aside>
-                            </a>
-                            <p>一级分类 / 一起地区，二级地区</p>
-                        </figure>
-                    </volist>
-                </article>
-            </div>
-            <nav class="roll-nav">
-                <a data-i="0" class="ts4 active"></a>
-                <a data-i="1" class="ts4"></a>
-            </nav>
-        </section>
+
         <!-- 用户反馈 -->
         <section class="each-item item-nav user-feedback">
             <h2 class="font-feedback text-hide">真实用户反馈</h2>

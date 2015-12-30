@@ -19,7 +19,7 @@
     <div class="con-nav i-lh30 i-bcm p10 mb20 c">
         <nav class="fl">
             <a href="{:U('Goods/index/')}">商品管理</a>
-            <a href="{:U('Goods/addGoods/')}">新增商品</a>
+            <a class="cd">编辑商品</a>
         </nav>
     </div>
     <!-- ************************************ -->
@@ -171,30 +171,33 @@
                 </tr>
                 <tr>
                     <td>不可提供日期</td>
-                    <td colspan="2">
-                        <section class="dlb">
+                    <td colspan="2" class="fs0">
+                        <section class="dlb fs14">
                             <notempty name="noProvideData">
                                 <volist name="noProvideData" id="provide">
                                     <div class="mb10">
-                                        <input name="no_provide_date_startdate[]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" value="{$provide.startdate|substr=0,10}" />到&ensp;<input name="no_provide_date_enddate[]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" value="{$provide.enddate|substr=0,10}" />
+                                        <input name="no_provide_date_startdate[]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" value="{$provide.startdate|substr=0,10}" />
+                                        到&ensp;
+                                        <input name="no_provide_date_enddate[]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" value="{$provide.enddate|substr=0,10}" />
                                         <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
                                     </div>
                                 </volist>
                             <else />
                                 <div class="mb10">
-                                    <input name="no_provide_date_startdate[]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />到&ensp;<input name="no_provide_date_enddate[]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
-                                   <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
+                                    <input name="no_provide_date_startdate[]" class="input-date i-input mr10 mb10" type="text" placeholder="选择开始日期" />
+                                    到&ensp;
+                                    <input name="no_provide_date_enddate[]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" />
+                                    <button type="button" class="del-temp-dom i-button i-b-w mr10">删除</button>
                                 </div>
                             </notempty>
                         </section>
-                        <button data-type="restart"  data-html="unDayDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                        <button data-type="restart"  data-html="unDayDom" class="add-dom i-button i-b-w fs14 mr10" type="button">+</button>
                     </td>
                 </tr>
                 <tr>
                     <td>日期/价格</td>
-                    <td colspan="2">
-                        <section class="dlb">
-
+                    <td colspan="2" class="fs0">
+                        <section class="dlb fs14">
                             <notempty name="datePriceData">
                                 <volist name="datePriceData" id="priceData">
                                     <div>
@@ -214,10 +217,8 @@
                                     <button type="button" class="del-temp-dom i-button i-b-w mr10 mb5">删除</button>
                                 </div>
                             </notempty>
-
-
                         </section>
-                        <button data-type="restart" data-html="dayPriceDom" class="add-dom i-button i-b-w mr10" type="button">+</button>
+                        <button data-type="restart" data-html="dayPriceDom" class="add-dom i-button fs14 i-b-w mr10" type="button">+</button>
                     </td>
                 </tr>
                 <tr>
@@ -232,8 +233,6 @@
                                         <input name="package_promotion_enddate[]" class="input-date i-input mr10" type="text" placeholder="选择结束日期" value="{$promotionDa.enddate|substr=0,10}"/>
                                         <select class="i-select mr10 mb10" name="promotion[]">
                                             <volist name="promotionData" id="promotion">
-                                                <!-- <option value="{$promotion.id}">{$promotion.value}</option> -->
-
                                                 <option value="{$promotion.id}" <if condition="$promotion.id eq $promotionDa['promotion_id']">selected="selected"</if>>{$promotion.value}</option>
                                             </volist>
                                         </select>
@@ -270,7 +269,7 @@
                     <td>超出人数</td>
                     <td colspan="2">
                         <input class="i-input i-max-width mr10" type="text" data-name="out_charge" name="out_charge" placeholder="价格" value="{$packData['out_charge']}"/>
-                        /&ensp;人
+                        $&ensp;/&ensp;人
                     </td>
                 </tr>
                 <tr>

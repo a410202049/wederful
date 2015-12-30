@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     
-    <title>详情页 - wederful</title>
+    <title><?php echo ($productData["name"]); ?> - Wederful 海外婚礼</title>
     <meta name="author" content="wederfull" />
-    <meta name="keywords" content="Wederful,海外婚礼,海外婚礼场地,海外婚礼旅拍" />
+    <meta name="keywords" content="<?php echo ($productData["seo_keywords"]); ?>" />
     <meta name="Copyright" content="wederful.com &copy;" />
-    <meta name="description" content="国内首家海外婚礼垂直电商,提供海外婚礼场地、全球知名婚礼及旅拍摄影师、海外婚礼团队住宿、交通服务、当地游活动及婚礼装扮等服务预定。DIY 海外婚礼,从此变得很简单。" />
+    <meta name="description" content="<?php echo ($productData["seo_description"]); ?>" />
 
 
     <!-- icon -->
@@ -30,7 +30,10 @@
     
     <script>
         var global = {
-            collectionPackage: "<?php echo U('User/collectionPackage');?>"
+            imgUrl: '/dev_wederful/Public/Home/images/',
+            collectionPackage: "<?php echo U('User/collectionPackage');?>",
+            getGoodDatePrice:"<?php echo U('Service/getGoodDatePrice');?>",
+            placeOrder:"<?php echo U('Service/placeOrder');?>"
         };
     </script>
 
@@ -86,11 +89,14 @@
                         </ul>
                     </section>
                 </li>
-               <li class="header-top-line fl h1 fs0">
+                <li class="header-top-line fl h1">
+                    <a class="header-list ts4 dlb" href="/dev_wederful/lovelyplanet">社区</a>
+                </li>
+                <!-- <li class="header-top-line fl h1 fs0">
                     <a class="h1 dlb" href="/dev_wederful/lovelyplanet">
                         <img class="h-down2 mt20 h20 fs18 fcm" src="/dev_wederful/Public/Home/images/Lonvely_Planet_logo.png" alt="爱的行星" />
                     </a>
-                </li>
+                </li> -->
             </ul>
             <ul class="fr h1">
                 <li class="fl h1 fs0 mr30">
@@ -113,7 +119,7 @@
                         <ul class="header-down-con w1 pa tac z3 lh200">
                             <li><a href="/dev_wederful/account" class="dlb w1 ts4">个人资料</a></li>
                             <li><a href="/dev_wederful/favor" class="dlb w1 ts4">收藏夹</a></li>
-                            <li><a href="<?php echo U('Home/User/orders/');?>" class="dlb w1 ts4">订单信息</a></li>
+                            <!-- <li><a href="<?php echo U('Home/User/orders/');?>" class="dlb w1 ts4">订单信息</a></li> -->
                             <li><a class="sign-out dlb w1 cp ts4">退出</a></li>
                         </ul>
                     </li>
@@ -329,7 +335,7 @@
                 <h2 class="section-label">套餐信息</h2>
                 <section class="package r4">
                     <!-- 给package-item 加上active 表示展开-->
-                    <?php if(is_array($productData["packageData"])): $i = 0; $__LIST__ = $productData["packageData"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$package): $mod = ($i % 2 );++$i;?><div class="package-item ofh i-bc" data-id="<?php echo ($package["id"]); ?>">
+                    <?php if(is_array($productData["packageData"])): $i = 0; $__LIST__ = $productData["packageData"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$package): $mod = ($i % 2 );++$i;?><div class="package-item ofh i-bc" data-name="<?php echo ($package["name"]); ?>" data-id="<?php echo ($package["id"]); ?>" data-min="<?php echo ($package["number_range_min"]); ?>" data-max="<?php echo ($package["number_range_max"]); ?>" data-charge="<?php echo ($package["out_charge"]); ?>" data-price="<?php echo ($package["price"]); ?>">
                             <div class="p-i-head">
                                 <div class="p-i-h-tit open-pack fs18 h1 bb fl cp lh150 c">
                                     <div class="dlb fc3 fl">
@@ -380,7 +386,7 @@
                                     <div class="calendar-wrap pr dlb hide fl">
                                         <section class="calendar-tit w1 bcf cp i-bc bb tac c">
                                             <span class="dlb fc3 fs16 ml20 fl">选择日期</span>
-                                            <span class="now-date mr20 fs16 dlb">2015-12-12</span>
+                                            <span class="now-date mr20 fs16 dlb"></span>
                                             <i class="i-arrow i-arrow-t dlb mr20 ts4 fr"></i>
                                         </section>
                                         <div class="calendar-con pa l0 w1 bcf i-bc bb z1"></div>
@@ -388,13 +394,10 @@
                                     <dl class="num-wrap dlb fl">
                                         <dt class="dlb fc3 fs16 mr15 fl">选择人数</dt>
                                         <dd class="dlb fl">
-                                            <span class="num-up dlb i-bc cp bcf fl mr5" title="增加人数">-</span>
-                                            <input class="num-ipt only-num tac i-bc fl" type="text" placeholder="最大容纳<?php echo ($package["number_range_max"]); ?>人" value="<?php echo ($package["number_range_min"]); ?>"/>
-                                            <span class="num-down dlb i-bc cp bcf fl ml5" title="减少人数">+</span>
-                                            <input type="hidden" class="min_num" value="<?php echo ($package["number_range_min"]); ?>">
-                                            <input type="hidden" class="max_num" value="<?php echo ($package["number_range_max"]); ?>">
-                                            <input type="hidden" class="out_charge" value="<?php echo ($package["out_charge"]); ?>">
-                                            <span class="fl ml10">&emsp;</span>
+                                            <span class="num-down dlb i-bc cp bcf fl mr5" title="增加人数">-</span>
+                                            <input class="num-ipt only-num tac i-bc fl" type="text" placeholder="最大容纳<?php echo ($package["number_range_max"]); ?>人" value="<?php echo ($package["number_range_min"]); ?>" data-type="num" />
+                                            <span class="num-up dlb i-bc cp bcf fl ml5" title="减少人数">+</span>
+                                            <span class="remind-err fl ml10">&emsp;</span>
                                         </dd>
                                     </dl>
                                 </section>
@@ -413,16 +416,17 @@
                                 <?php if(!empty($package["addValue"])): ?><div class="i-bc r4 bcf mt20">
                                         <h4 class="fc3 fs16 p-h4 pl20">增值服务</h4>
                                         <ul class="p-i-ext">
-                                            <?php if(is_array($package["addValue"])): $i = 0; $__LIST__ = $package["addValue"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$add): $mod = ($i % 2 );++$i;?><li class="c mb10">
+                                            <?php if(is_array($package["addValue"])): $i = 0; $__LIST__ = $package["addValue"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$add): $mod = ($i % 2 );++$i;?><li class="ext-item c mb10" data-price="<?php echo ($add["price"]); ?>" data-id="<?php echo ($add["id"]); ?>" data-min="<?php echo ($add["min_num"]); ?>" data-max="<?php echo ($add["max_num"]); ?>" data-name="<?php echo ($add["name"]); ?>">
                                                     <!-- 加上 avtive 表示选中 -->
                                                     <section class="p-ext-tit cp fl mr20" title="<?php echo ($add["name"]); ?>">
                                                         <i class="fl dlb h10 w10 mr10"></i>
                                                         <span class="fl to"><?php echo ($add["name"]); ?></span>
                                                     </section>
                                                     <?php if(($add["min_num"] != '0') and ($add["max_num"] != '0')): ?><section class="p-ext-num dlb fl tac">
-                                                            <span class="dlb w20 i-bc cp fl mr5">-</span>
-                                                            <input class="only-num i-bc fl" type="text" placeholder="<?php echo ($add["min_num"]); ?>个到<?php echo ($add["max_num"]); ?>个" />
-                                                            <span class="dlb w20 i-bc cp fl ml5">+</span>
+                                                            <span class="ext-down dlb w20 i-bc cp fl mr5">-</span>
+                                                            <input class="only-num i-bc fl" type="text" placeholder="<?php echo ($add["min_num"]); ?>个到<?php echo ($add["max_num"]); ?>个" data-type="ext" />
+                                                            <span class="ext-up dlb w20 i-bc cp fl ml5">+</span>
+                                                            <span class="remind-err fl ml10">&emsp;</span>
                                                         </section><?php endif; ?>
                                                     <span class="fr p-ext-money" data-price="<?php echo ($add["price"]); ?>">￥<?php echo ($add["price"]); ?></span>
                                                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -434,7 +438,7 @@
                                     <dt class="dlb">总计:</dt>
                                     <dd class="package-money dlb">RMB <?php echo ($package["price"]); ?></dd>
                                 </dl>
-                                <span class="ml15 dlb vam r4 bcm fcf pl15 pr15 pt10 pb10 cp mr5">申请预定</span>
+                                <span class="pkg-order ml15 dlb vam r4 bcm fcf pl15 pr15 pt10 pb10 cp mr5">申请预定</span>
                             </div>
                         </div><?php endforeach; endif; else: echo "" ;endif; ?>
                 </section>
@@ -447,7 +451,7 @@
                 <section class="pt30 pb30 bcf i-shadow r4">
                     <article>
                         <h4 class="ml20 fc3 fs16 mb20"><i class="i-tit-icon i-process"></i>流程图</h4>
-                        <img src="/dev_wederful/Public/Home/images/process.png" alt="预定流程图" />
+                        <img draggable="false" src="/dev_wederful/Public/Home/images/process.png" alt="预定流程图" />
                     </article>
                     <article class="n-order">
                         <h4 class="mb20 fc3 fs16"><i class="i-tit-icon i-notice"></i>预定须知</h4>
@@ -612,7 +616,7 @@
             <div id="mapBox" class="w1 h1"></div>
             <div class="map-box i-shadow tac i-bcm">
                 <figure class="w1">
-                    <img class="w1" src="http://7xo7hn.com1.z0.glb.clouddn.com/1450075236180" />
+                    <img draggable="false" class="w1" src="http://7xo7hn.com1.z0.glb.clouddn.com/1450075236180" />
                     <a class="center-lg map-lg db lh200 cp" data-lg="-8.80441, 115.2311">巴厘岛</a>
                 </figure>
                 <section class="bcf lh200 cp">
@@ -636,7 +640,7 @@
                 <h2 class="section-label">其他推荐</h2>
                 <nav id="recomNav" class="recom-nav pb20 tar">
                     <!-- 初始化的时候给第一个a加上active -->
-                    <?php $__FOR_START_21574__=0;$__FOR_END_21574__=$randLength;for($i=$__FOR_START_21574__;$i < $__FOR_END_21574__;$i+=1){ ?><a class="ts4 dlb cp ml15 r50 <?php if($i == 0): ?>active<?php endif; ?>" data-i="<?php echo ($i); ?>"></a><?php } ?>
+                    <?php $__FOR_START_2673__=0;$__FOR_END_2673__=$randLength;for($i=$__FOR_START_2673__;$i < $__FOR_END_2673__;$i+=1){ ?><a class="ts4 dlb cp ml15 r50 <?php if($i == 0): ?>active<?php endif; ?>" data-i="<?php echo ($i); ?>"></a><?php } ?>
                 </nav>
                 <section class="ofh">
                     <ul id="recomCon" class="recom-con tac lh150 c">
@@ -708,7 +712,6 @@
         <section class="footer-friends i-fcb bc fc9 pt15 c">
             <span class="fl">友情链接</span>
             <nav class="f-fri-con ml20 dlb fr">
-                <a href="<?php echo U('/');?>">wederful</a>
             </nav>
         </section>
         <section class="tac i-fcb">

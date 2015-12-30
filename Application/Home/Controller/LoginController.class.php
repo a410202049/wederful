@@ -9,7 +9,7 @@ class LoginController extends Controller {
      * 处理登陆页
      */
     public function login(){
-        $password = I('password','','md5');
+        $password = deCodeMd5(I('password',''));
         $username = I('username');
         $where = array('username' =>$username);
         $table = M('user');
@@ -29,7 +29,7 @@ class LoginController extends Controller {
      */
     public function forget(){
         $mobile = I('username','');
-        $password = I('password','','md5');
+        $password = deCodeMd5(I('password',''));
         $code = I('code','null');
         $table = M('mobileVerifyRecord');
         $where = array('mobile' =>$mobile,'type'=>1);
@@ -55,8 +55,8 @@ class LoginController extends Controller {
      */
     public function reset(){
         $arr = I();
-        $oldPassword = I('oldPassword','','md5');
-        $password = I('password','','md5');
+        $oldPassword = deCodeMd5(I('oldPassword',''));
+        $password = deCodeMd5(I('password',''));
         if($status = is_login()){      
             $where = array('id' =>$status);
             $user = M('user');
@@ -109,7 +109,7 @@ class LoginController extends Controller {
 
         $auto = array(
             array('roles','2'),
-            array('password','md5',3,'function'),
+            array('password','autoMd5',3,'callback'),
             array('createtime',date('Y-m-d H:i:s',time()))
         );
         $condition = array('username'=>$mobile);
@@ -122,7 +122,9 @@ class LoginController extends Controller {
             session('uid', $id);
             $info = M('userInfo');
             $info->data(array('uid'=>$id,'mobile'=>$mobile))->add();
-            sendMail('hi@wederful.com', 'wederful用户注册提醒', '用户名：' . $mobile.'已注册，请查看！');
+            $ip = get_client_ip();
+            $region = getMobileArea($mobile);//查询归属地
+            sendMail('hi@wederful.com', '用户注册提醒', '注册时间：'.date('y-m-d h:i:s',time()).'<br>注册手机号：'.$mobile.'<br>归属地：'.$region.'<br>IP：'.$ip);
             $this->resultMsg('success','注册成功！');
         }else{
             $this->resultMsg('error',$user->getError());
@@ -157,9 +159,9 @@ class LoginController extends Controller {
         $data = array('code'=>$code,'mobile'=>$mobile,'type'=>$type,'ip'=>$ip,'created'=>$createTime);
         $where = array('ip'=>$ip,'created'=>array('lt',$endTime));
         $count = $table->where($where)->count();
-        // if($count >= 5){
-        //     $this->resultMsg('error','请求次数过多！');
-        // }
+        if($count >= 5){
+            $this->resultMsg('error','请求次数过多！');
+        }
         $status = $table->add($data);
         //此处添加短信发送接口
         if($status){

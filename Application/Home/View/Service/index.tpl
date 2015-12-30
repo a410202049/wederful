@@ -1,11 +1,11 @@
 <extend name="Public/base" />
 
 <block name="meta">
-    <title>地区 - wederful</title>
+    <title>{$title}</title>
     <meta name="author" content="wederfull" />
-    <meta name="keywords" content="Wederful,海外婚礼,海外婚礼场地,海外婚礼旅拍" />
+    <meta name="keywords" content="{$keywords}" />
     <meta name="Copyright" content="wederful.com &copy;" />
-    <meta name="description" content="国内首家海外婚礼垂直电商,提供海外婚礼场地、全球知名婚礼及旅拍摄影师、海外婚礼团队住宿、交通服务、当地游活动及婚礼装扮等服务预定。DIY 海外婚礼,从此变得很简单。" />
+    <meta name="description" content="{$description}" />
 </block>
 
 <block name="global">
@@ -49,7 +49,6 @@
         </div>
         <!-- 导航 -->
         <nav id="listNav" class="list-nav mb10 bcf">
-            <!-- <if condition='$i eq 1'>active</if> -->
             <ul class="wm bc c tac fs16">
                 <volist name="ProductCategoryData" id="data">
                     <if condition="$data.is_show eq '1'">
@@ -156,7 +155,7 @@
             <div class="c">
                 <volist name="productData" id="prodata">
                     <div class="each fl mb20 mr20">
-                        <a title="{$prodata.name}" class="img-wrap db ofh pr" href="__ROOT__/{$area}/{$prodata.id}">
+                        <a title="{$prodata.name}" class="img-wrap db ofh pr" href="__ROOT__/{$area}/{$prodata.id}" target="_blank">
                             <img class="h1 ts4" src="{$prodata.thumbnail}" alt="{$prodata.name}" />
                             <div class="pa b0 l0 w1 c fcf fs18">
                                 <span class="each-name fl to ml20">{$prodata.name}</span>

@@ -181,7 +181,8 @@ body {
     background-color: #bdb099;
 }
 
-.header-top-line:hover::before {
+.header-top-line:hover::before,
+.header-top-line.active::before {
     -webkit-transform: translateY(0) translateZ(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
@@ -258,8 +259,8 @@ body {
 }
 
 .f-us-4 {
-    cursor: default;
     margin-right: 46px;
+    cursor: default;
     color: #f6f6f6;
 }
 
@@ -298,21 +299,21 @@ body {
 }
 
 .f-fri-con {
-    text-align: center;
     width: 736px;
     margin-top: 3px;
+    text-align: center;
 }
 
 .f-fri-con a {
-    display: inline-block;
-    /*margin-right: 5px;*/
-    margin-bottom: 14px;
-    line-height: 14px;
-    padding-right: 8px;
-    font-size: 12px;
     /*-webkit-transform: scale(0.86);*/
     /*-o-transform: scale(1);*/
     font-family: arial, '宋体', sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    display: inline-block;
+    /*margin-right: 5px;*/
+    margin-bottom: 14px;
+    padding-right: 8px;
     border-right: 1px solid #ccc;
 }
 
@@ -378,6 +379,29 @@ body {
 
 .i-s-contact {
     background-position: 0 0;
+}
+
+
+/*美洽重置*/
+
+#MEIQIA-BTN-HOLDER {
+    right: 12px !important;
+    bottom: 64px !important;
+}
+
+#MEIQIA-BTN {
+    border: none !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .26) !important;
+    /*background-color: #f6f6f6 !important;*/
+    /*color: #bdb099 !important;*/
+}
+
+#MEIQIA-BTN-LINE {
+    display: none !important;
+}
+
+#MEIQIA-BTN-TEXT {
+    display: none !important;
 }
 
 

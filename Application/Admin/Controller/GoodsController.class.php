@@ -11,13 +11,13 @@ use Common\Tools\Page;
 class GoodsController extends BaseController {
     public function index(){
         $arr = I();
-    	// $destination = M('destination');
-    	// $destinations = $destination->select();
     	$pagesize = C('BACKEND_PAGESIZE');
     	$package = M('package');
         $product = M('product');
         $category = D('ProductCategory');
         $vendors = D('vendors');
+        $destination = M('destination');
+        $destinations = $destination->select();
         $where = "where p.is_del=0 ";
         if($arr['search']){
             $where.="and p.name like '%".$arr['search']."%' ";
@@ -40,6 +40,10 @@ class GoodsController extends BaseController {
             $where.=" order by p.price ".$arr['order'];
         }
 
+        if($arr['area']){
+            $where.=" and p.area_id =".$arr['area'];
+        }
+
         $dao = M();
         $countData = $dao->query("SELECT count(*) as count from package as p LEFT JOIN product as pro on p.product_id = pro.id LEFT JOIN vendors as v on pro.vendors_id = v.id LEFT JOIN product_category as cate on cate.id = pro.category_id ".$where);
         $count = $countData[0]['count'];
@@ -55,8 +59,9 @@ class GoodsController extends BaseController {
         $totalPage = ceil($count/$pagesize);
 
 
-
-                
+        
+        $this->assign('areaid',$arr['area']);
+        $this->assign('destinations',$destinations);
         $this->assign('order',$arr['order']);
         $this->assign('page',$page->show());
         $this->assign('categorys',$categorys);

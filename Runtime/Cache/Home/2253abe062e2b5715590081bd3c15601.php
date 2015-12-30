@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     
-    <title>地区 - wederful</title>
+    <title><?php echo ($title); ?></title>
     <meta name="author" content="wederfull" />
-    <meta name="keywords" content="Wederful,海外婚礼,海外婚礼场地,海外婚礼旅拍" />
+    <meta name="keywords" content="<?php echo ($keywords); ?>" />
     <meta name="Copyright" content="wederful.com &copy;" />
-    <meta name="description" content="国内首家海外婚礼垂直电商,提供海外婚礼场地、全球知名婚礼及旅拍摄影师、海外婚礼团队住宿、交通服务、当地游活动及婚礼装扮等服务预定。DIY 海外婚礼,从此变得很简单。" />
+    <meta name="description" content="<?php echo ($description); ?>" />
 
 
     <!-- icon -->
@@ -87,11 +87,14 @@
                         </ul>
                     </section>
                 </li>
-               <li class="header-top-line fl h1 fs0">
+                <li class="header-top-line fl h1">
+                    <a class="header-list ts4 dlb" href="/dev_wederful/lovelyplanet">社区</a>
+                </li>
+                <!-- <li class="header-top-line fl h1 fs0">
                     <a class="h1 dlb" href="/dev_wederful/lovelyplanet">
                         <img class="h-down2 mt20 h20 fs18 fcm" src="/dev_wederful/Public/Home/images/Lonvely_Planet_logo.png" alt="爱的行星" />
                     </a>
-                </li>
+                </li> -->
             </ul>
             <ul class="fr h1">
                 <li class="fl h1 fs0 mr30">
@@ -114,7 +117,7 @@
                         <ul class="header-down-con w1 pa tac z3 lh200">
                             <li><a href="/dev_wederful/account" class="dlb w1 ts4">个人资料</a></li>
                             <li><a href="/dev_wederful/favor" class="dlb w1 ts4">收藏夹</a></li>
-                            <li><a href="<?php echo U('Home/User/orders/');?>" class="dlb w1 ts4">订单信息</a></li>
+                            <!-- <li><a href="<?php echo U('Home/User/orders/');?>" class="dlb w1 ts4">订单信息</a></li> -->
                             <li><a class="sign-out dlb w1 cp ts4">退出</a></li>
                         </ul>
                     </li>
@@ -245,7 +248,6 @@
         </div>
         <!-- 导航 -->
         <nav id="listNav" class="list-nav mb10 bcf">
-            <!-- <?php if($i == 1): ?>active<?php endif; ?> -->
             <ul class="wm bc c tac fs16">
                 <?php if(is_array($ProductCategoryData)): $i = 0; $__LIST__ = $ProductCategoryData;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i; if($data["is_show"] == '1'): ?><li data-name="category" data-id="<?php echo ($data["id"]); ?>" class="ts4 dlb pl15 pr15 ts4 cp <?php if($data["id"] == $categoryId): ?>active<?php endif; ?>">
                             <?php if($data["id"] == '55'): ?><a href="/dev_wederful/<?php echo ($area); ?>/venue" class="dlb"><?php echo ($data["name"]); ?></a>
@@ -345,7 +347,7 @@
             <!-- 图片内容 -->
             <div class="c">
                 <?php if(is_array($productData)): $i = 0; $__LIST__ = $productData;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$prodata): $mod = ($i % 2 );++$i;?><div class="each fl mb20 mr20">
-                        <a title="<?php echo ($prodata["name"]); ?>" class="img-wrap db ofh pr" href="/dev_wederful/<?php echo ($area); ?>/<?php echo ($prodata["id"]); ?>">
+                        <a title="<?php echo ($prodata["name"]); ?>" class="img-wrap db ofh pr" href="/dev_wederful/<?php echo ($area); ?>/<?php echo ($prodata["id"]); ?>" target="_blank">
                             <img class="h1 ts4" src="<?php echo ($prodata["thumbnail"]); ?>" alt="<?php echo ($prodata["name"]); ?>" />
                             <div class="pa b0 l0 w1 c fcf fs18">
                                 <span class="each-name fl to ml20"><?php echo ($prodata["name"]); ?></span>
@@ -414,7 +416,6 @@
         <section class="footer-friends i-fcb bc fc9 pt15 c">
             <span class="fl">友情链接</span>
             <nav class="f-fri-con ml20 dlb fr">
-                <a href="<?php echo U('/');?>">wederful</a>
             </nav>
         </section>
         <section class="tac i-fcb">

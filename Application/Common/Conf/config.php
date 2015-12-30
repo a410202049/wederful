@@ -12,6 +12,71 @@ return array(
     'URL_ROUTE_RULES' => array(
         'account$'=>'Home/User/index',
         'favor$'=>'Home/User/favorites',
+        'package/show/:id'=>function($id){
+            switch ($id) {
+                case '85':
+                    redirect(__ROOT__.'/bali/221');
+                    break;
+                case '68':
+                    redirect(__ROOT__.'/bali/173');
+                    break;
+                case '73':
+                    redirect(__ROOT__.'/bali/173');
+                    break;
+                case '60':
+                    redirect(__ROOT__.'/bali/167');
+                    break;
+                case '67':
+                    redirect(__ROOT__.'/bali/122');
+                    break;
+                case '6':
+                    redirect(__ROOT__.'/bali/178');
+                    break;
+                case '74':
+                    redirect(__ROOT__.'/bali/121');
+                    break;
+                case '64':
+                    redirect(__ROOT__.'/bali/162');
+                    break;
+                case '82':
+                    redirect(__ROOT__.'/bali/164');
+                    break;
+                case '62':
+                    redirect(__ROOT__.'/bali/190');
+                    break;
+                case '59':
+                    redirect(__ROOT__.'/bali/163');
+                    break;
+                case '58':
+                    redirect(__ROOT__.'/bali/174');
+                    break;
+                case '75':
+                    redirect(__ROOT__.'/bali/177');
+                    break;
+                case '72':
+                    redirect(__ROOT__.'/bali/175');
+                    break;
+                case '60':
+                    redirect(__ROOT__.'/bali/167');
+                    break;
+                case '65':
+                    redirect(__ROOT__.'/bali/179');
+                    break;
+                case '81':
+                    redirect(__ROOT__.'/bali/195');
+                    break;
+                case '79':
+                    redirect(__ROOT__.'/bali/201');
+                    break;
+                case '83':
+                    redirect(__ROOT__.'/bali/199');
+                    break;
+                case '117':
+                    redirect(__ROOT__.'/bali/205');
+                    break;
+            }   
+            return false; 
+        },
         // 'account$'=>'Home/User/index',
         'lovelyplanet/[:p\d]$'=>'Home/Article/index',
         'lovelyplanet/id/:id\d'=>'Home/Article/articleDetail',

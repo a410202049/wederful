@@ -422,7 +422,18 @@
 
 .calendar-con {
     margin-top: -1px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
     border-bottom: none !important;
+}
+
+.fc-header {
+    padding: 0 10px !important;
+}
+
+.fc-day > div {
+    line-height: 40px !important;
+    min-height: 40px !important;
+    height: 40px !important;
 }
 
 
@@ -522,8 +533,9 @@
 
 /*套餐footer*/
 
-.package-money {
-    color: #f33;
+.package-money,
+.remind-err {
+    color: #ff2c55;
 }
 
 
@@ -699,6 +711,7 @@
     padding: 10px 15px;
     text-align: left;
 }
+
 
 /**
  * public
